@@ -10,19 +10,6 @@ condition: a configuration of the population in which \emph{every agent
 permanently inhabits a Bayesian world}---models fit, questions are dead, and
 no represented calculation prices further inquiry above its cost.
 
-\begin{lemma}[Finitely many refinements]
-\label{lem:finite}
-Each successful production strictly increases the number of cells of some
-agent's partition, so along any path there are at most $n(|S|-1)$ successful
-productions; almost surely there is a last one.
-\end{lemma}
-
-\begin{proof}
-A strict refinement of a partition of a finite set adds at least one cell,
-cell counts are bounded by $|S|$, and cumulative awareness
-(\cref{ass:elective}) rules out coarsening.
-\end{proof}
-
 \begin{definition}[Self-confirming unawareness equilibrium]
 \label{def:scue}
 A profile $(\mathcal P_i,\mu_i,q_i,\sigma_i)_{i\in N}$ is a
@@ -63,27 +50,86 @@ configuration in which the grain of truth holds on-path for every agent and
 no one has a priced reason to look for the off-path remainder.
 \end{remark}
 
-\begin{proposition}[Absorption]
-\label{prop:absorption}
-Suppose tests are consistent (\cref{lem:test-consistency}), tolerances
-generic, conjectures empirically updated, and ties in
-\cref{eq:subjective-optimality} broken by a fixed rule.  Then almost surely
-there is a generation after which every agent's awareness is constant and
-the population is in one of two absorbing regimes:
-\begin{enumerate}[label=(\roman*)]
-  \item a SCUE, in which every agent lives in a Bayesian world; or
-  \item \emph{dissonant stasis} for a nonempty set of agents: dissonance
-  recurs, but inquiry is never both elected and successful---because
-  $\lambda_iB_i<\gamma_i$, or because elected production fails
-  thereafter---and the affected agents carry committed policies forward with
-  standing anomalies.
+\begin{assumption}[Regularity]
+\label{ass:regularity}
+(i) \emph{Generic tolerance.}  The tolerance $\eta$ lies outside the finite
+set of critical values at which, for some agent, theory, partition profile,
+and policy profile, the total-variation distance between an induced on-path
+conditional and the theory's prediction equals $\eta$.
+(ii) \emph{Production randomness.}  The randomization in each $\phi_i$ is
+independent across elections and of the state and consequence draws, and,
+conditional on any election, production succeeds with probability at least
+$\underline\pi>0$.
+\end{assumption}
+
+Part (i) excludes finitely many tolerance values, since agents, theories,
+partitions, and policies are all finite.  Part (ii) is substantive: it rules
+out technologies that can be elected forever without ever producing
+(\cref{rem:scope}).
+
+\begin{theorem}[Epistemic absorption]
+\label{thm:absorption}
+Under \cref{ass:regularity}, almost surely:
+\begin{enumerate}[label=(\alph*)]
+  \item at most $n(|S|-1)$ refinements occur, and every agent's awareness
+  partition is eventually constant;
+  \item only finitely many inquiry elections occur; and
+  \item there is an almost surely finite generation after which no agent's
+  language changes and no agent pays an inquiry cost: every agent's
+  epistemic life thereafter is judged-Bayesian updating within a fixed
+  language, punctuated at most by dissonance episodes that fail the
+  participation threshold.
 \end{enumerate}
-If, whenever dissonance occurs with $B_i>0$, the election threshold is met
-and $\phi_i$ succeeds with probability bounded away from zero, then regime
-(ii) with $B_i>0$ is transient, and absorption into a SCUE or into
-zero-leverage stasis is almost sure.  (Proof sketch in
-\cref{app:absorption}.)
+Moreover, on the event that the committed profile is eventually constant,
+\begin{enumerate}[label=(\alph*),start=4]
+  \item every agent's active set is eventually constant, every theory it
+  contains is $\eta$-adequate under the terminal play at every recurrent
+  observation pair, and each agent is eventually either never
+  dissonant---it lives in a Bayesian world---or in \emph{dissonant stasis}:
+  dissonance recurs while $\lambda_iB_i<\gamma_i$, in particular whenever
+  $B_i=0$.
+\end{enumerate}
+The proof is in \cref{app:absorption}.
+\end{theorem}
+
+\begin{proposition}[Rest points and persistence]
+\label{prop:rest-points}
+\leavevmode
+\begin{enumerate}[label=(\roman*)]
+  \item If awareness partitions, committed policies, conjectures, and
+  beliefs are all eventually constant almost surely, then the limiting
+  configuration, restricted to the agents not in dissonant stasis, is a
+  self-confirming unawareness equilibrium.
+  \item Conversely, consider a generation at which the SCUE conditions hold
+  and, in addition: every theory in every belief's support is
+  $\eta'$-adequate under the configuration's own play for some $\eta'<\eta$;
+  for each agent, a single action per cell is strictly optimal under every
+  theory in its support; and $B_i=0$ at every record the configuration's
+  play generates.  Then play persists forever almost surely, and the SCUE
+  conditions fail in at most finitely many generations.  When mechanisms
+  are deterministic, as in the running example, adequate theories are never
+  rejected and persistence is exact.
+\end{enumerate}
+The proof is in \cref{app:absorption}.
 \end{proposition}
+
+\begin{remark}[What the theorem does and does not claim]
+\label{rem:scope}
+\Cref{thm:absorption} is a statement about the epistemic process---the death
+of inquiry---not about the convergence of play.  Within a Bayesian world,
+committed policies may in principle continue to cycle as beliefs and
+conjectures chase one another; that is the classical convergence problem of
+learning in games \citep{FudenbergLevine1993,KalaiLehrer1993a}, it is
+orthogonal to this paper's contribution, and the theorem deliberately does
+not resolve it.  Part (d) and the rest-point characterization are
+accordingly conditional on play stabilizing, which in every configuration
+featured in this paper is immediate: their beliefs make one action per cell
+strictly dominant.  Separately, if the success bound in
+\cref{ass:regularity}(ii) is dropped, one further absorbing pattern becomes
+possible: perpetually elected, perpetually failing inquiry---a question
+worth asking that is never answered, whose economics (paying $\gamma_i$
+forever for a repair that never arrives) merit separate study.
+\end{remark}
 
 \begin{remark}[Rational anomaly tolerance]
 \label{rem:anomaly}

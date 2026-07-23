@@ -49,6 +49,20 @@ that generation.
 The deterministic case is the degenerate instance $\eta=0$, $\bar n=1$,
 $w\equiv0$: passing is exact consistency with every retained episode.
 
+\paragraph{Judged updating.}
+Between generations, beliefs are updated by Bayes' rule \emph{conditioned on
+survival of the test}: the posterior is restricted and renormalized to the
+current active set, so belief never rides on a rejected theory.  If the
+active set is empty, the posterior is undefined and the carry-forward clause
+of \cref{ass:commitment} governs; if the set later refills without any
+refinement, the most recent well-defined belief is renormalized on the
+refilled set.  Judged updating is the formal junction between the test and
+the posterior---between judgment and understanding
+(\cref{rem:self-sealing})---and it guarantees, in the analysis of
+\cref{sec:dynamics}, that surviving beliefs are supported on adequate
+theories.  In the deterministic case it coincides with ordinary Bayesian
+conditioning, since rejection there is exactly a zero-likelihood event.
+
 \subsection{Dissonance and exposure}
 
 \begin{definition}[Causal dissonance]
