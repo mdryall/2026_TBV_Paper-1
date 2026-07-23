@@ -10,7 +10,7 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
 
 | Path | Contents |
 |---|---|
-| `paper/` | Paper 1 manuscript: `main.tex` + `sections/` (modular), `refs.bib`; first full draft compiled as `main.pdf` |
+| `paper/` | Paper 1 manuscript as a single file: `tbv_mdr_Paper01-v01.tex` with `tbv_mdr_Paper01-v01.bib`; compiled as `tbv_mdr_Paper01-v01.pdf` |
 | `notes/` | Working formal notes: the four-state (2×2) insight model — the paper's engine — and the two-state minimal example |
 | `agenda/` | `Questions_Before_Priors.tex` — the research-program design memo (four-paper agenda, no-baked-in checklist, SCM architecture horizon) |
 | `literature/own-work/` | Prior Ryall papers and manuscripts feeding the agenda (SCE 2003, causal ambiguity 2009, value capture 2017, unawareness 2022, Ryall–Wilkins, action-theory Appendix A) |
