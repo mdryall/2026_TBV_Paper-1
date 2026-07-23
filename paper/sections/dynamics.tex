@@ -1,0 +1,183 @@
+\section{Strategic dynamics: when everyone lives in a Bayesian world}
+\label{sec:dynamics}
+
+The chain now runs inside a population.  Theories determine committed
+policies; policies determine which conditionals are visited; visited
+conditionals determine dissonance and leverage; and refinements feed back
+into theories.  This section characterizes where the process comes to rest.
+The object of interest is not a strategic equilibrium but an epistemic
+condition: a configuration of the population in which \emph{every agent
+permanently inhabits a Bayesian world}---models fit, questions are dead, and
+no represented calculation prices further inquiry above its cost.
+
+\begin{lemma}[Finitely many refinements]
+\label{lem:finite}
+Each successful production strictly increases the number of cells of some
+agent's partition, so along any path there are at most $n(|S|-1)$ successful
+productions; almost surely there is a last one.
+\end{lemma}
+
+\begin{proof}
+A strict refinement of a partition of a finite set adds at least one cell,
+cell counts are bounded by $|S|$, and cumulative awareness
+(\cref{ass:elective}) rules out coarsening.
+\end{proof}
+
+\begin{definition}[Self-confirming unawareness equilibrium]
+\label{def:scue}
+A profile $(\mathcal P_i,\mu_i,q_i,\sigma_i)_{i\in N}$ is a
+\emph{self-confirming unawareness equilibrium} (SCUE) if, under the induced
+play,
+\begin{enumerate}[label=(\roman*)]
+  \item each $\sigma_i$ is subjectively optimal
+  (\cref{eq:subjective-optimality});
+  \item each conjecture $q_i$ agrees with the play induced by $\sigma_{-i}$
+  at every on-path cell;
+  \item no dissonance occurs: each agent's active set is almost surely
+  eventually nonempty, and each $\mu_i$ is supported on $\eta$-adequate
+  theories; and
+  \item no agent elects inquiry: $\lambda_iB_i<\gamma_i$, which holds in
+  particular whenever $B_i=0$.
+\end{enumerate}
+\end{definition}
+
+Conditions (i)--(ii) are subjective rationality with confirmed conjectures:
+the self-confirming conditions of the fixed-language tradition
+\citep{FudenbergLevine1993,KalaiLehrer1993b}.  Conditions (iii)--(iv) are the
+new, epistemic ones: the language survives its own evidence, and the
+question has no priced value.  A SCUE in which every partition is sufficient
+for $\tau$ and beliefs concentrate near the truth is simply a
+self-confirming equilibrium; the concept's interest lies entirely in the
+other cases.
+
+\begin{remark}[The grain of truth, restored endogenously]
+\label{rem:grain}
+Rational-learning convergence requires a grain of truth: the environment
+absolutely continuous with respect to beliefs \citep{KalaiLehrer1993a}.
+Under unawareness the condition can fail at the level of language---the
+truth may be inexpressible---and statistical dissonance is precisely the
+detector of that failure.  Each successful refinement restores the grain
+\emph{on the path of play}: post-restoration, some expressible theory
+matches the visited conditionals within tolerance.  A SCUE is a
+configuration in which the grain of truth holds on-path for every agent and
+no one has a priced reason to look for the off-path remainder.
+\end{remark}
+
+\begin{proposition}[Absorption]
+\label{prop:absorption}
+Suppose tests are consistent (\cref{lem:test-consistency}), tolerances
+generic, conjectures empirically updated, and ties in
+\cref{eq:subjective-optimality} broken by a fixed rule.  Then almost surely
+there is a generation after which every agent's awareness is constant and
+the population is in one of two absorbing regimes:
+\begin{enumerate}[label=(\roman*)]
+  \item a SCUE, in which every agent lives in a Bayesian world; or
+  \item \emph{dissonant stasis} for a nonempty set of agents: dissonance
+  recurs, but inquiry is never both elected and successful---because
+  $\lambda_iB_i<\gamma_i$, or because elected production fails
+  thereafter---and the affected agents carry committed policies forward with
+  standing anomalies.
+\end{enumerate}
+If, whenever dissonance occurs with $B_i>0$, the election threshold is met
+and $\phi_i$ succeeds with probability bounded away from zero, then regime
+(ii) with $B_i>0$ is transient, and absorption into a SCUE or into
+zero-leverage stasis is almost sure.  (Proof sketch in
+\cref{app:absorption}.)
+\end{proposition}
+
+\begin{remark}[Rational anomaly tolerance]
+\label{rem:anomaly}
+Zero-leverage dissonant stasis is a recognizable condition, not a
+pathology of the model: the agent knows its causal account is
+broken---every expressible theory is rejected---yet the break disturbs no
+represented action comparison, so repairing it is worth nothing.  Standing
+anomalies tolerated by working scientists and managers have exactly this
+structure, and the model locates them: anomaly tolerance is rational
+precisely when pinned distinctions carry no robust action leverage.
+\end{remark}
+
+\begin{proposition}[On-path adequacy, and where error lives]
+\label{prop:adequacy}
+In a SCUE, every theory in the support of every $\mu_i$ is $\eta$-adequate
+at every visited pair.  All surviving falsity is confined to what the
+configuration does not expose: mechanism assignments at states pooled with
+causally different states whose mixture imitates a single mechanism at the
+visited profiles, and counterfactual claims at unvisited profiles.
+\end{proposition}
+
+\begin{proof}
+Immediate from \cref{def:scue}(iii) and \cref{lem:test-consistency}; the
+residual clause is the complement of the visited pairs' constraints.
+\end{proof}
+
+\begin{proposition}[Persistent performance differences]
+\label{prop:persistence}
+There exist primitives and absorbing configurations in which agents hold
+different terminal partitions and theories, expected per-generation payoffs
+differ strictly and permanently, and no disadvantaged agent has a priced
+repair: for each such agent either $B_i=0$ or $\lambda_iB_i<\gamma_i$.
+\end{proposition}
+
+The proof is by the instances below, and the mechanism deserves emphasis.
+Performance differences persist not because an equilibrium concept freezes
+them but because the process that would erase them has died economically:
+the disadvantaged configuration generates no dissonance, or generates no
+leverage, or prices its question below the cost of asking.  Terminal
+heterogeneity in awareness is path dependence in the strong sense---agents
+with identical preferences and identical Bayesian competence, facing the
+same objective system, end at different languages and different payoffs
+because their histories posed different questions.
+
+\begin{definition}[Diagnostic environments]
+\label{def:diagnostic}
+The primitives $(\Theta,\tau,\rho,u)$ are \emph{diagnostic} if, under every
+profile sustainable in a SCUE, every expressible theory that is
+payoff-relevantly false---false at some state where the truth would change
+its holder's optimal action---is $\eta$-inadequate.
+\end{definition}
+
+\begin{proposition}[No payoff-relevant error in diagnostic environments]
+\label{prop:diagnostic}
+In a diagnostic environment, every SCUE is free of payoff-relevant error.
+Payoff-relevant falsity survives only in environments that admit concealing
+profiles, and it requires them to be sustained: collective error needs the
+absence of \emph{both} corrective forces, strategic variety inside agents'
+categories and environmental punishment of uniform misservice.
+\end{proposition}
+
+\begin{proof}
+By \cref{def:scue}(iii), theories surviving in a SCUE are not
+$\eta$-inadequate; in a diagnostic environment every payoff-relevantly false
+theory is.  The second claim restates \cref{def:exposure}: a false theory
+survives only under concealing profiles, and \cref{prop:exposure} makes
+concealment necessary as well as sufficient.
+\end{proof}
+
+\begin{excont}
+Set $\beta=1$ and suppose both firms acquired the column refinement after
+the discovery generation and became certain of the false column assignment.
+Each then plays the column policy; the firms pool at every state; every
+payoff is one-half; and one-half is exactly what the column theory predicts
+under pooled play.  The configuration is a SCUE with payoff-relevant error:
+policies are subjectively optimal, conjectures confirmed, no dissonance ever
+occurs (the profile is concealing), and $B_i=0$ for both firms---so the
+configuration survives even a free, infallible inquiry technology.  The
+warrant gap of \cref{sec:pivot} is permanent: unbounded experience
+accumulates while each firm remains exactly half-warranted, the missing half
+being the reflective weight on the world their shared language cannot
+express.  Now let $\beta<1$.  In the first generation containing an
+off-diagonal state, the pooled firms receive $\beta/2$ where their theory
+predicts one-half: the demand side reveals the label, dissonance returns,
+leverage turns positive, and the reflective posterior becomes degenerate.
+Payoff-relevant self-confirmation is a knife-edge property of perfectly
+forgiving demand---the $\beta<1$ environments are diagnostic---and the
+destroyed value $1-\beta$ at each misserved episode is itself the corrective
+signal: what demand withholds from the firms, their epistemics receives as
+evidence.  Finally, persistence: with $\beta=1$, let firm~1 hold the row
+refinement and the true assignment while firm~2 remains coarse with
+$\gamma_2>\lambda_2B_2$.  Firm~1 wins both off-diagonal states and splits
+the rest, earning three-quarters to firm~2's one-quarter, forever; firm~2
+sits in dissonant stasis, its question priced below its cost.  Every route
+out---strategic variety, demand harshness, cheaper inquiry---is exactly one
+of the model's named forces.
+\end{excont}

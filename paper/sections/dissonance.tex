@@ -1,0 +1,120 @@
+\section{Causal dissonance}
+\label{sec:dissonance}
+
+\subsection{Tests and active sets}
+
+\begin{definition}[Consistency test and active set]
+\label{def:test}
+Fix a tolerance $\eta\geq0$, a minimum count $\bar n\geq1$, and a
+nonincreasing slack sequence $w(\cdot)\to0$.  Given record $r_i$ with counts
+$n_i(C,a)$ and empirical conditionals $\hat p_i(\cdot\mid C,a)$, theory
+$m\in M(\mathcal P_i)$ \emph{passes} if
+\begin{equation}
+\TV\bigl(\hat p_i(\cdot\mid C,a),\,\marg{i}m(C)(a)\bigr)
+\leq
+\eta+w\bigl(n_i(C,a)\bigr)
+\qquad
+\text{for every }(C,a)\text{ with }n_i(C,a)\geq\bar n,
+\label{eq:test}
+\end{equation}
+where $\TV$ is total-variation distance.  The \emph{active set}
+$\widehat M_i(\mathcal P_i,r_i)$ collects the passing theories.  Under a
+committed profile, call $m$ \emph{$\eta$-adequate} if
+$\TV(p_i^{*}(\cdot\mid C,a),\marg{i}m(C)(a))\leq\eta$ at every visited pair
+and \emph{$\eta$-inadequate} if the inequality fails strictly at some visited
+pair.
+\end{definition}
+
+\begin{lemma}[Test consistency]
+\label{lem:test-consistency}
+Fix a committed profile played in all generations and suppose no theory's
+distance to an on-path conditional equals $\eta$ exactly.  As generations
+accumulate, almost surely every $\eta$-adequate theory is eventually always
+in the active set and every $\eta$-inadequate theory is eventually never in
+it.
+\end{lemma}
+
+\begin{proof}
+Visited pairs accumulate observations without bound almost surely under
+i.i.d.\ full-support states, so
+$\hat p_i(\cdot\mid C,a)\to p_i^{*}(\cdot\mid C,a)$ by the strong law of
+large numbers.  The triangle inequality places
+$\TV(\hat p_i,\marg{i}m(C)(a))$ within any $\epsilon>0$ of
+$\TV(p_i^{*},\marg{i}m(C)(a))$ from some generation on; the genericity
+hypothesis converts strict inequalities into eventual acceptance and
+rejection, and the slack sequence absorbs finite-sample fluctuation before
+that generation.
+\end{proof}
+
+The deterministic case is the degenerate instance $\eta=0$, $\bar n=1$,
+$w\equiv0$: passing is exact consistency with every retained episode.
+
+\subsection{Dissonance and exposure}
+
+\begin{definition}[Causal dissonance]
+\label{def:dissonance}
+Agent $i$ experiences \emph{causal dissonance} at the end of a generation if
+$\widehat M_i(\mathcal P_i,r_i)=\emptysetset$: every expressible theory is
+rejected.  The expressible set does not disappear; no element of it accounts
+for the record.  The immediate question has a determinate defect but not a
+determinate answer: \emph{what unrepresented difference among the pooled
+states explains the heterogeneity of their consequences?}
+\end{definition}
+
+Dissonance is the model's rendering of a question for intelligence.  It is
+localized (the failing cells are identified by the test), it is directed (an
+adequate repair must reconcile the record), and it is semantically open (no
+expressible object names the missing distinction).  Whether dissonance ever
+occurs, however, depends on whether play makes the falsity of the language
+visible.
+
+\begin{definition}[Exposure and concealment]
+\label{def:exposure}
+Under a committed profile, awareness $\mathcal P_i$ is \emph{exposed} if
+every $m\in M(\mathcal P_i)$ is $\eta$-inadequate.  A committed profile is
+\emph{concealing} for agent $i$ if some expressible theory is
+$\eta$-adequate under it while false as a claim about $\tau$ at some state
+its cells cover.
+\end{definition}
+
+\begin{proposition}[Exposure and dissonance]
+\label{prop:exposure}
+Under a fixed committed profile, agent $i$ experiences dissonance from some
+generation onward almost surely if and only if $\mathcal P_i$ is exposed.
+\end{proposition}
+
+\begin{proof}
+Immediate from \cref{lem:test-consistency}: exposure means every expressible
+theory is eventually rejected; its failure means some theory is eventually
+always accepted.
+\end{proof}
+
+Exposure has two sources, and the distinction organizes much of what
+follows.  Heterogeneity inside a cell surfaces either because \emph{other
+agents play differently across the pooled states}---strategic
+differentiation inside one's categories, which changes the visited profiles
+and the induced mixtures---or because \emph{the environment punishes uniform
+play across causally different states in an observable way}.  Both reappear
+as the corrective forces in \cref{sec:dynamics}.
+
+\begin{excont}
+Let $\beta=1$ and suppose the firms' priors over the constant theories are
+heterogeneous: firm~1 considers $\theta^0$ more likely than $\theta^1$, and
+firm~2 the reverse.  A direct computation shows that, against any conjecture
+about the rival, offering architecture $0$ is subjectively strictly dominant
+for firm~1 and architecture $1$ for firm~2 whenever
+$\mu_i(m^a)>(2-\beta)\,\mu_i(m^{a'})$; at $\beta=1$ this is simple belief
+asymmetry.  The firms therefore commit to differentiated constant policies.
+Consider a generation in which $s_{00}$ and $s_{11}$ are served.  With
+differentiated actions, the winner-take-all payoffs reveal the objectively
+preferred architecture at each state: firm~1 wins at $s_{00}$ (payoffs
+$1,0$) and loses at $s_{11}$ (payoffs $0,1$).  No constant assignment is
+consistent with both episodes---$m^0$ fails at $s_{11}$, $m^1$ at $s_{00}$,
+and $m^n$ predicts one-half at both---so each firm's active set empties:
+causal dissonance, in its exact deterministic form.  Had the firms instead
+pooled on the same architecture at both states, each would have received
+one-half at every episode, an outcome consistent with all three constant
+theories: the pooled profile is concealing, and coarse awareness would have
+survived its own evidence indefinitely.  Belief heterogeneity, by inducing
+differentiated play, is what made the shared language's failure visible.
+\end{excont}

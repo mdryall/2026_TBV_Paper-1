@@ -1,0 +1,108 @@
+\section{The pivot: formulation, warrant, and the return to Bayes}
+\label{sec:pivot}
+
+Successful production yields a refinement $\mathcal P_i'$; \emph{formulation}
+selects a theory $m'\in\widehat M_i(\mathcal P_i',r_i)$ on the recoded
+record; and the agent forms a full-support \emph{bridge prior}
+$\mu_i^{+}\in\Delta(M(\mathcal P_i'))$, from which ordinary updating
+resumes.  Nothing in Bayesian coherence determines $\mu_i^{+}$ from the
+pre-dissonance belief---the domains differ---and this nonuniqueness is not a
+defect to be repaired but the boundary between insight and judgment.
+Renormalizing $\mu_i^{+}$ on the active set yields what we call
+\emph{representation-relative coherence}: the confidence the new language
+awards its own theories.  The question of this section is how much of that
+confidence the evidence actually licenses.
+
+\begin{definition}[Reflective assessment, warrant, and the gap]
+\label{def:warrant}
+A reflective assessment problem is a pair $(\mathcal T,\nu)$: a finite set
+of candidate objective assignments and a full-support reflective prior.
+Given the record and a successful production-and-formulation event, the
+\emph{selection-adjusted warrant} $W$ of $(\mathcal P_i',m')$ is the
+$\nu$-posterior probability that $m'$ is objectively correct---that
+$\tau'(s)=m'(C_{\mathcal P_i'}(s))$ for all $s$---conditional on the record
+\emph{and} on the production event.  The \emph{warrant gap} $G$ is the
+representation-relative coherence probability of $m'$ minus $W$.
+\end{definition}
+
+\begin{theorem}[The insight is not evidence]
+\label{thm:uninformative}
+If the technology is truth-blind, conditioning on the production event adds
+nothing to the record: $W$ equals the ordinary reflective posterior of
+$m'$'s correctness given the record alone.  Post-restoration fit is
+guaranteed by the restoration property, so passing the test carries no
+information beyond the record either.  Among candidates in $\mathcal T$ that
+induce the same record distribution, prior odds are preserved exactly.
+\end{theorem}
+
+\begin{proof}
+The reflective posterior on $\tau'\in\mathcal T$ is proportional to
+$\nu(\tau')$, times the record's likelihood under $\tau'$, times the
+probability of the production event given the record; truth blindness makes
+the last factor a function of the record alone, constant across
+$\mathcal T$, so it cancels.  Fit is a deterministic function of record and
+output (\cref{def:restorative}), hence has likelihood one in every world
+consistent with the event.  The last claim applies the cancellation to
+candidates with identical record likelihoods.
+\end{proof}
+
+The theorem locates the evidential boundary: everything evidential is in
+the record; nothing evidential is in the arrival of the insight or in its
+retrospective success at organizing the experience that produced it.  The
+practical force is a prohibition on double counting.  The same experience
+that directed representation production cannot also confirm the resulting
+theory, because any restorative output fits it by construction.  Truth
+blindness is the polar case; were production correlated with the objective
+assignment---social transmission from an informed source---the arrival would
+itself be evidence, and the adjustment could move confidence in either
+direction.
+
+\begin{corollary}[Self-audit requires sufficiency for the candidates]
+\label{cor:self-audit}
+The assessment $(\mathcal T,\nu)$ is expressible by agent $i$ only if
+$\mathcal P_i$ is sufficient for every $\tau'\in\mathcal T$, hence only if
+$\mathcal P_i$ refines the join of \cref{prop:robust-sufficiency}.  An agent
+holding a minimal restoration therefore generally cannot formulate the
+comparison that measures its own warrant gap: the overconfidence is
+invisible from within the representation that produces it.  Short of that
+refinement, warrant must be supplied externally---by fresh evidence whose
+likelihoods differ across candidates, by an assessor with broader awareness,
+or by a future self.
+\end{corollary}
+
+\begin{proof}
+Entertaining $\tau'$ as a hypothesis requires expressing it, which is
+sufficiency (\cref{def:awareness}); sufficiency for every candidate is
+refinement of the join.
+\end{proof}
+
+The pivot is now complete, and it is the paper's fulcrum.  Dissonance broke
+the agent's Bayesian competence; inquiry produced a distinction; formulation
+and the bridge prior rebuilt a probability space; and judgment---fresh
+evidence with differential likelihoods, honestly accounted---resumes as
+ordinary updating on the expanded language.  The agent has returned to the
+Bayesian world carrying a warrant gap of known location and, by
+\cref{cor:self-audit}, generally unknowable (to it) size.
+
+\begin{excont}
+Suppose firm~$i$'s technology produces the column refinement.  The recoded
+record pins the unique consistent theory: architecture $0$ on the first
+column, $1$ on the second.  Representation-relative coherence assigns it
+probability one.  Now conduct the reflective assessment with
+$\mathcal T=\{\text{row world},\text{column world}\}$ and a symmetric prior.
+The two worlds generate identical records
+(\cref{thm:nonidentification}), and the technology is truth-blind, so by
+\cref{thm:uninformative} the reflective posterior equals the prior:
+$W=\tfrac12$, and the warrant gap is exactly one-half.  The same gap
+afflicts the firm that acquires the \emph{row} refinement: its coherence in
+the true assignment is also probability one, and its warrant is also
+one-half.  Unwarranted certainty is not a symptom of error---early
+confidence outruns the evidence even when it happens to be right, and what
+separates the two firms is the objective law, which neither observes.  By
+\cref{cor:self-audit}, neither firm can conduct this assessment itself:
+expressing both candidate worlds requires the full partition into
+singletons.  One fresh differentiated observation at an off-diagonal state
+closes the gap completely---the two worlds predict opposite labels
+there---while pooled observations, in any number, close nothing.  Warrant,
+like leverage, is purchased with differentiated action.
+\end{excont}

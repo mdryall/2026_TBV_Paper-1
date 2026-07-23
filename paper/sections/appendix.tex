@@ -1,0 +1,93 @@
+\section{Proof sketch for Proposition~\ref{prop:absorption}}
+\label{app:absorption}
+
+\Cref{lem:finite} gives a terminal refinement almost surely; fix the path
+beyond it, so every agent's awareness is constant.  By
+\cref{lem:test-consistency} applied within the terminal awareness profile,
+each agent's active set is eventually constant almost surely.  Two cases.
+
+\emph{Case 1: every agent's active set is eventually nonempty.}  Posteriors
+converge on the finite theory space; empirical conjectures converge to the
+play induced by the committed profile; and the fixed tie-breaking rule makes
+policies eventually constant.  The limit configuration satisfies conditions
+(i)--(iii) of \cref{def:scue}.  Condition (iv) holds because a met election
+threshold, together with success probability bounded away from zero, would
+produce a further refinement with probability one given recurring dissonance
+---contradicting terminality---and without dissonance $B_i=0$ by
+\cref{def:leverage}.
+
+\emph{Case 2: some agent's active set is eventually empty.}  Dissonance
+recurs for that agent.  Terminality forces the absence of successful elected
+production from that point on: either the election threshold fails
+($\lambda_iB_i<\gamma_i$, including $B_i=0$), or elected production fails in
+every subsequent attempt.  This is dissonant stasis; the carried-forward
+policy (\cref{ass:commitment}) makes the configuration behaviorally
+constant.
+
+For the final claim, suppose the threshold is met whenever dissonance occurs
+with $B_i>0$ and that $\phi_i$ succeeds with probability at least
+$\underline\pi>0$ per elected episode.  Each recurrence of dissonance with
+positive leverage then produces a refinement with probability at least
+$\underline\pi$; by Borel--Cantelli logic a refinement occurs almost surely
+on any path where such dissonance recurs infinitely often, and
+\cref{lem:finite} bounds the number of refinements, so eventually no
+dissonance-with-positive-leverage recurs: the terminal regime is a SCUE or
+zero-leverage stasis.
+
+Two items are deferred to a full treatment: uniform control of the test's
+finite-sample behavior across the finitely many awareness regimes a path can
+visit, and the genericity conditions under which policies stabilize in
+finite time rather than asymptotically.
+
+\section{Supporting computations for the running example}
+\label{app:example}
+
+\paragraph{Dominance thresholds.}
+At an awareness cell $C$, write $p^a=\mu_i(\{m:m(C)=\theta^a\})$ for
+$a\in\{0,1\}$.  Against a rival playing $0$, the subjective expected-payoff
+difference between own actions $0$ and $1$ is
+$\tfrac12p^0-(1-\tfrac{\beta}{2})p^1$; against a rival playing $1$ it is
+$(1-\tfrac{\beta}{2})p^0-\tfrac12p^1$; mixtures follow by linearity.  Action
+$0$ is strictly dominant on $C$ if and only if $p^0>(2-\beta)p^1$, and
+symmetrically.  Certainty in an architecture label makes the labeled action
+strictly dominant for every $\beta\in[0,1]$, which is what sustains the
+committed policies in the trap configuration.  At $\beta=1$ the threshold is
+simple belief asymmetry, which is what differentiates the firms' opening
+policies.
+
+\paragraph{Unit leverage.}
+Let a retained labeled episode carry revealed label $a^{*}$ while the
+committed policy prescribes $a\neq a^{*}$, and compare the committed policy
+with one implementing $a^{*}$ at that recurrence, at $\beta=1$.  If the
+rival plays $a^{*}$: committed yields $0$ (differentiated loss),
+implementing yields $\tfrac12$ (pool).  If the rival plays $a$: committed
+yields $\tfrac12$ (pool), implementing yields $1$ (differentiated win).  The
+gain is exactly $\tfrac12$ in both cases, hence against every rival mixture.
+Episodes whose labels agree with the committed policy contribute zero.  With
+one disagreeing episode per firm after the discovery generation,
+$B_i=\tfrac12$; after the validation generation of \cref{sec:economics},
+$B_1=0$ and $B_2=1$.
+
+\paragraph{The trap and its knife edge.}
+With both firms certain of the column assignment, the column policy pools at
+every state; every payoff is $\tfrac12$; and under pooled play every
+mechanism in $\{\theta^0,\theta^1,\theta^n\}$ consistent with the column
+labels predicts $\tfrac12$ at $\beta=1$.  No episode is labeled, active sets
+never empty, and $B_i=0$; conditions (i)--(iv) of \cref{def:scue} hold.  For
+$\beta<1$, at an off-diagonal state the pooled action is objectively wrong,
+realized payoffs are $\beta/2$ against a prediction of $\tfrac12$, and the
+payoff level itself reveals the label (payoff $\tfrac12$ implies the pooled
+architecture is preferred; $\beta/2$ implies the other is).  The revealed
+label conflicts with a diagonal label inside one column cell, the active set
+empties, the episode enters the disagreement record, and the reflective
+posterior over the row and column worlds becomes degenerate: dissonance,
+leverage, and warrant closure arrive together.
+
+\paragraph{Persistence payoffs.}
+With firm~1 playing the true row assignment and firm~2 a constant
+architecture, the firms pool at two states and differentiate at two, firm~1
+winning both differentiated states: average payoffs $\tfrac34$ and
+$\tfrac14$ under uniform $\rho$.  Firm~2's record rejects all three constant
+theories (it wins nothing differentiated and loses twice), so it sits in
+dissonance with $B_2>0$; stasis obtains whenever
+$\gamma_2>\lambda_2B_2$.

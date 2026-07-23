@@ -1,0 +1,2188 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\definecolor{linkblue}{HTML}{163A5F}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue,
+  pdftitle={A Four-State Laboratory for Causal Dissonance, Insight, and Strategic Learning},
+  pdfauthor={Research note}
+}
+
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{definition}[assumption]{Definition}
+\newtheorem{lemma}[assumption]{Lemma}
+\newtheorem{proposition}[assumption]{Proposition}
+\newtheorem{theorem}[assumption]{Theorem}
+\newtheorem{corollary}[assumption]{Corollary}
+\newtheorem{remark}[assumption]{Remark}
+
+\crefname{assumption}{assumption}{assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+\newcommand{\emptysetset}{\varnothing}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\Prow}{\mathcal P^{r}}
+\newcommand{\Pcol}{\mathcal P^{c}}
+\newcommand{\Pdiag}{\mathcal P^{\times}}
+\newcommand{\Pfull}{\mathcal P^{\mathrm{full}}}
+
+\title{A Four-State Laboratory for\\
+Causal Dissonance, Insight, and Strategic Learning}
+\author{Research note}
+\date{July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note develops a deterministic two-firm, four-state model of causal
+dissonance and experience-triggered awareness change.  Firms initially cannot formulate a
+customer-contingent causal theory.  Heterogeneous private beliefs induce
+different committed offering rules, and the resulting experience
+empties the active subset of their current model space.  A successful inquiry
+episode is represented by two distinct products: a minimally restorative
+awareness refinement, followed by an associated causal formulation.  The
+$2\times2$ customer-state geometry makes
+the central difficulty explicit: the same dissonant experience supports four
+minimal refinements and two equally simple factor-based explanations.  No
+truth-blind inquiry rule can infer the correct factor from those data alone.
+Robustly accommodating both observationally equivalent causal worlds requires
+complete awareness, while a non-exhaustive technology must accept fallibility.
+Because a restorative refinement fits its generating experience by
+construction, retrospective fit carries no discriminating information:
+representation-relative certainty exceeds selection-adjusted warrant by a
+computable gap that pooled experience never narrows and a single fresh
+differentiated observation closes.  Expressing the comparison behind that gap
+requires complete awareness, so no minimally refined firm can audit its own
+formulation from within.
+The model also shows that strategic action controls the diagnostic content of
+experience.  Shared false formulations induce pooled actions and can become
+self-confirming; heterogeneous formulations generate revealing competition,
+learning, and asymmetric value capture.  These pathologies are knife-edge
+properties of perfectly forgiving demand: with any outside option, pooled
+misservice destroys observable value, and consistency together with
+subjective optimality forces every recurring state to be correctly
+served---payoff-relevant self-confirming traps, permanent warrant gaps, and
+zero-leverage locks all require demand to absorb misservice completely.  An
+inquiry-participation layer then
+prices the question that dissonance raises: a delabeled leverage statistic,
+computed from retained episodes without naming any candidate representation,
+determines when costly inquiry is subjectively justified.  Pooled histories
+carry zero leverage, so the awareness trap survives even cheap and infallible
+inquiry, while differentiated defeat concentrates both the evidence and the
+incentive to inquire in the losing firm.  The note separates representation
+generation, causal formulation, Bayesian assessment, reflective judgment, and strategic decision and
+interprets that separation in relation to Lonergan's account of inquiry and
+insight.
+\end{abstract}
+
+\section{Purpose and status of the example}
+
+The note is a formal laboratory rather than a complete paper model.  Its
+purpose is to determine what can be established in the smallest environment
+that permits several qualitatively different awareness refinements: rows,
+columns, diagonals, singleton exceptions, and finer combinations.  The model is
+designed to answer five questions.
+\begin{enumerate}[label=(\roman*)]
+  \item How can strategic experience reveal that every currently expressible
+  causal theory is inadequate?
+  \item What restrictions does the experience place on a satisfactory new
+  representation?
+  \item Why do those restrictions direct inquiry without logically determining
+  its answer?
+  \item Where does fixed-space Bayesian learning stop, and where do
+  representation production and subsequent judgment begin?
+  \item How do the firms' resulting strategies affect whether a false
+  formulation will subsequently be exposed?
+  \item When is costly inquiry subjectively justified, and what represented
+  statistic can price a question whose possible answers the firm cannot yet
+  formulate?
+  \item How much confidence does the generating experience actually license in
+  a produced formulation, and which agents can compute that warrant?
+  \item Which epistemic pathologies survive when misservice destroys value
+  rather than merely reallocating it?
+\end{enumerate}
+
+Four modeling distinctions are maintained throughout.  An \emph{awareness
+partition} determines which customer distinctions a firm can represent.  A
+\emph{causal theory} assigns a customer response to every cell of that
+partition.  A \emph{causal formulation} combines a newly available partition
+with an expressible theory.  A \emph{strategy} maps represented customer states
+to product architectures.  None of these objects is identified with insight
+itself; the mathematics represents the output of a successful insight-producing
+process.
+
+\section{Notation}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.28\textwidth}X@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \\
+\midrule
+$N=\{1,2\}$ & Set of firms. \\
+$A=\{0,1\}$ & Set of architectures and firm actions. \\
+$X=\{x_{00},x_{01},x_{10},x_{11}\}$ & Analyst's finite customer-state space. \\
+$d:X\to A$ & Objectively preferred architecture. \\
+$u_i$ & Firm $i$'s objective payoff function. \\
+$\beta$ & Demand retention under pooled misservice; $\beta=1$ is the baseline. \\
+$\Pi(X)$ & Set of all partitions of $X$. \\
+$\mathcal P_i\in\Pi(X)$ & Firm $i$'s awareness partition. \\
+$M(\mathcal P_i)$ & Set of causal theories expressible under $\mathcal P_i$. \\
+$m\in M(\mathcal P_i)$ & An individual causal theory. \\
+$\mu_i\in\Delta(M(\mathcal P_i))$ & Firm $i$'s belief over its expressible theories. \\
+$\sigma_i:\mathcal P_i\to A$ & Firm $i$'s product policy. \\
+$H$ & Set of analyst-level histories. \\
+$h$ & Analyst's record of customer states, actions, and payoffs. \\
+$e_i(h;\mathcal P_i)$ & Firm $i$'s deliberative record of retained episode tokens. \\
+$D(h)\subseteq X\times A$ & Causal labels revealed by differentiated actions. \\
+$\widehat M(\mathcal P,D)$ & Theories under $\mathcal P$ consistent with $D$. \\
+$E(D)$ & Conflict-edge set induced by $D$. \\
+$\mathcal R(\mathcal P,D)$ & Set of minimally restorative refinements. \\
+$\kappa(\mathcal P)$ & Coordinate complexity of a binary partition. \\
+$\phi_i:\Pi(X)\times H\to\Pi(X)$ & Analyst-level representation-producing technology. \\
+$\mathcal I(\mathcal P,D)$ & Complexity-filtered restorative correspondence. \\
+$\overline\mu_i$ & Representation-relative coherence distribution. \\
+$\varepsilon_i$ & Firm $i$'s binary inquiry election. \\
+$\gamma_i$ & Firm $i$'s inquiry activation cost. \\
+$\theta_i$ & Firm $i$'s delabeled inquiry-success weight. \\
+$L_i(h)$ & Disagreement set: retained labeled episodes contradicting the committed policy. \\
+$B_i(h)$ & Retained-record leverage of inquiry. \\
+$\mathcal D$ & Candidate objective laws in a reflective assessment. \\
+$\nu$ & Reflective prior over $\mathcal D$. \\
+$W(m'\mid h)$ & Selection-adjusted warrant of formulation $m'$. \\
+$G(m'\mid h)$ & Warrant gap: coherence probability minus warrant. \\
+$\Prow,\Pcol,\Pdiag$ & Row, column, and diagonal partitions. \\
+$\mathcal P^{jk}$ & Partition isolating $x_{jk}$ from the other states. \\
+$\Pfull$ & Partition of $X$ into four singleton cells. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Capital Roman letters denote sets, lowercase Roman and Greek letters denote
+elements, parameters, and functions, calligraphic letters denote sets of sets,
+and blackboard-bold notation is reserved for canonical sets.  For any finite
+set $Z$, $\Delta(Z)$ denotes the set of probability distributions on $Z$.
+
+\section{Objective environment and timing}
+
+\subsection{Customer states and objective fit}
+
+There are two firms,
+\[
+N=\{1,2\},
+\]
+and two available architectures,
+\[
+A=\{0,1\}.
+\]
+The analyst's customer-state space is
+\[
+X=\{x_{00},x_{01},x_{10},x_{11}\}.
+\]
+It is convenient to display the states as a matrix:
+\[
+\begin{array}{c|cc}
+ & c=0 & c=1\\
+\hline
+r=0 & x_{00} & x_{01}\\
+r=1 & x_{10} & x_{11}.
+\end{array}
+\]
+The two coordinates are analyst-level descriptions of potentially usable
+customer distinctions.  Their status in the firms' awareness is specified in
+\cref{sec:unawareness}.
+
+The objectively preferred architecture is
+\begin{equation}
+d:X\longrightarrow A,
+\qquad
+d(x_{rc})=r.
+\label{eq:true-row-law}
+\end{equation}
+Thus the first coordinate is causally relevant and the second is not:
+\[
+\begin{array}{c|cc}
+ & c=0 & c=1\\
+\hline
+r=0 & 0 & 0\\
+r=1 & 1 & 1.
+\end{array}
+\]
+
+If the firms offer different architectures, the customer buys from the firm
+offering $d(x)$.  If they offer the same architecture, they split the unit
+market, even if another architecture would have served the customer better.
+Firm $i$'s payoff is
+\begin{equation}
+u_i(a_i,a_j,x)=
+\begin{cases}
+\frac12, & a_i=a_j,\\
+1, & a_i\neq a_j\text{ and }a_i=d(x),\\
+0, & a_i\neq a_j\text{ and }a_j=d(x).
+\end{cases}
+\label{eq:objective-payoff}
+\end{equation}
+The payoffs sum to one.  A customer state can equivalently be interpreted as a
+unit market segment, which avoids interpreting the one-half outcome as random
+tie-breaking for an indivisible customer.
+
+\subsection{Batch commitment}
+
+The opening experience occurs within a product generation.  At the start of a
+generation, each firm simultaneously commits to a contingent offering or
+configuration rule.  A finite batch of customer states is then served under
+those rules.  Firms observe the customer episodes, actions, and payoffs, but
+they cannot revise the committed rule until the batch ends.  Initial coarse
+awareness makes the rule constant; refined awareness permits customer-
+contingent implementation.  Updating and inquiry take place only between
+generations.
+
+\begin{assumption}[Diagnostic batch]
+\label{ass:batch}
+The initial batch consists of the two states $x_{00}$ and $x_{11}$.  Both are
+served under the policies chosen before either outcome is observed.
+\end{assumption}
+
+The batch commitment is substantive.  With deterministic period-by-period
+updating and immediate redesign, the first differentiated observation would
+collapse both firms' active sets onto the same constant theory.  They would
+then choose the same architecture at the second state, suppressing the causal
+signal needed for the focal dissonance.
+
+\section{Awareness and expressible causal theories}
+\label{sec:unawareness}
+
+\begin{definition}[Awareness partition]
+An awareness partition $\mathcal P_i\in\Pi(X)$ determines the customer
+distinctions firm $i$ can use in causal theories and prospective product
+policies.  A policy is a function
+\[
+\sigma_i:\mathcal P_i\longrightarrow A.
+\]
+The action taken at $x$ is $\sigma_i(C)$, where $C\in\mathcal P_i$ is the cell
+containing $x$.  For brevity, $\sigma_i(x)$ denotes this induced statewise
+action.
+\end{definition}
+
+For any $\mathcal P\in\Pi(X)$, let $C_{\mathcal P}(x)$ denote the unique cell
+of $\mathcal P$ containing $x$.
+
+Initially, both firms have the coarse awareness partition
+\begin{equation}
+\mathcal P_i^0=\{X\}.
+\label{eq:coarse-partition}
+\end{equation}
+A firm with this partition cannot formulate a causal theory, or commit to a
+policy, that distinguishes any pair of customer states.
+
+Let $n$ denote the claim that architecture is causally neutral.  For any
+partition $\mathcal P$, define
+\begin{equation}
+M(\mathcal P)
+=
+\left\{
+m:X\longrightarrow\{0,1,n\}:
+m(x)=m(x')
+\text{ whenever }x,x'\text{ lie in the same cell of }\mathcal P
+\right\}.
+\label{eq:model-space}
+\end{equation}
+For $C\in\mathcal P$ and $m\in M(\mathcal P)$, write $m(C)$ for the common
+value $m(x)$ on $C$, which is well defined by cell constancy.
+The interpretations are
+\[
+m(x)=a:
+\text{ architecture }a\text{ is preferred at }x,
+\qquad
+m(x)=n:
+\text{ architecture is neutral at }x.
+\]
+
+The payoff predicted by $m$ is
+\begin{equation}
+u_i^m(a_i,a_j,x)=
+\begin{cases}
+\frac12, & a_i=a_j\text{ or }m(x)=n,\\
+1, & a_i\neq a_j\text{ and }m(x)=a_i,\\
+0, & a_i\neq a_j\text{ and }m(x)=a_j.
+\end{cases}
+\label{eq:subjective-payoff}
+\end{equation}
+
+Under $\mathcal P_i^0$, the only expressible theories are the three constant
+functions
+\[
+M(\mathcal P_i^0)=\{m^0,m^1,m^n\},
+\]
+where $m^a(x)=a$ for every $x\in X$ and $a\in\{0,1,n\}$.  The true law $d$ is
+not in $M(\mathcal P_i^0)$.
+
+The partition is an analyst-level representation of the firm's subjective
+state space.  At the level of deliberation and expressible belief, the firm has
+the quotient state space $X/\mathcal P_i$, whose elements are the cells of
+$\mathcal P_i$; it does not possess the master space $X$ together with an
+unobserved choice among finer partitions.  Every pre-insight belief,
+likelihood, deliberately entertained question, and policy is
+$\mathcal P_i$-measurable.  In particular, before awareness expands, the firm
+cannot name a finer partition, assign it a probability, or condition a policy
+on it.
+
+\begin{assumption}[Retention and recodability]
+\label{ass:recodability}
+Customer episodes can be retained as particulars and retrospectively recoded
+after the firm acquires a new predicate.  Once acquired, the predicate can also
+classify a future customer before the firm acts.  Before acquisition, neither
+belief nor action can condition on that predicate.
+\end{assumption}
+
+This assumption supplies the minimal distinction between experiencing a
+particular and possessing a projectible causal concept about it.  Without some
+extra-deliberative access to retained particulars, a strict refinement could
+not arise endogenously from a subjective state space that contains only one
+state.  Retaining a particular is not possession of an event that separates it
+from other customer states and cannot support a contingent policy before
+recoding.  The representation-producing technology introduced below is a
+primitive of concept production: it can operate on retained particulars through
+latent comparison capacities, but those operations are not available to the
+firm's pre-insight deliberation.
+
+\section{Private beliefs and the opening product policies}
+
+Firm $i$ has a private prior
+\[
+\mu_i^0\in\Delta(M(\mathcal P_i^0)).
+\]
+The priors need not be common knowledge.  For a general awareness cell
+$C\in\mathcal P_i$, write
+\[
+p_i^a(C)
+=
+\mu_i\big(\{m\in M(\mathcal P_i):m(C)=a\}\big),
+\qquad a\in\{0,1,n\}.
+\]
+Let $v_i(a\mid C)$ denote firm $i$'s subjective expected payoff from action
+$a$ at cell $C$, given its current causal belief and any conjecture about the
+rival's action.
+
+\begin{assumption}[Subjective optimality and commitment]
+\label{ass:subjective-optimality}
+Whenever firm $i$ has a well-defined current causal belief, it selects at the
+start of each generation an action maximizing $v_i(a\mid C)$ at every
+represented cell $C\in\mathcal P_i$ and commits to the resulting policy for the
+generation's batch.  The carry-forward clause in
+\cref{ass:dissonance-trigger} governs the exceptional state in which
+dissonance has made belief undefined and representation production has failed.
+\end{assumption}
+
+\begin{lemma}[Subjective dominance]
+\label{lem:dominance}
+For either pure action of the rival, and therefore for any mixture over the
+rival's actions,
+\begin{equation}
+v_i(0\mid C)-v_i(1\mid C)
+=
+\frac12\big[p_i^0(C)-p_i^1(C)\big].
+\label{eq:dominance-difference}
+\end{equation}
+Consequently, action $0$ is subjectively strictly dominant on $C$ if
+$p_i^0(C)>p_i^1(C)$, and action $1$ is subjectively strictly dominant if the
+inequality is reversed.
+\end{lemma}
+
+\begin{proof}
+Suppose first that the rival selects $0$.  Selecting $0$ yields one-half under
+every theory.  Selecting $1$ yields zero under a theory labeling the cell $0$,
+one under a theory labeling it $1$, and one-half under a neutral theory.  The
+expected-payoff difference is therefore
+\[
+\frac12-\left[p_i^1(C)+\frac12p_i^n(C)\right]
+=
+\frac12\big[p_i^0(C)-p_i^1(C)\big].
+\]
+If the rival selects $1$, action $0$ yields
+$p_i^0(C)+\frac12p_i^n(C)$ and action $1$ yields one-half, giving the same
+difference.  Linearity establishes the result against any mixture.
+\end{proof}
+
+\begin{assumption}[Heterogeneous initial causal beliefs]
+\label{ass:heterogeneous-priors}
+\[
+\mu_1^0(m^0)>\mu_1^0(m^1),
+\qquad
+\mu_2^0(m^1)>\mu_2^0(m^0).
+\]
+\end{assumption}
+
+\begin{proposition}[Belief-induced differentiation]
+\label{prop:initial-differentiation}
+Under \cref{ass:batch,ass:subjective-optimality,ass:heterogeneous-priors}, firm $1$ commits to
+architecture $0$ throughout the opening batch and firm $2$ commits to
+architecture $1$.
+\end{proposition}
+
+\begin{proof}
+Under $\mathcal P_i^0$, each product policy must be constant on $X$.
+\Cref{lem:dominance} and \cref{ass:heterogeneous-priors} make action $0$
+strictly dominant for firm $1$ and action $1$ strictly dominant for firm $2$.
+Batch commitment then holds the differentiated action profile fixed while both
+diagnostic states are served.
+\end{proof}
+
+\section{Revealed causal evidence and Bayesian closure}
+
+Let $H$ be the set of finite analyst-level histories, with a typical history
+written
+\[
+h=\big(x_s,a_{1s},a_{2s},u_{1s},u_{2s}\big)_{s=1}^{t}.
+\]
+At the deliberative level, firm $i$ represents this history under
+$\mathcal P_i$ as
+\begin{equation}
+e_i(h;\mathcal P_i)
+=
+\big(s,C_{\mathcal P_i}(x_s),a_{1s},a_{2s},u_{1s},u_{2s}\big)_{s=1}^{t}.
+\label{eq:deliberative-record}
+\end{equation}
+The index $s$ retains an episode as a particular token; it is not a customer
+predicate on which a pre-insight theory or policy may condition.  The
+analyst-level history also records the underlying customer state so that a
+newly produced representation can retrospectively recode the token.
+
+When the actions differ, the payoff vector identifies the winning architecture.
+Let
+\begin{equation}
+D(h)
+=
+\left\{
+(x_s,a_{is}):
+s\in\{1,\ldots,t\},\ i\in N,\
+a_{1s}\neq a_{2s}\text{ and }u_{is}=1
+\right\}
+\subseteq X\times A
+\label{eq:revealed-data}
+\end{equation}
+be the analyst's recoding of causal labels attached to the retained episodes.
+Before refinement, the firm does not observe the ordered pair $(x_s,a_{is})$ as
+a proposition on the master space.  It experiences two episode tokens in its
+same represented cell with the displayed actions and opposing payoffs.  After
+refinement, \cref{ass:recodability} permits the tokens to be recoded into the
+new cells.  A pooled observation is omitted because its payoff vector is
+$(1/2,1/2)$ under every objective and subjective causal law.
+
+A revealed dataset is \emph{functional} if
+\begin{equation}
+(x,a),(x,a')\in D
+\quad\Longrightarrow\quad
+a=a'.
+\label{eq:functional-data}
+\end{equation}
+Every dataset generated by the deterministic objective law is functional.
+
+For a proposed awareness partition $\mathcal P$, define the active model set
+\begin{equation}
+\widehat M(\mathcal P,D)
+=
+\left\{
+m\in M(\mathcal P):
+m(x)=a\text{ for every }(x,a)\in D
+\right\}.
+\label{eq:active-set}
+\end{equation}
+
+\begin{definition}[Causal dissonance]
+An awareness partition $\mathcal P$ exhibits causal dissonance at dataset $D$
+when
+\[
+\widehat M(\mathcal P,D)=\emptysetset.
+\]
+The expressible model set $M(\mathcal P)$ does not disappear.  Rather, no model
+in it accounts for all revealed causal evidence.
+\end{definition}
+
+In the opening batch, \cref{eq:true-row-law,prop:initial-differentiation} imply
+\begin{equation}
+\overline D
+=
+\{(x_{00},0),(x_{11},1)\}.
+\label{eq:discovery-data}
+\end{equation}
+No constant theory fits both observations, so
+\begin{equation}
+\widehat M(\mathcal P_i^0,\overline D)=\emptysetset.
+\label{eq:initial-dissonance}
+\end{equation}
+The immediate question has a determinate defect but not a determinate answer:
+what difference between $x_{00}$ and $x_{11}$ explains why different
+architectures fit them?
+
+\begin{lemma}[Endogenous revelation]
+\label{lem:revelation}
+At a customer state $x$, the objective label $d(x)$ is revealed by the payoff
+vector if the firms choose different architectures.  If they choose the same
+architecture, the payoff vector is independent of $d(x)$ and supplies no
+restriction on the active model set.
+\end{lemma}
+
+\begin{proof}
+With two architectures, differentiated actions imply that exactly one firm
+offers $d(x)$.  The firm receiving payoff one identifies that architecture.
+Under pooled actions, \cref{eq:objective-payoff} gives both firms one-half for
+either value of $d(x)$.
+\end{proof}
+
+\begin{lemma}[Fixed-space Bayesian closure]
+\label{lem:bayesian-closure}
+Fix $\mathcal P$ and a prior $\mu\in\Delta(M(\mathcal P))$.  Whenever Bayesian
+conditioning has a positive denominator, the posterior remains in
+$\Delta(M(\mathcal P))$.  Every theory in posterior support and every optimal
+policy therefore remains constant within each cell of $\mathcal P$.  If
+$\widehat M(\mathcal P,D)=\emptysetset$ in the deterministic model, the Bayesian
+posterior is undefined and conditioning supplies no strict refinement of
+$\mathcal P$.
+\end{lemma}
+
+\begin{proof}
+Conditional on the realized customer-state and action design, define the
+deterministic likelihood
+\[
+\ell(D\mid m,\mathcal P)
+=
+\ind\{m\in\widehat M(\mathcal P,D)\}.
+\]
+Whenever the denominator is positive, Bayes' rule gives
+\[
+\mu(m\mid D,\mathcal P)
+=
+\frac{\mu(m)\ell(D\mid m,\mathcal P)}
+{\sum_{m'\in M(\mathcal P)}
+\mu(m')\ell(D\mid m',\mathcal P)}.
+\]
+Conditioning changes probability weights but not the domain on which those
+weights are defined.  By \cref{eq:model-space}, every element of
+$M(\mathcal P)$ is constant within $\mathcal P$-cells, so any posterior mixture
+and any policy optimized against it respects those cells.  When every model
+assigns likelihood zero to the data, Bayes' denominator is zero.  No operation
+in the conditioning formula introduces a partition outside the prior domain.
+\end{proof}
+
+If the prior lacks full support, a nonempty active set can still receive total
+prior mass zero.  The direction used here is the sharper one needed for causal
+dissonance: an empty active set necessarily gives a zero denominator under
+every prior.
+
+\begin{remark}[Algebraic interpretation]
+Let the event algebra generated by $\mathcal P$ consist of all unions of its
+cells.  Boolean operations and conditioning within that algebra cannot produce
+an event separating two states in the same cell.  A strict awareness refinement
+therefore requires a representation-producing primitive that is not reducible
+to fixed-space Bayesian conditioning.
+\end{remark}
+
+\section{Restorative inquiry and the conflict structure}
+
+For $\mathcal P,\mathcal P'\in\Pi(X)$, write
+\[
+\mathcal P\prec\mathcal P'
+\]
+when $\mathcal P'$ strictly refines $\mathcal P$: every cell of
+$\mathcal P'$ lies within a cell of $\mathcal P$, and the partitions are not
+equal.
+
+\begin{definition}[Restorative refinement]
+Partition $\mathcal P'$ is restorative at $(\mathcal P,D)$ if
+\[
+\mathcal P\prec\mathcal P'
+\qquad\text{and}\qquad
+\widehat M(\mathcal P',D)\neq\emptysetset.
+\]
+It is \emph{minimally restorative} if no restorative $\mathcal P''$ satisfies
+\[
+\mathcal P\prec\mathcal P''\prec\mathcal P'.
+\]
+Let $\mathcal R(\mathcal P,D)$ denote the set of minimally restorative
+refinements.
+\end{definition}
+
+Minimality is defined in the refinement partial order.  It does not imply that
+there is a unique coarsest answer.
+
+Define the conflict-edge set
+\begin{equation}
+E(D)
+=
+\left\{
+\{x,x'\}\subseteq X:
+(x,0),(x',1)\in D
+\text{ or }(x,1),(x',0)\in D
+\right\}.
+\label{eq:conflict-edges}
+\end{equation}
+A subset of $X$ is conflict-free if it contains neither endpoint pair of any
+edge in $E(D)$.
+
+\begin{proposition}[Conflict characterization]
+\label{prop:conflict-characterization}
+For any $\mathcal P\in\Pi(X)$ and functional revealed dataset $D$,
+\[
+\widehat M(\mathcal P,D)\neq\emptysetset
+\]
+if and only if every cell of $\mathcal P$ is conflict-free.  Consequently,
+$\mathcal P'$ is restorative at $(\mathcal P,D)$ if and only if it strictly
+refines $\mathcal P$ and every cell of $\mathcal P'$ is conflict-free.
+\end{proposition}
+
+\begin{proof}
+If a cell contains the endpoints of a conflict edge, the observations require
+a cell-constant theory to assign both zero and one to that cell, which is
+impossible.  Conversely, suppose every cell is conflict-free.  If a cell
+contains a revealed state, all revealed states in it have the same label;
+assign that label to the cell.  Assign any value in $\{0,1,n\}$ to an unlabeled
+cell.  The resulting cell-constant function belongs to
+$\widehat M(\mathcal P,D)$.
+\end{proof}
+
+The conflict characterization generalizes beyond the focal example.  The
+restorative correspondence identifies minimally refined partitions whose cells
+form proper colorings of the experienced conflict relation.  It determines what
+a successful representation-producing process must accomplish without
+selecting a particular answer.
+
+\section{Complete four-state enumeration}
+
+The fifteen partitions of a four-element set have the following cell-size
+patterns.
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Cell-size pattern & Number & Role in the example\\
+\midrule
+$4$ & $1$ & Initial awareness\\
+$3+1$ & $4$ & Singleton-exception refinements\\
+$2+2$ & $3$ & Rows, columns, and diagonals\\
+$2+1+1$ & $6$ & Three-cell refinements\\
+$1+1+1+1$ & $1$ & Complete awareness\\
+\midrule
+Total & $15$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The three balanced two-cell partitions are
+\begin{align}
+\Prow
+&=
+\big\{\{x_{00},x_{01}\},\{x_{10},x_{11}\}\big\},
+\label{eq:row-partition}\\
+\Pcol
+&=
+\big\{\{x_{00},x_{10}\},\{x_{01},x_{11}\}\big\},
+\label{eq:column-partition}\\
+\Pdiag
+&=
+\big\{\{x_{00},x_{11}\},\{x_{01},x_{10}\}\big\}.
+\label{eq:diagonal-partition}
+\end{align}
+For $j,k\in\{0,1\}$, define the four singleton-exception partitions
+\begin{equation}
+\mathcal P^{jk}
+=
+\big\{\{x_{jk}\},X\setminus\{x_{jk}\}\big\}.
+\label{eq:singleton-partition}
+\end{equation}
+These seven two-cell partitions are exactly the immediate refinements of
+$\mathcal P^0=\{X\}$.
+
+\begin{proposition}[Four minimally restorative refinements]
+\label{prop:four-restorations}
+For the discovery dataset $\overline D$ in \cref{eq:discovery-data},
+\begin{equation}
+\mathcal R(\mathcal P^0,\overline D)
+=
+\{\Prow,\Pcol,\mathcal P^{00},\mathcal P^{11}\}.
+\label{eq:restorative-set}
+\end{equation}
+The uniquely active theories under these partitions, written in the state order
+$(x_{00},x_{01},x_{10},x_{11})$, are
+\begin{align*}
+m^r&=(0,0,1,1),\\
+m^c&=(0,1,0,1),\\
+m^{00}&=(0,1,1,1),\\
+m^{11}&=(0,0,0,1).
+\end{align*}
+Under the objective law in \cref{eq:true-row-law}, $m^r=d$ and the other three
+formulations are false outside the discovery data.
+\end{proposition}
+
+\begin{proof}
+By \cref{prop:conflict-characterization}, a restorative partition must separate
+$x_{00}$ from $x_{11}$.  Exactly four two-cell partitions do so: rows, columns,
+the partition isolating $x_{00}$, and the partition isolating $x_{11}$.  The
+diagonal partition and the singleton partitions isolating $x_{01}$ or $x_{10}$
+leave $x_{00}$ and $x_{11}$ in the same cell.  Every restorative partition with
+three or four cells strictly refines at least one of the four restorative
+two-cell partitions and is therefore not minimal.
+
+In each of the four listed partitions, one cell contains the observation
+$x_{00}\mapsto0$ and the other contains $x_{11}\mapsto1$.  Cell constancy
+therefore determines the displayed theory uniquely.  Direct comparison with
+$d=(0,0,1,1)$ establishes the final claim.
+\end{proof}
+
+\begin{proposition}[Multiplicity with one conflict]
+\label{prop:multiplicity}
+Let $C$ be the only non-conflict-free cell of the current partition, let
+$|C|=q\geq2$, and suppose exactly one conflict edge has both endpoints in $C$.
+There are $2^{q-2}$ minimally restorative refinements that replace $C$ by two
+cells and leave every other awareness cell unchanged.
+\end{proposition}
+
+\begin{proof}
+Fix the endpoint labeled zero in the first new cell and the endpoint labeled one
+in the second.  Each of the remaining $q-2$ states can independently be placed
+in either cell, producing $2^{q-2}$ binary partitions.  Fixing the two labeled
+endpoints removes the duplication generated by exchanging cell names.  Every
+such partition separates the sole conflict edge and is an immediate refinement
+obtained by splitting $C$; hence it is minimally restorative.
+\end{proof}
+
+For $q=4$, \cref{prop:multiplicity} gives the four partitions in
+\cref{prop:four-restorations}.  The result shows that restoration and
+minimality direct inquiry but generally do not select its output.
+
+\section{A structured but fallible representation-producing correspondence}
+
+The partition lattice treats every binary refinement as equally immediate.  To
+distinguish a one-coordinate factor from a two-coordinate interaction or
+exception, the representation-producing process requires some comparison or
+descriptive structure.
+
+Define the analyst-level coordinate functions
+\[
+\rho(x_{rc})=r,
+\qquad
+\chi(x_{rc})=c.
+\]
+These functions describe analyst-level capacities of the non-deliberative
+generative system to compare retained particulars.  They are not initially
+elements of the firms' subjective event algebra or information possessed for
+deliberation.  Before a representation is produced, the firm cannot name a row
+or column predicate or optimize over the corresponding partitions.
+
+For any binary partition $\mathcal P$, let $b_{\mathcal P}:X\to\{0,1\}$ be an
+indicator of either one of its cells.  Coordinate $\rho$ is essential to
+$b_{\mathcal P}$ if changing the row while holding the column fixed changes the
+indicator for some column.  Define essentiality of $\chi$ analogously.
+Complementing $b_{\mathcal P}$ does not alter its essential coordinates.
+
+\begin{definition}[Coordinate complexity]
+The coordinate complexity $\kappa(\mathcal P)$ of a binary partition is the
+number of coordinates in $\{\rho,\chi\}$ essential to an indicator generating
+that partition.
+\end{definition}
+
+It follows that
+\begin{equation}
+\kappa(\Prow)=\kappa(\Pcol)=1,
+\label{eq:factor-complexity}
+\end{equation}
+whereas
+\begin{equation}
+\kappa(\Pdiag)=\kappa(\mathcal P^{jk})=2
+\quad\text{for every }j,k\in\{0,1\}.
+\label{eq:interaction-complexity}
+\end{equation}
+Rows and columns are one-factor distinctions.  The diagonal partition is an
+interaction, while a singleton exception requires a conjunction of the two
+coordinates.
+
+\begin{definition}[Complexity-filtered restorative correspondence]
+For any $(\mathcal P,D)$ whose minimally restorative refinements are binary,
+define
+\begin{equation}
+\mathcal I(\mathcal P,D)
+=
+\underset{\mathcal P'\in\mathcal R(\mathcal P,D)}{\arg\min}
+\;\kappa(\mathcal P').
+\label{eq:inquiry-correspondence}
+\end{equation}
+\end{definition}
+
+\begin{corollary}[Factor-based candidates]
+\label{cor:factor-candidates}
+For the discovery data,
+\[
+\mathcal I(\mathcal P^0,\overline D)=\{\Prow,\Pcol\}.
+\]
+\end{corollary}
+
+\begin{proof}
+Apply \cref{eq:factor-complexity,eq:interaction-complexity} to the four
+partitions in \cref{eq:restorative-set}.
+\end{proof}
+
+The correspondence is not the firm's subjective answer menu and $\kappa$ is
+not a cost the unaware firm consciously minimizes.  It is the analyst's model
+of which conceptual products can be generated from the experienced contrast by
+a particular representational capacity.  The imposed grammar is substantive
+and contestable: it favors simple factor explanations, even in a world where a
+conjunctive exception is objectively correct.  Alternative inquiry
+technologies can be studied by varying the available grammar and its complexity
+ordering.
+
+\begin{definition}[Representation-producing technology]
+\label{def:representation-technology}
+A deterministic representation-producing technology for firm $i$ is an
+analyst-level function
+\[
+\phi_i:\Pi(X)\times H\longrightarrow\Pi(X).
+\]
+The output $\phi_i(\mathcal P,h)=\mathcal P$ means that no new representation
+is produced.  A strict output $\mathcal P\prec\phi_i(\mathcal P,h)$ is a
+successful production event.  The technology is \emph{restorative} if every
+strict output lies in $\mathcal R(\mathcal P,D(h))$.  When
+$\mathcal I(\mathcal P,D(h))$ is defined, it is \emph{factor-seeking} if every
+strict output lies in $\mathcal I(\mathcal P,D(h))$.
+\end{definition}
+
+The technology is not controlled through subjective optimization.  Its input
+$h$ is the analyst's representation of the retained particulars on which the
+non-deliberative generative system can operate.  Its output, and even the set of
+outputs it could have produced, is not a pre-insight subjective menu.
+
+\begin{assumption}[Dissonance-triggered production]
+\label{ass:dissonance-trigger}
+If $\widehat M(\mathcal P,D(h))\neq\emptysetset$, then
+$\phi_i(\mathcal P,h)=\mathcal P$.  If the active set is empty, the technology
+may fail, again producing $\mathcal P$, or successfully produce a minimally
+restorative refinement.  The main factor-seeking specification further
+restricts a successful output to $\mathcal I(\mathcal P,D(h))$.  If production
+fails while the active set is empty, the firm carries forward its previously
+committed policy until a successful production event occurs.  All results that
+condition on an acquired refinement condition on such success.
+\end{assumption}
+
+The function $\phi_i$ has no direct objective-law argument.  Two causal worlds
+that generate the same retained history and current awareness therefore
+produce the same output.  Agent-specific prior understanding, analogy, and
+organizational routines may be represented by differences across the functions
+$\phi_i$, but not by allowing a function to inspect unobserved values of the
+objective law.
+
+\section{Nonidentification and the cost of robustness}
+
+The focal truth is the row law $d^r\equiv d$, where $d^r(x_{rc})=r$.  For comparison, define the
+column law
+\begin{equation}
+d^c(x_{rc})=c.
+\label{eq:column-law}
+\end{equation}
+Both causal worlds agree on the discovery states:
+\[
+d^r(x_{00})=d^c(x_{00})=0,
+\qquad
+d^r(x_{11})=d^c(x_{11})=1.
+\]
+
+\begin{definition}[Truth-blind inquiry-and-formulation rule]
+A single-valued inquiry-and-formulation rule returns, conditional on successful
+representation production, one pair $(\mathcal P',m')$ satisfying
+\[
+\mathcal P'=\phi_i(\mathcal P,h),
+\qquad
+m'\in\widehat M(\mathcal P',D(h)).
+\]
+It is truth-blind if two objective causal laws that generate the same current
+awareness partition and retained history induce the same pair.  The rule is
+correct under objective law $d'$ if $m'=d'$.  It may depend on experience,
+retained particulars, the comparison grammar, and agent-specific background
+capacities, but not on unobserved values of the objective law.
+\end{definition}
+
+\begin{theorem}[Observational nonidentification]
+\label{thm:nonidentification}
+No deterministic truth-blind inquiry-and-formulation rule can produce the correct causal
+formulation after $\overline D$ in both the row world $d^r$ and the column world
+$d^c$.
+\end{theorem}
+
+\begin{proof}
+The current partition and retained history are identical in the two worlds, so
+a deterministic truth-blind rule must produce the same formulation in both.
+But $d^r\neq d^c$.  The same formulated theory cannot equal both objective
+laws.
+\end{proof}
+
+This result does not depend on the coordinate-complexity criterion.  It follows
+from observational equivalence.  The $2\times2$ geometry provides an additional
+symmetry interpretation.  Let
+\[
+\pi(x_{rc})=x_{cr}
+\]
+exchange the coordinates.  The transformation fixes $x_{00}$, $x_{11}$,
+$\mathcal P^0$, and $\overline D$, while exchanging $\Prow$ and $\Pcol$.
+For a partition selector $s$, coordinate equivariance means
+\[
+s(\pi\mathcal P,\pi h)=\pi s(\mathcal P,h).
+\]
+Here $\pi\mathcal P$ and $\pi h$ apply the state relabeling to every partition
+cell and every customer-state entry in the retained history.
+Therefore no deterministic coordinate-equivariant selector can choose one of
+the two elements of $\mathcal I(\mathcal P^0,\overline D)$ without an
+additional asymmetry in evidence or background accessibility.  The complexity
+filter, rather than symmetry alone, is what excludes the invariant singleton-
+exception candidates.
+
+\begin{definition}[Causal sufficiency]
+Partition $\mathcal P$ is sufficient for a causal law $d'$ if
+\[
+d'\in M(\mathcal P),
+\]
+or, equivalently, if $d'$ is constant on every cell of $\mathcal P$.
+\end{definition}
+
+\begin{corollary}[Worst-case success of minimal inquiry]
+\label{cor:maximin}
+For comparison with the deterministic baseline, suppose an analyst-level
+truth-blind technology randomizes over
+$\mathcal R(\mathcal P^0,\overline D)$, and call it successful in a causal world
+when its selected partition is sufficient to express that world's objective
+law.  Randomized truth blindness requires observationally equivalent causal
+worlds to induce the same distribution over outputs.  Its worst-case
+probability of success across $\{d^r,d^c\}$ is at most
+$1/2$.  The bound is attained by assigning equal probability to $\Prow$ and
+$\Pcol$.
+\end{corollary}
+
+\begin{proof}
+Among the four minimally restorative partitions, only $\Prow$ is sufficient
+for $d^r$ and only $\Pcol$ is sufficient for $d^c$.  If their selection
+probabilities are $p_r$ and $p_c$, then $p_r+p_c\leq1$, so
+$\min\{p_r,p_c\}\leq1/2$.
+\end{proof}
+
+\begin{proposition}[Robust sufficiency requires complete awareness]
+\label{prop:robust-awareness}
+If a partition is sufficient for both $d^r$ and $d^c$, then it is the singleton
+partition
+\begin{equation}
+\Pfull
+=
+\big\{
+\{x_{00}\},\{x_{01}\},\{x_{10}\},\{x_{11}\}
+\big\}.
+\label{eq:full-partition}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Sufficiency for $d^r$ requires every cell to lie within a row.  Sufficiency for
+$d^c$ requires every cell to lie within a column.  Each row-column intersection
+contains exactly one state.  Hence every cell is a singleton.
+\end{proof}
+
+\Cref{prop:robust-awareness} concerns representation, not identification.
+Complete awareness makes both observationally equivalent causal laws
+expressible, but $\overline D$ alone still does not determine which one is true.
+Thus exhaustive awareness is necessary for a representation guaranteed to
+accommodate both worlds, but is not sufficient for knowledge.  A non-exhaustive
+technology avoids brute-force bookkeeping only by accepting fallibility.
+
+\section{Formulation, representation-relative coherence, and judgment}
+
+Successful representation production first supplies a new partition
+$\mathcal P'$.  A causal formulation is then a pair
+\[
+(\mathcal P',m'),
+\qquad
+m'\in\widehat M(\mathcal P',\overline D).
+\]
+In the focal example, every minimally restorative partition in
+\cref{eq:restorative-set} has a unique active theory, so representation and
+formulation occur in immediate succession.  They remain conceptually distinct:
+the partition supplies a distinction; the theory states the causal relation
+organized by that distinction.
+
+After acquiring $\mathcal P'$, firm $i$ forms a bridge prior
+\begin{equation}
+\mu_i^+\in\Delta(M(\mathcal P')).
+\label{eq:bridge-prior}
+\end{equation}
+Ordinary Bayesian updating does not derive $\mu_i^+$ from $\mu_i^0$, because
+the domains differ.  For the deterministic example, assume only that the bridge
+prior has full support.  Define the representation-relative coherence
+distribution
+\begin{equation}
+\overline\mu_i(m\mid\mathcal P',\overline D)
+=
+\frac{
+\mu_i^+(m)\ind\{m\in\widehat M(\mathcal P',\overline D)\}
+}{
+\sum_{m'\in M(\mathcal P')}
+\mu_i^+(m')\ind\{m'\in\widehat M(\mathcal P',\overline D)\}
+}.
+\label{eq:coherence-distribution}
+\end{equation}
+This is a retrospective renormalization on the newly produced model space, not
+a posterior generated from one temporally prior probability model over the
+entire representation-selection process.
+
+\begin{proposition}[Representation-relative certainty under a false formulation]
+\label{prop:false-coherence}
+Suppose inquiry produces $\Pcol$ and $\mu_i^+$ has full support on
+$M(\Pcol)$.  The coherence distribution assigns probability one to
+\[
+m^c=(0,1,0,1).
+\]
+Nevertheless, under the row truth,
+\[
+m^c(x_{01})\neq d^r(x_{01}),
+\qquad
+m^c(x_{10})\neq d^r(x_{10}).
+\]
+\end{proposition}
+
+\begin{proof}
+Under $\Pcol$, cell constancy and $x_{00}\mapsto0$ require value zero on the
+first column.  Cell constancy and $x_{11}\mapsto1$ require value one on the
+second.  Hence $m^c$ is the unique model in
+$\widehat M(\Pcol,\overline D)$, and full support gives it
+$\overline\mu_i$-probability one.  Direct evaluation at the off-diagonal states
+establishes both errors.
+\end{proof}
+
+The distribution in \cref{prop:false-coherence} is Bayesian-coherent
+conditional on the generated representation.  It should not be treated as
+independent confirmation: the same evidence directed representation production
+and fitted the resulting theory.  To implement reflective judgment cleanly in
+this model, evidential assessment must use fresh evidence or a likelihood that
+explicitly accounts for the representation-selection process.  The remainder
+of this section makes that accounting exact.
+
+\begin{definition}[Reflective assessment problem]
+\label{def:reflective-assessment}
+A reflective assessment problem is a pair $(\mathcal D,\nu)$, where
+$\mathcal D$ is a finite set of candidate objective laws $d':X\to A$ and
+$\nu\in\Delta(\mathcal D)$ is a full-support reflective prior.  The assessment
+asks how much probability the total evidence---the retained history together
+with the record of what inquiry produced---places on each candidate law.
+\end{definition}
+
+\begin{definition}[Selection-adjusted warrant and the warrant gap]
+\label{def:warrant}
+Fix a history $h$ and a successful production event yielding the formulation
+$(\mathcal P',m')$.  The \emph{selection-adjusted warrant} of the formulation
+is
+\begin{equation}
+W(m'\mid h)
+=
+\nu\big(\{d\in\mathcal D:d=m'\}\;\big|\;
+h,\ \phi_i(\mathcal P,h)=\mathcal P'\big),
+\label{eq:warrant}
+\end{equation}
+the posterior probability that the objective law coincides with the formulated
+theory, conditional on both the retained history and the production event.
+The \emph{warrant gap} is
+\begin{equation}
+G(m'\mid h)
+=
+\overline\mu_i(m'\mid\mathcal P',D(h))-W(m'\mid h).
+\label{eq:warrant-gap}
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Guaranteed fit]
+\label{lem:guaranteed-fit}
+Conditional on a successful production event, the produced partition lies in
+$\mathcal R(\mathcal P,D(h))$, so its active set is nonempty and every active
+theory agrees with all revealed labels.  The event that the formulation fits
+the discovery data therefore has probability one under every candidate law
+that generates $h$, and retrospective fit carries no discriminating
+information.
+\end{lemma}
+
+\begin{proof}
+Immediate from \cref{def:representation-technology} and \cref{eq:active-set}:
+a restorative output is defined by the nonemptiness of its active set, and
+membership of the active set is defined by agreement with $D(h)$.  Neither
+condition involves the objective law except through $D(h)$ itself.
+\end{proof}
+
+\begin{proposition}[Prior preservation under truth-blind production]
+\label{prop:prior-preservation}
+Suppose the firms' committed policies are fixed, the technology is truth-blind
+(deterministic or randomized), and each candidate law consistent with the
+revealed labels generates the same realized history $h$.  Then conditioning on
+$h$ and on the production event excludes the candidates inconsistent with the
+revealed labels and preserves the reflective prior odds among the rest.  For
+the discovery history with $\mathcal D=\{d^r,d^c\}$ and symmetric $\nu$, both
+candidates survive; production of either factor-based refinement yields a
+coherence probability of one on its unique active theory
+(\cref{prop:false-coherence}); and
+\[
+W(m^r\mid h)=W(m^c\mid h)=\tfrac12,
+\qquad
+G(m^r\mid h)=G(m^c\mid h)=\tfrac12.
+\]
+\end{proposition}
+
+\begin{proof}
+The reflective posterior on $d\in\mathcal D$ is proportional to the product of
+three factors: the prior $\nu(d)$; the likelihood of the realized history,
+which in the deterministic environment is an indicator equal to one exactly
+when $d$ agrees with every label in $D(h)$, since a disagreeing law would have
+produced different payoffs at some differentiated episode; and the probability
+of the production event given $(d,h)$, which by truth blindness depends on
+$(\mathcal P,h)$ alone and is therefore constant across $\mathcal D$ and
+cancels.  This establishes the general claim.  For the discovery history,
+$d^r$ and $d^c$ agree with both labels in $\overline D$
+(\cref{thm:nonidentification}), so the symmetric prior is preserved:
+$\nu(d^c\mid\cdot)=\nu(d^r\mid\cdot)=1/2$.  Since $m^c=d^c\neq d^r$, the
+warrant of $m^c$ is one-half, and symmetrically for $m^r$.  Subtracting from
+the unit coherence probability gives the gap.
+\end{proof}
+
+\begin{corollary}[Self-audit requires complete awareness]
+\label{cor:self-audit}
+The reflective assessment $(\mathcal D,\nu)$ is expressible by firm $i$ only
+if every candidate law in $\mathcal D$ is a theory expressible under
+$\mathcal P_i$, that is, only if $\mathcal P_i$ is sufficient for every
+$d\in\mathcal D$.  For $\mathcal D=\{d^r,d^c\}$,
+\cref{prop:robust-awareness} implies $\mathcal P_i=\Pfull$.  A firm holding
+either minimally restorative factor candidate therefore cannot formulate the
+comparison that measures its own warrant gap: the overstatement identified in
+\cref{prop:false-coherence} is invisible from within the representation that
+produces it.  Short of complete awareness, warrant must be supplied
+externally---by fresh diagnostic evidence, an analyst, a differently aware
+rival, or a future self with expanded awareness.
+\end{corollary}
+
+\begin{proof}
+Holding $\nu$ over $\mathcal D$ requires entertaining each candidate law as a
+hypothesis about customer response, which requires each law to be cell
+constant under $\mathcal P_i$ (\cref{sec:unawareness}); this is causal
+sufficiency for each $d\in\mathcal D$.  Sufficiency for both $d^r$ and $d^c$
+forces the singleton partition by \cref{prop:robust-awareness}.
+\end{proof}
+
+\begin{remark}[Double use, made exact]
+\label{rem:double-use}
+The coherence distribution treats restored fit as confirmation;
+\cref{lem:guaranteed-fit} shows the fit was guaranteed by the restoration
+property, and \cref{prop:prior-preservation} shows the production event
+carries no additional information when the technology is truth-blind.  The
+warrant gap of one-half is therefore an exact measure of the confidence
+overstatement produced by using the discovery experience twice---once to
+direct representation production and once to fit the resulting theory.  Truth
+blindness is the polar case in which the production event is completely
+uninformative.  If production were correlated with the objective law---for
+instance, social transmission from an informed source---the event would itself
+be evidence, and the selection adjustment could raise as well as lower
+confidence.
+\end{remark}
+
+\begin{remark}[Unwarranted certainty is not a symptom of error]
+\label{rem:warranted-luck}
+The gap afflicts the correct formulation equally: the firm that acquires
+$\Prow$ holds $\overline\mu=1$ on $m^r=d^r$, yet its warrant at the discovery
+stage is also one-half.  Early certainty is unwarranted even when it happens
+to be true.  What separates the two firms is not their evidence or their
+coherence but the objective law, which neither observes; validation by fresh
+differentiated evidence is what converts a fortunate formulation into
+warranted knowledge.
+\end{remark}
+
+The row and column formulations make opposing off-diagonal predictions:
+\begin{center}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Formulation & $x_{00}$ & $x_{01}$ & $x_{10}$ & $x_{11}$\\
+\midrule
+Row $m^r$ & $0$ & $0$ & $1$ & $1$\\
+Column $m^c$ & $0$ & $1$ & $0$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Either off-diagonal state can therefore discriminate between them, provided
+strategic actions reveal its objective label.
+
+\begin{proposition}[Diagnostic closure of the warrant gap]
+\label{prop:warrant-closure}
+Append additional episodes to the discovery history and maintain the
+reflective assessment of \cref{prop:prior-preservation}.
+\begin{enumerate}[label=(\roman*)]
+  \item A single differentiated episode at an off-diagonal state closes the
+  gap.  If the revealed label agrees with the acquired formulation, $W$ rises
+  to one and $G=0$.  If it disagrees, the active set under the acquired
+  partition empties, coherence collapses with renewed dissonance, and the
+  warrant of the surviving candidate rises to one.
+  \item Pooled episodes, at any states and in any number, change neither the
+  coherence distribution nor the selection-adjusted posterior: the warrant gap
+  is invariant under unbounded pooled experience.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) At $x_{01}$ the candidates predict opposite labels ($d^r$ assigns $0$ and
+$d^c$ assigns $1$), and likewise at $x_{10}$.  A revealed label therefore has
+likelihood one under one candidate and zero under the other, making the
+reflective posterior degenerate.  If the label agrees with the acquired
+formulation, the active set is unchanged, $\overline\mu$ remains one, and
+$G=1-1=0$.  If it disagrees, the new label conflicts with a previously
+revealed diagonal label inside one cell of the acquired partition, the active
+set empties, and \cref{ass:dissonance-trigger} governs renewed inquiry.
+(ii) By \cref{lem:revelation}, a pooled episode has the same payoff vector
+under every candidate law, so its likelihood is one under both candidates and
+the reflective posterior is unchanged; the active set is also unchanged, so
+$\overline\mu$ is unchanged.
+\end{proof}
+
+\begin{proposition}[Resolution under one additional diagnostic label]
+\label{prop:directed-resolution}
+Suppose representation production initially fails after $\overline D$, so
+awareness remains $\mathcal P^0$ and the previously differentiated policy
+profile is carried forward for one additional diagnostic episode.  Let the row
+law be true.
+\begin{enumerate}[label=(\alph*)]
+  \item If differentiated actions reveal $x_{01}\mapsto0$, the minimally
+  restorative refinements are $\Prow$ and $\mathcal P^{11}$, and the unique
+  minimum-complexity refinement is $\Prow$.
+  \item If differentiated actions reveal $x_{10}\mapsto1$, the minimally
+  restorative refinements are $\Prow$ and $\mathcal P^{00}$, and the unique
+  minimum-complexity refinement is $\Prow$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For part (a), the two zero-labeled states must lie apart from $x_{11}$.  In a
+minimal binary restoration, the unobserved state $x_{10}$ may join either side,
+giving the row partition and the partition isolating $x_{11}$.  Their
+complexities are one and two.  Part (b) is symmetric.
+\end{proof}
+
+The proposition is a continued-commitment comparative exercise rather than a
+claim that undefined post-dissonance beliefs generate an equilibrium policy.
+It is conditional on obtaining a fresh diagnostic observation.  An
+unaware firm cannot simply be assumed to target ``the off-diagonal state'' as
+an experiment before it can formulate that distinction.  A theory of inquiry
+must explain whether the observation arrives through ordinary experience,
+comparison of retained cases, social transmission, or an exploration
+technology available without prior semantic specification.
+
+\section{Cumulative awareness and path dependence}
+
+\begin{assumption}[Cumulative awareness]
+\label{ass:cumulative-awareness}
+Once a distinction becomes available, later awareness can refine but does not
+coarsen the acquired partition.  Rejecting a causal theory need not make the
+distinction on which it was formulated unthinkable again.
+\end{assumption}
+
+This is an explicit economic assumption, not a logical implication of
+unawareness.  It permits causal theory to be rejected while the associated
+conceptual distinction remains available.
+
+\begin{proposition}[Path-dependent terminal awareness]
+\label{prop:path-dependence}
+Assume the row law, cumulative awareness, successful minimally restorative
+revision after every dissonance, and eventual differentiated observations at
+both off-diagonal states.
+\begin{enumerate}[label=(\roman*)]
+  \item A firm that initially acquires $\Prow$ holds the correct formulation
+  $m^r=d^r$ and need not refine further.
+  \item A firm that initially acquires $\Pcol$ must eventually reach
+  $\Pfull$.
+\end{enumerate}
+The two firms can therefore converge to the same correct causal theory and
+policy while retaining different awareness partitions.
+\end{proposition}
+
+\begin{proof}
+Under $\Prow$, every subsequently revealed label agrees with $m^r$, so the
+active set never becomes empty.
+
+Under $\Pcol$, $x_{00}$ and $x_{10}$ initially share one cell, while $x_{01}$
+and $x_{11}$ share the other.  A revealed label at $x_{01}$ conflicts with the
+previous label at $x_{11}$ and forces the second column to split.  A revealed
+label at $x_{10}$ conflicts with the previous label at $x_{00}$ and forces the
+first column to split.  Reversing the order of the off-diagonal observations
+reverses the order of these two splits.  Cumulative awareness rules out
+discarding the column distinction and replacing it with the incomparable row
+partition.  The terminal partition is therefore the coarsest common refinement
+\[
+\Pcol\vee\Prow
+=
+\Pfull.
+\]
+Once all four labels have been revealed, the unique active causal function is
+$d^r$ under either awareness path.
+\end{proof}
+
+\begin{remark}[Alternative false paths]
+If the complexity filter is not imposed, an initial singleton formulation also
+leaves a permanent representational footprint.  Under complete diagnostic
+coverage, $\mathcal P^{00}$ leads to
+\[
+\big\{\{x_{00}\},\{x_{01}\},\{x_{10},x_{11}\}\big\},
+\]
+whereas $\mathcal P^{11}$ leads to
+\[
+\big\{\{x_{00},x_{01}\},\{x_{10}\},\{x_{11}\}\big\}.
+\]
+Both are sufficient for the row law but finer than the minimally sufficient
+row partition.
+\end{remark}
+
+\begin{proposition}[Diagnostic-coverage benchmark]
+\label{prop:coverage}
+Let $X$ be finite and $d:X\to\{0,1\}$ deterministic.  Suppose awareness only
+changes after dissonance through strict refinements; after every dissonance,
+revision continues until a partition with a nonempty active set is produced;
+and every $x\in X$ is eventually observed under differentiated actions.  Let
+the terminal partition be the partition in place after the last revealing
+observation and any revision it requires.  Then the terminal partition exists,
+every terminal awareness cell is homogeneous under $d$, and the terminal active
+model set is $\{d\}$.
+\end{proposition}
+
+\begin{proof}
+Every successful awareness change strictly increases the number of cells, so
+finiteness of $X$ permits only finitely many such changes.  Hence a terminal
+partition exists after the final revealing observation and required revision.
+Differentiated observation reveals $d(x)$ for every state.  An active theory
+must consequently satisfy $m(x)=d(x)$ for all $x\in X$, so it equals $d$.
+No terminal awareness cell can contain two states with different objective
+labels, because cell constancy would then make the active set empty.
+\end{proof}
+
+\Cref{prop:coverage} is a benchmark rather than a headline result.  Its strong
+coverage condition does most of the work.  The economically substantive issue
+is whether endogenous strategy supplies or suppresses differentiated
+observations.
+
+\section{Strategic diagnosticity and self-confirming awareness}
+
+The policies analyzed in this section are provisional commitments based on
+representation-relative beliefs.  They may themselves generate validation
+evidence; they are not assumed to follow a completed reflective judgment.
+
+Once a partition is acquired prospectively, a firm with a degenerate belief on
+$m$ follows the policy
+\[
+\sigma_i(C)=m(C)
+\]
+at every cell labeled zero or one.  By \cref{lem:dominance}, this policy is a
+subjectively strict best response against either rival action.
+
+\begin{definition}[Self-confirming awareness trap]
+\label{def:awareness-trap}
+A profile of awareness partitions, beliefs, and policies forms a
+self-confirming awareness trap if
+\begin{enumerate}[label=(\roman*)]
+  \item every firm's policy is optimal under its belief;
+  \item all outcomes generated by the policy profile are consistent with each
+  firm's active causal theory, so no dissonance triggers further inquiry; and
+  \item there exist a firm $i$ with active theory $m_i$ and a state $x$ such
+  that $m_i(x)\neq d(x)$, but the on-path policy profile pools at $x$ and hence
+  does not reveal $d(x)$.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Shared false formulation suppresses its own falsification]
+\label{thm:self-confirming-trap}
+Suppose the row law is true, both firms acquire $\Pcol$, both become certain of
+$m^c=(0,1,0,1)$ after the discovery batch, and every customer state subsequently
+recurs.  Suppose \cref{ass:dissonance-trigger} governs later representation
+production and the firms recommit their optimal policies in every generation.
+The induced policy profile is a self-confirming awareness trap.
+The false formulation is never falsified, even though it is wrong at both
+off-diagonal states.
+\end{theorem}
+
+\begin{proof}
+Under certainty of $m^c$, \cref{lem:dominance} makes the column policy
+\[
+\sigma_i(x_{00},x_{01},x_{10},x_{11})=(0,1,0,1)
+\]
+subjectively strictly optimal for each firm.  The firms therefore choose the
+same action at every state.  By \cref{lem:revelation}, every subsequent payoff
+vector is $(1/2,1/2)$ and supplies no causal label.  The pooled payoffs are
+exactly those predicted by $m^c$ under the on-path action profile, so the active
+set never becomes empty.  Nevertheless, $m^c(x_{01})=1\neq0=d^r(x_{01})$ and
+$m^c(x_{10})=0\neq1=d^r(x_{10})$.
+\end{proof}
+
+The trap relies on the market-splitting payoff in \cref{eq:objective-payoff}:
+pooled firms receive one-half even when both offer the objectively inferior
+architecture.  Introducing an outside option or demand losses could make an
+incorrect pooled architecture directly informative and would alter the result.
+
+\begin{corollary}[Permanent warrant gap at the trap]
+\label{cor:permanent-gap}
+In the environment of \cref{thm:self-confirming-trap}, every post-discovery
+episode is pooled, so by \cref{prop:warrant-closure}(ii) the warrant gap
+remains $G=\tfrac12$ in every generation.  The firms accumulate unbounded
+experience, remain representation-relatively certain of $m^c$, and are never
+more than half-warranted; the missing half is exactly the reflective weight on
+the causal world their shared partition cannot express.
+\end{corollary}
+
+\begin{proof}
+Immediate from \cref{thm:self-confirming-trap} and
+\cref{prop:warrant-closure}(ii).
+\end{proof}
+
+\begin{corollary}[Theory heterogeneity creates diagnostic competition]
+\label{cor:heterogeneous-theories}
+Suppose the row law is true, firm $1$ is certain of $m^r$, and firm $2$ is
+certain of $m^c$.  Their policies differ at $x_{01}$ and $x_{10}$, revealing
+the objective labels and falsifying $m^c$.  If all four states are served once
+with equal weight in one committed validation batch before either firm can
+revise, firm $1$ earns average payoff $3/4$ and firm $2$ earns $1/4$.
+\end{corollary}
+
+\begin{proof}
+The policies are
+\[
+\sigma_1=(0,0,1,1),
+\qquad
+\sigma_2=(0,1,0,1).
+\]
+They pool at $x_{00}$ and $x_{11}$, giving each firm one-half.  At $x_{01}$ and
+$x_{10}$, firm $1$ offers the objectively preferred architecture and receives
+one.  Thus its equally weighted payoff is
+\[
+\frac14\left(\frac12+1+1+\frac12\right)=\frac34,
+\]
+with the complementary payoff accruing to firm $2$.  Both differentiated
+outcomes reveal the labels on which $m^c$ is wrong.
+\end{proof}
+
+The theorem and corollary identify an endogenous epistemic effect of strategic
+interaction.  Shared theories align actions and can suppress causal evidence.
+Different theories create action differentiation, which both reallocates value
+capture and generates the evidence needed for judgment.
+
+\section{The economics of inquiry: costly activation and delabeled leverage}
+\label{sec:inquiry-economics}
+
+In the preceding sections, representation production is triggered by
+dissonance and costs nothing, as if activation were free and automatic.  A
+theory of directed inquiry requires more: whether to prosecute a question must
+itself be a decision.  The obstacle is that the natural criterion for that
+decision---the expected value of the answer---is doubly unavailable at exactly
+the moment the question exists.  The Bayesian posterior is undefined
+(\cref{lem:bayesian-closure}), and the candidate answers are not objects of
+pre-insight deliberation (\cref{def:representation-technology}).  This section
+shows that the laboratory nevertheless supports an honest valuation: a
+statistic computed entirely from retained episodes and revealed payoffs that
+is invariant across every representation successful inquiry could produce.
+
+\begin{assumption}[Costly activation]
+\label{ass:costly-activation}
+At the close of a generation whose history exhibits causal dissonance, firm
+$i$ elects an inquiry effort $\varepsilon_i\in\{0,1\}$ at cost
+$\gamma_i\varepsilon_i$, with $\gamma_i>0$ in payoff units.  The technology
+$\phi_i$ of \cref{def:representation-technology} operates only if
+$\varepsilon_i=1$ and then succeeds or fails as in
+\cref{ass:dissonance-trigger}.  If $\varepsilon_i=0$ or production fails, the
+firm carries forward its previously committed policy.  Firm $i$ holds a
+delabeled success weight $\theta_i\in(0,1]$: a subjective probability that an
+elected inquiry episode produces a usable refinement.  The weight is defined
+on the event of success alone; it is not a distribution over the identities of
+possible outputs.
+\end{assumption}
+
+The success weight is awareness of unawareness in delabeled form.  The firm
+can believe that inquiry may yield a usable distinction without being able to
+describe any candidate distinction.  The earlier sections are the special case
+$\gamma_i=0$, in which election is always subjectively justified and
+activation is effectively automatic.
+
+\begin{definition}[Revealed labels and the disagreement set]
+\label{def:disagreement-set}
+A retained episode $s$ in $e_i(h;\mathcal P_i)$ is \emph{labeled} if
+$a_{1s}\neq a_{2s}$; its label $a^*_s$ is the architecture of the firm that
+received payoff one.  Let $\sigma_i$ denote firm $i$'s currently committed
+policy.  The \emph{disagreement set} is
+\[
+L_i(h)
+=
+\left\{
+s:\ s\text{ labeled and }
+\sigma_i\big(C_{\mathcal P_i}(x_s)\big)\neq a^*_s
+\right\},
+\]
+the labeled episodes at whose recurrence the committed policy prescribes the
+architecture that lost.  The \emph{retained-record leverage} is
+\begin{equation}
+B_i(h)=\tfrac12\,\bigl|L_i(h)\bigr|.
+\label{eq:leverage}
+\end{equation}
+\end{definition}
+
+Both objects are deliberative-level computations.  A token's awareness cell,
+the actions taken, and the payoffs received are all recorded in
+$e_i(h;\mathcal P_i)$, so identifying the winning architecture requires no
+predicate the firm lacks.  For a firm with coarse awareness and a constant
+committed policy, $L_i(h)$ is exactly the set of differentiated episodes the
+firm lost.
+
+\begin{assumption}[Subjective recurrence and pinned valuation]
+\label{ass:subjective-recurrence}
+In evaluating inquiry, firm $i$ proceeds as if the next generation's batch
+reproduces its retained record token for token, and it evaluates one
+generation ahead.  It values a prospective refinement by its \emph{pinned
+gain}: the component of the anticipated payoff change that is common to every
+restorative refinement.  The recurrence premise is a belief, not foresight;
+the analyst does not require the future batch to satisfy it, and a
+miscalibrated premise can produce both under- and over-investment in inquiry.
+A longer subjective horizon scales the valuation by the number of anticipated
+recurrences and changes nothing qualitative.
+\end{assumption}
+
+\begin{lemma}[Unit leverage of a disagreeing episode]
+\label{lem:unit-leverage}
+Consider the recurrence of a retained labeled episode $s$ and compare two
+policies for firm $i$: the carried-forward committed policy, and a policy
+identical to it except that it implements the label $a^*_s$ at that
+recurrence.  Against every rival action, pure or mixed:
+\begin{enumerate}[label=(\roman*)]
+  \item if $s\in L_i(h)$, the implementing policy gains exactly one-half;
+  \item if $s\notin L_i(h)$, the two policies coincide at the recurrence and
+  the gain is zero.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For (i), write $a$ for the committed action at the recurrence and
+$a^*=a^*_s\neq a$ for the label; by \cref{lem:revelation}, $a^*=d(x_s)$.  If
+the rival plays $a^*$, the committed policy is differentiated and loses,
+yielding zero, while the implementing policy pools, yielding one-half.  If the
+rival plays $a$, the committed policy pools, yielding one-half, while the
+implementing policy is differentiated and wins, yielding one.  In both cases
+the difference is one-half, and linearity extends the conclusion to mixtures.
+For (ii), a labeled episode outside $L_i(h)$ satisfies
+$\sigma_i(C_{\mathcal P_i}(x_s))=a^*_s$, so implementation changes nothing.
+\end{proof}
+
+The gain in part (i) is independent of the rival's behavior, so no conjecture
+about the rival is needed to price the disagreement set.  The structural
+reason is the same one driving \cref{lem:dominance}: with two architectures
+and payoffs summing to one, switching from the losing to the winning
+architecture at a state moves the firm up by exactly one-half against either
+rival action.
+
+\begin{lemma}[Answer invariance]
+\label{lem:answer-invariance}
+Let the current partition exhibit causal dissonance at $D(h)$, let
+$\mathcal P'\in\mathcal R(\mathcal P_i,D(h))$ be any minimally restorative
+refinement, and let $m'\in\widehat M(\mathcal P',D(h))$ be held with
+certainty.  Then the induced subjectively optimal policy implements $a^*_s$ at
+the recurrence of every labeled episode $s$, and the anticipated pinned gain
+over the carried-forward policy equals $B_i(h)$, identically across all
+elements of $\mathcal R(\mathcal P_i,D(h))$ and their active theories.  At
+unlabeled recurrences the induced policy may also depart from the
+carried-forward policy; the value of that departure depends on unrevealed
+values of the objective law and is not represented in $B_i(h)$.
+\end{lemma}
+
+\begin{proof}
+By \cref{prop:conflict-characterization}, every cell of $\mathcal P'$ is
+conflict-free, so by \cref{eq:active-set} every active theory satisfies
+$m'(x_s)=a^*_s$ at each labeled episode.  Under certainty of $m'$,
+\cref{lem:dominance} makes the policy $\sigma_i(C)=m'(C)$ subjectively
+strictly optimal at every cell labeled zero or one, and
+\cref{ass:recodability} licenses its prospective implementation.  Summing
+\cref{lem:unit-leverage} over labeled recurrences gives a total pinned gain of
+$\lvert L_i(h)\rvert/2=B_i(h)$, which does not depend on which restorative
+refinement was acquired.
+\end{proof}
+
+\begin{remark}[Delabeled deliberation]
+\label{rem:delabeled-deliberation}
+The leverage computation quantifies over retained tokens and their recorded
+outcomes, never over candidate representations.  The firm's reasoning can be
+glossed: ``customers like the episodes I lost will recur; whatever distinction
+inquiry may yield, possessing it would let me offer such customers the
+architecture that won.''  The gloss uses only token-indexicals, which
+retention supplies (\cref{ass:recodability}); it requires no predicate, no
+answer menu, and no probability over semantic alternatives.  This is the
+model's precise sense in which a question can be priced before its answer can
+be thought.
+\end{remark}
+
+\begin{remark}[Pinned versus extrapolated value]
+\label{rem:pinned-extrapolated}
+The statistic $B_i$ prices only what every answer must deliver: agreement with
+the revealed labels.  A full formulation extrapolates beyond them---for
+example, the column formulation's off-diagonal prescriptions---and the
+extrapolated component is exactly what representation-relative coherence
+cannot warrant (\cref{prop:false-coherence}) and what reflective judgment must
+assess with fresh or selection-adjusted evidence.  Anticipated leverage and
+warranted confidence therefore separate cleanly: the former is
+answer-invariant and computable at dissonance; the latter is answer-specific
+and computable only after formulation.
+\end{remark}
+
+\begin{proposition}[Participation rule]
+\label{prop:participation}
+Under \cref{ass:costly-activation,ass:subjective-recurrence}, electing inquiry
+has represented value $\theta_iB_i(h)-\gamma_i$ and abstention has represented
+value zero, so firm $i$ elects inquiry if and only if
+\[
+\theta_iB_i(h)\geq\gamma_i,
+\]
+with indifference resolved toward inquiry.  After the discovery batch
+$\overline D$, $\lvert L_i(h)\rvert=1$ for both firms, so each elects inquiry
+if and only if $\theta_i/2\geq\gamma_i$.
+\end{proposition}
+
+\begin{proof}
+Election costs $\gamma_i$ and, with subjective probability $\theta_i$,
+production succeeds; by \cref{lem:answer-invariance} the pinned gain on the
+recurrence record is then $B_i(h)$ whichever refinement arrives, and
+\cref{ass:subjective-recurrence} assigns the extrapolated component no
+represented value at the election.  On failure the carried-forward policy
+continues and the gain is zero.  For the discovery batch, firm $1$'s constant
+policy $0$ agrees with the label at $x_{00}$ and disagrees at $x_{11}$, while
+firm $2$'s constant policy $1$ disagrees only at $x_{00}$; hence
+$\lvert L_i\rvert=1$ and $B_i=1/2$ for both firms.
+\end{proof}
+
+Both firms hold identical leverage despite opposite experiences: each won one
+episode and lost the other.  The incentive to inquire is symmetric; which firm
+succeeds, and on which refinement, is governed by the technologies $\phi_i$,
+the locus of firm-specific insight capacity.
+
+\begin{proposition}[Action separation, not residual uncertainty]
+\label{prop:action-separation}
+$B_i(h)>0$ if and only if some retained labeled episode contradicts the
+committed policy.  In particular:
+\begin{enumerate}[label=(\roman*)]
+  \item on the self-confirming path of \cref{thm:self-confirming-trap}, no
+  episode is ever labeled, so $L_i(h)=\emptysetset$ and $B_i(h)=0$ for both
+  firms in every generation, although each firm's formulation is false at two
+  of the four states and the empty label record leaves the entire model space
+  unrestricted at the analyst's level;
+  \item after the discovery batch, the revealed labels reduce the minimally
+  restorative refinements to four (\cref{prop:four-restorations}) and the
+  complexity-filtered candidates to two
+  (\cref{cor:factor-candidates}), yet $B_i(h)=1/2>0$.
+\end{enumerate}
+The represented value of a question therefore tracks the action separation in
+the retained record, not the quantity of unresolved structure.
+\end{proposition}
+
+\begin{proof}
+The equivalence restates \cref{def:disagreement-set}.  For (i), pooled actions
+label no episode by \cref{lem:revelation}.  For (ii), the count is computed in
+\cref{prop:participation}, and the reduction of candidates is given by the
+cited results.
+\end{proof}
+
+\begin{corollary}[Trap immunity to cheap inquiry]
+\label{cor:trap-immunity}
+Extend the environment of \cref{thm:self-confirming-trap} with
+\cref{ass:costly-activation}.  The trap persists for every $\gamma_i>0$ and
+every $\theta_i\leq1$.  It is doubly locked: on-path experience generates no
+dissonance, so the technology is inert (\cref{ass:dissonance-trigger}); and
+$B_i(h)=0$ in every generation, so even an infallible technology at an
+arbitrarily small positive cost would receive no represented justification.
+Escaping the trap therefore requires a source of action differentiation
+outside the represented calculus---exogenous experimentation, entry by a firm
+with a different formulation, or a payoff environment in which pooled
+misservice is itself informative.
+\end{corollary}
+
+\begin{proof}
+Combine \cref{thm:self-confirming-trap} with
+\cref{prop:action-separation}(i) and the participation rule of
+\cref{prop:participation}.
+\end{proof}
+
+\begin{corollary}[Rational cessation and the loser's leverage]
+\label{cor:loser-leverage}
+Append the validation batch of \cref{cor:heterogeneous-theories} to the
+discovery history, with firm $1$ certain of $m^r$ and firm $2$ certain of
+$m^c$.
+\begin{enumerate}[label=(\roman*)]
+  \item Firm $1$'s record contains labels at all four states, each agreeing
+  with its committed policy: $L_1=\emptysetset$ and $B_1=0$.  Firm $1$
+  experiences no dissonance and, even were inquiry offered, would decline it
+  at every positive cost.  Its terminal awareness $\Prow$ remains incomplete
+  (\cref{prop:robust-awareness}), and that incompleteness is subjectively
+  optimal rather than merely mechanically absorbing.
+  \item Firm $2$'s record contains the same four labels; its committed column
+  policy disagrees at $x_{01}$ and $x_{10}$, so $\lvert L_2\rvert=2$ and
+  $B_2=1$---twice the discovery-stage leverage.  Firm $2$ experiences
+  dissonance, elects inquiry whenever $\theta_2\geq\gamma_2$, and, conditional
+  on success, proceeds by \cref{prop:path-dependence} toward complete
+  awareness.
+\end{enumerate}
+Differentiated defeat thus concentrates the incentive to inquire in the
+defeated firm: the same episodes that transfer value to the correctly
+formulated rival supply the loser with dissonance, revealed labels, and
+leverage.  Competitive failure is, in this precise sense, an engine of
+awareness growth, and sustained success rationally extinguishes the question.
+\end{corollary}
+
+\begin{proof}
+The labels revealed across the two batches are $x_{00}\mapsto0$,
+$x_{11}\mapsto1$ (discovery) and $x_{01}\mapsto0$, $x_{10}\mapsto1$
+(validation).  Firm $1$'s policy $(0,0,1,1)$ agrees with every label, so
+$L_1=\emptysetset$; absence of dissonance follows because
+$m^r\in\widehat M(\Prow,D(h))$.  Firm $2$'s policy $(0,1,0,1)$ disagrees at
+exactly the two off-diagonal states, so $\lvert L_2\rvert=2$.  Its dissonance
+follows because under $\Pcol$ the label $x_{01}\mapsto0$ conflicts with
+$x_{11}\mapsto1$ in one cell and $x_{10}\mapsto1$ conflicts with
+$x_{00}\mapsto0$ in the other, emptying the active set.  The election claim
+applies \cref{prop:participation}.
+\end{proof}
+
+\begin{remark}[Relation to deliberation-cost models]
+\label{rem:cplus-relation}
+The participation rule instantiates, in partition form, the deliberation logic
+of the C-family agents of \cite{RyallAction2026}: refinement effort is
+expended only when its represented value exceeds its cost.  There, the value
+of investigating an unexplored branch is computed from objective payoff bounds
+attached to unseen continuations.  The present treatment replaces those bounds
+with the firm's own revealed record, in keeping with the discipline that
+nothing behind the awareness frontier may carry objective payoff information
+into pre-insight deliberation.
+\end{remark}
+
+\begin{remark}[An asymmetric partial-correction benchmark]
+Suppose instead that firm $2$ remains exogenously fixed at architecture $1$ and
+firm $1$ initially follows the false column theory.  A differentiated loss at
+$x_{10}$ can lead firm $1$ to the partition
+\[
+\big\{\{x_{00}\},\{x_{10}\},\{x_{01},x_{11}\}\big\}
+\]
+and theory $(0,1,1,1)$.  Firm $1$ then wins at $x_{00}$ and pools elsewhere,
+earning $5/8$ under equal state weights.  Its theory remains wrong at $x_{01}$,
+where pooling conceals the error.  This calculation is useful as an
+illustration, but it is not an equilibrium theorem unless firm $2$'s continued
+fixed behavior and failure of inquiry are endogenized.
+\end{remark}
+
+\section{An outside option: value destruction and the knife-edge of
+self-confirmation}
+\label{sec:outside-option}
+
+Under \cref{eq:objective-payoff}, total value is one in every episode: pooled
+firms split the market even when both offer the objectively inferior
+architecture, so misservice reallocates nothing and destroys nothing.  Three
+results lean on that feature: the self-confirming trap
+(\cref{thm:self-confirming-trap}), its immunity to cheap inquiry
+(\cref{cor:trap-immunity}), and the permanent warrant gap
+(\cref{cor:permanent-gap}).  This section parameterizes the demand side and
+shows that all three are knife-edge properties of perfectly forgiving demand.
+
+\begin{definition}[Outside option]
+\label{def:outside-option}
+For $\beta\in[0,1]$, replace \cref{eq:objective-payoff} with
+\begin{equation}
+u_i^\beta(a_i,a_j,x)=
+\begin{cases}
+\frac12, & a_i=a_j=d(x),\\[2pt]
+\frac{\beta}{2}, & a_i=a_j\neq d(x),\\[2pt]
+1, & a_i\neq a_j\text{ and }a_i=d(x),\\[2pt]
+0, & a_i\neq a_j\text{ and }a_j=d(x).
+\end{cases}
+\label{eq:beta-payoff}
+\end{equation}
+Payoffs sum to the value created: one whenever some firm offers $d(x)$, and
+$\beta$ when both firms offer the other architecture, in which case the
+customer withholds $1-\beta$ of the unit value.  The subjective payoff
+predicted by theory $m$ extends accordingly:
+\begin{equation}
+u_i^{m,\beta}(a_i,a_j,x)=
+\begin{cases}
+\frac12, & a_i=a_j\text{ and }m(x)\in\{a_i,n\},\\[2pt]
+\frac{\beta}{2}, & a_i=a_j\text{ and }m(x)\notin\{a_i,n\},\\[2pt]
+1, & a_i\neq a_j\text{ and }m(x)=a_i,\\[2pt]
+0, & a_i\neq a_j\text{ and }m(x)=a_j,\\[2pt]
+\frac12, & a_i\neq a_j\text{ and }m(x)=n.
+\end{cases}
+\label{eq:beta-subjective}
+\end{equation}
+The payoff rule, including $\beta$, is known to both firms; only the causal
+law is not.  Every preceding section is the special case $\beta=1$.
+\end{definition}
+
+\begin{lemma}[Dominance under an outside option]
+\label{lem:beta-dominance}
+At an awareness cell $C$, the subjective expected-payoff differences between
+actions $0$ and $1$ are
+\[
+v_i(0\mid C)-v_i(1\mid C)
+=
+\begin{cases}
+\tfrac12\,p_i^0(C)-\bigl(1-\tfrac{\beta}{2}\bigr)p_i^1(C),
+& \text{rival plays }0,\\[4pt]
+\bigl(1-\tfrac{\beta}{2}\bigr)p_i^0(C)-\tfrac12\,p_i^1(C),
+& \text{rival plays }1,
+\end{cases}
+\]
+with mixtures handled by linearity.  Consequently:
+\begin{enumerate}[label=(\roman*)]
+  \item a firm certain of an architecture label finds the labeled action
+  strictly dominant on that cell for every $\beta\in[0,1]$;
+  \item action $0$ is strictly dominant on $C$ if and only if
+  $p_i^0(C)>(2-\beta)\,p_i^1(C)$, and symmetrically for action $1$; hence
+  belief-induced differentiation (\cref{prop:initial-differentiation}) extends
+  to $\beta<1$ provided the prior asymmetry in
+  \cref{ass:heterogeneous-priors} is strengthened to this threshold.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Against rival action $0$:
+$v_i(0\mid C)=\tfrac12[p_i^0(C)+p_i^n(C)]+\tfrac{\beta}{2}p_i^1(C)$ and
+$v_i(1\mid C)=p_i^1(C)+\tfrac12 p_i^n(C)$.  Against rival action $1$:
+$v_i(0\mid C)=p_i^0(C)+\tfrac12 p_i^n(C)$ and
+$v_i(1\mid C)=\tfrac12[p_i^1(C)+p_i^n(C)]+\tfrac{\beta}{2}p_i^0(C)$.
+Subtracting gives the displayed differences, which reduce to
+\cref{eq:dominance-difference} at $\beta=1$.  For (i), $p_i^a(C)=1$ makes both
+differences equal to $\tfrac12$ and $1-\tfrac{\beta}{2}$, both strictly
+positive.  For (ii), both differences are strictly positive exactly when
+$\tfrac12 p_i^0(C)>(1-\tfrac{\beta}{2})p_i^1(C)$.
+\end{proof}
+
+When $\beta<1$ and neither threshold in part (ii) is met, no constant action
+is dominant and best responses acquire an anti-coordination structure:
+differentiating guarantees that the customer is served and value one is
+created, so demand-side harshness pushes balanced-belief play toward the
+diagnostic regime.  A full equilibrium analysis of that game is deferred.
+
+\begin{lemma}[Demand-side revelation]
+\label{lem:demand-revelation}
+Let $\beta<1$ and consider a pooled episode at state $x$ with common action
+$a$.  The payoff level reveals the objective label: payoff one-half implies
+$d(x)=a$ and excludes the theory value $1-a$ at $x$, while payoff $\beta/2$
+implies $d(x)=1-a$ and excludes both the value $a$ and neutrality.
+Differentiated episodes reveal labels as in \cref{lem:revelation}.  At
+$\beta=1$, pooled episodes reveal nothing.
+\end{lemma}
+
+\begin{proof}
+Objectively, \cref{eq:beta-payoff} gives pooled payoff one-half if $a=d(x)$
+and $\beta/2$ otherwise, and the two are distinguishable exactly when
+$\beta\neq1$.  Subjectively, \cref{eq:beta-subjective} predicts one-half under
+$m(x)\in\{a,n\}$ and $\beta/2$ under $m(x)=1-a$; comparing predicted with
+realized payoffs yields the stated exclusions.
+\end{proof}
+
+\begin{remark}[Leverage and participation under an outside option]
+\label{rem:leverage-beta}
+For $\beta<1$, \cref{def:disagreement-set} extends by counting as labeled any
+pooled episode whose payoff level pins the objective label
+(\cref{lem:demand-revelation}).  The unit gain of implementing a disagreeing
+label is no longer conjecture-free: depending on the rival's action at the
+recurrence, it lies in $[\tfrac12,\,1-\tfrac{\beta}{2}]$, so
+$B_i(h)=\lvert L_i(h)\rvert/2$ is a conjecture-free \emph{lower bound} on the
+pinned gain rather than its exact value, and the participation rule of
+\cref{prop:participation} errs only toward abstention.  The results of
+\cref{sec:inquiry-economics} hold as stated at $\beta=1$; for $\beta<1$ the
+trap-immunity corollary loses its premise because, as shown next, the trap
+itself fails.
+\end{remark}
+
+\begin{proposition}[No payoff-relevant self-confirmation for $\beta<1$]
+\label{prop:no-trap}
+Let $\beta<1$.  Consider awareness partitions, degenerate beliefs (each firm
+certain of a single expressible theory), and committed policies recommitted
+each generation, satisfying conditions (i) and (ii) of
+\cref{def:awareness-trap}---subjective optimality and on-path
+consistency---and suppose every customer state recurs.  Then every state is
+served by its objectively preferred architecture, so value creation is
+maximal in every generation, and every architecture label is objectively
+correct: $m_i(x)\in\{0,1\}$ implies $m_i(x)=d(x)$.  Residual falsity is
+confined to neutral mislabeling---states labeled $n$ whose realized service is
+nonetheless correct---which affects neither value creation nor value capture.
+\end{proposition}
+
+\begin{proof}
+Fix a recurring state $x$.  First, the actions must pool at $x$.  Suppose they
+differ; the losing firm observes payoff zero.  If the loser's cell carries an
+architecture label, \cref{lem:beta-dominance}(i) and subjective optimality
+require its action to equal that label, so its predicted payoff is one, and if
+its cell is labeled $n$ its predicted payoff is one-half; either way the
+observation contradicts consistency.  Second, suppose the pooled payoff is
+$\beta/2$.  By \cref{lem:demand-revelation}, consistency requires
+$m_i(x)=1-a$ for both firms; \cref{lem:beta-dominance}(i) then prescribes
+action $1-a$, contradicting the pooled action $a$.  Hence the pooled payoff is
+one-half, so $d(x)=a$: the state is correctly served, and consistency admits
+only $m_i(x)\in\{a,n\}$, so any architecture label equals $d(x)$.
+\end{proof}
+
+\begin{corollary}[Knife-edge of the epistemic pathologies]
+\label{cor:knife-edge}
+The column profile of \cref{thm:self-confirming-trap} is a self-confirming
+awareness trap if and only if $\beta=1$.  For $\beta<1$, in the first
+generation containing an off-diagonal state:
+\begin{enumerate}[label=(\roman*)]
+  \item both firms receive $\beta/2$ where their shared theory predicts
+  one-half; the pinned label conflicts with a previously revealed diagonal
+  label inside a cell of $\Pcol$, the active set empties, and
+  \cref{ass:dissonance-trigger} governs renewed inquiry;
+  \item the pinned label disagrees with the committed column policy, so the
+  extended disagreement set is nonempty, $B_i>0$, and the zero-leverage lock
+  of \cref{cor:trap-immunity} fails;
+  \item the observed payoff has likelihood one under $d^r$ and zero under
+  $d^c$, so the reflective posterior is degenerate and the permanent warrant
+  gap of \cref{cor:permanent-gap} fails.
+\end{enumerate}
+The destroyed value $1-\beta$ at each misserved episode is itself the
+corrective signal: what demand withholds from the firms, their epistemics
+receives as evidence.
+\end{corollary}
+
+\begin{proof}
+The $\beta=1$ direction is \cref{thm:self-confirming-trap}.  Let $\beta<1$
+and let the off-diagonal state be $x_{01}$ (the case $x_{10}$ is symmetric).
+The column policies pool on action $1$ there while $d^r(x_{01})=0$, so the
+realized payoff is $\beta/2$, whereas $m^c(x_{01})=1$ predicts one-half:
+consistency fails, so the profile is not a trap.  By
+\cref{lem:demand-revelation} the label $x_{01}\mapsto0$ is pinned; it
+conflicts with the discovery label $x_{11}\mapsto1$ in the cell
+$\{x_{01},x_{11}\}$ of $\Pcol$, so the active set empties
+(\cref{prop:conflict-characterization}).  The committed policy plays $1$ at
+$x_{01}$, so the episode enters the extended disagreement set and
+$B_i\geq\tfrac12$.  Finally, under $d^c$ the pooled action at $x_{01}$ is
+correct and the predicted payoff is one-half, so the realized $\beta/2$ has
+likelihood zero, while under $d^r$ it has likelihood one; the reflective
+posterior concentrates on $d^r$.
+\end{proof}
+
+\begin{remark}[Two sources of diagnosticity]
+\label{rem:two-sources}
+At $\beta=1$, evidence arises only from strategic differentiation: theory
+heterogeneity across firms is the sole corrective force, and consensus on a
+false formulation is absorbing
+(\cref{thm:self-confirming-trap,cor:trap-immunity,cor:permanent-gap}).  For
+$\beta<1$, the demand side supplies evidence precisely when the strategy side
+pools, and \cref{prop:no-trap} shows that payoff-relevant collective error
+cannot persist.  The comparative interpretation is direct: markets with
+forgiving demand---captive customers, absent substitutes, buyers who do not
+bear the cost of misservice---require competitive variety in beliefs to
+correct false collective theories, whereas markets with strong outside
+options discipline theories even under consensus.  For the general dynamic
+model, the parameter locates two learning regimes: $\beta<1$ supplies an
+evidence stream independent of strategic heterogeneity, while $\beta=1$ makes
+all learning contingent on it.
+\end{remark}
+
+\section{Cognitional interpretation}
+
+The model's relationship to Lonergan's account of inquiry is interpretive, not
+algorithmic.  Lonergan does not supply a partition lattice, a coordinate-
+complexity criterion, or a Bayesian rule.  His distinctions instead discipline
+which formal objects should not be conflated.  The relevant distinctions among
+insight, formulation, and reflective judgment are developed in
+Lonergan~\cite[chs.~1 and 10]{Lonergan1992}; the question--insight--formulation--
+validation sequence is also developed in Ryall and
+Wilkins~\cite{RyallWilkins2018}.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}X@{}}
+\toprule
+\textbf{Cognitional operation} & \textbf{Formal counterpart} &
+\textbf{Qualification}\\
+\midrule
+Experience & Customer episodes, actions, and outcomes & Particular experience
+does not itself supply a causal predicate.\\
+Question for intelligence & In this baseline, causal dissonance makes salient
+the question of what explains the reversal & The question specifies the defect
+and requirements of an answer, not a known answer menu.\\
+Heuristic anticipation & Restoration, minimality, and projectibility & These
+are the model's analogue of heuristic anticipation: they constrain what an
+answer must accomplish without providing its semantic content.\\
+Direct insight & No direct mathematical counterpart & The model represents
+only the ensuing representational and formulational products, not the conscious
+occurrence.\\
+Representation production & New partition $\mathcal P'$ & A previously
+unavailable distinction becomes usable in theory and action.\\
+Formulation & Pair $(\mathcal P',m')$ & A distinction alone is not a causal
+explanation; a stable relation must be articulated on it.\\
+Question for reflection & Whether $m'$ holds beyond the generating cases &
+Retrospective fit is not independent confirmation.\\
+Judgment & Assessment of whether the formulation is adequately warranted &
+Fresh diagnostic evidence or a selection-adjusted likelihood supplies the
+model's implementation.\\
+Decision & Policy measurable with respect to $\mathcal P'$ & Strategic action
+determines which future experience will be diagnostic; provisional action may
+occur before judgment is complete.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+In this interpretation, the formal sequence associated with a successful
+insight is not exhausted by partition production: the available distinction
+must subsequently be expressed in a projectible causal formulation.
+Restoration is weaker than truth, so the candidate formulation
+remains subject to reflective judgment.  Agent-specific prior understanding,
+analogy, habits of comparison, and organizational routines can eventually be
+modeled as differences in heuristic accessibility or in the complexity
+ordering, but they must not become a subjective menu over semantically named
+answers before those answers are thinkable.
+
+In Lonergan's account the desire to know is unrestricted, but its deliberate
+prosecution by an economic agent is not free.  The participation layer of
+\cref{sec:inquiry-economics} separates the spontaneous emergence of a question
+(dissonance makes the defect salient without any choice) from the deliberate
+allocation of effort to pursue it (the election $\varepsilon_i$).  The former
+is a cognitive event; the latter is an economic act, and the leverage
+statistic shows that it can be priced without violating the stricture that
+pre-insight deliberation must not quantify over unformulated answers.
+
+Causal dissonance should not be identified with inverse insight.  A more
+appropriate later analogue of inverse insight would be a transition in which
+the agent grasps that another deterministic customer partition is the wrong
+kind of explanation---for example, because the relevant law is stochastic,
+strategic, or located at a different causal level.  That transition lies beyond
+the deterministic four-state model.
+
+\section{Results, limitations, and the next theoretical problem}
+
+The formal results have different roles.  The following are necessary
+scaffolding:
+\begin{enumerate}[label=(\roman*)]
+  \item private causal beliefs can induce strategically differentiated product
+  commitments;
+  \item differentiated actions reveal causal labels while pooled actions do
+  not;
+  \item fixed-space Bayesian conditioning cannot produce a new awareness
+  partition;
+  \item conflict-free cells characterize restorative refinements; and
+  \item the four-state discovery history has exactly four minimal restorative
+  refinements.
+\end{enumerate}
+
+The potentially substantive mechanisms are sharper:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{Fallibility versus exhaustiveness.}  Observationally equivalent
+  worlds preclude a uniformly correct truth-blind formulation, while a
+  representation robustly sufficient for both row and column worlds must be
+  completely fine.
+  \item \emph{Representation-relative certainty.}  A false causal formulation
+  can receive probability one under retrospective renormalization inside its
+  newly produced model space.
+  \item \emph{Path-dependent awareness.}  Firms can converge to the same true
+  causal theory and policy while retaining different awareness structures.
+  \item \emph{Endogenous diagnosticity.}  Theories determine actions, actions
+  determine which causal labels experience reveals, and revealed labels
+  determine whether theories survive.
+  \item \emph{Self-confirming causal homogeneity.}  Shared false formulations
+  can align strategies and suppress their own falsification, whereas causal
+  heterogeneity generates both learning and asymmetric value capture.
+  \item \emph{Delabeled question value.}  The subjective value of a question
+  is computable from retained episodes alone, is invariant across every
+  representation that could answer it, and tracks action separation rather
+  than residual model multiplicity.  Consequently the awareness trap is robust
+  to cheap inquiry, sustained competitive success rationally extinguishes
+  inquiry, and differentiated defeat makes the losing firm the natural
+  inquirer.
+  \item \emph{Unwarranted certainty and its invisibility.}  Retrospective fit
+  is guaranteed by restoration and hence uninformative; representation-
+  relative certainty exceeds selection-adjusted warrant by a gap that pooled
+  play preserves forever; and no firm short of complete awareness can express
+  the comparison that measures its own gap.  Question value and warrant
+  improvement share a currency: both are created by differentiated action and
+  destroyed by pooling.
+  \item \emph{Knife-edge pathologies.}  The self-confirming trap, the
+  permanent warrant gap, and the zero-leverage lock all require demand to
+  absorb misservice completely.  With any outside option, consistency and
+  subjective optimality force correct service of every recurring state; false
+  theories persist only as payoff-irrelevant neutral mislabels, and the
+  destroyed value is itself the corrective signal.  Diagnosticity has two
+  sources---strategic heterogeneity and demand-side harshness---and collective
+  error requires the absence of both.
+\end{enumerate}
+
+The example does not yet supply a complete strategy-field contribution.  In
+particular, it endogenizes only the binary participation margin of inquiry,
+not its intensity or duration; and it does not endogenize the production
+of a bridge prior, the accumulation of agent-specific heuristic accessibility,
+or the organizational and competitive conditions that make alternative
+inquiry technologies valuable.  \Cref{sec:outside-option} connects false
+awareness to value creation through the outside option, but the demand
+response itself remains exogenous; endogenizing $\beta$ through prices,
+customer search, or exit dynamics---and characterizing equilibrium in the
+anti-coordination region where no constant action is dominant---remains open.
+
+The next theoretical problem is therefore not simply to enlarge $X$.  It is to
+endogenize the representation-producing technology and its strategic
+environment while preserving the four-state model's central discipline:
+experience may direct inquiry, but neither inquiry nor Bayes may be allowed to
+select the objective truth by assumption.
+
+\section{Conclusion}
+
+The $2\times2$ environment isolates a formal boundary between learning within a
+theory space and producing a new theory space.  Strategic differentiation
+creates a causal conflict that no initially expressible theory can resolve.
+Restoration and parsimony narrow the possible responses from fifteen partitions
+to two simple factor-based candidates, but observational equivalence prevents
+the experience from selecting the true one.  A non-exhaustive inquiry
+technology must therefore be fallible.  Once a formulation is produced,
+fixed-space Bayesian assessment can resume, but representation-relative
+certainty must be separated from judgment based on adequate fresh or
+selection-adjusted evidence.  Finally, strategic action feeds back into the epistemic process:
+shared false formulations may become self-confirming by eliminating diagnostic
+variation, whereas theory heterogeneity generates both competitive rents and
+the experience required for correction.  Both sides of that contrast
+presuppose perfectly forgiving demand; with any outside option, the customer
+side supplies the discipline that pooled strategies suppress.
+
+\begin{thebibliography}{9}
+
+\bibitem{Lonergan1992}
+Lonergan, Bernard J. F. 1992.
+\newblock \emph{Insight: A Study of Human Understanding}.
+\newblock Collected Works of Bernard Lonergan, vol.~3, edited by Frederick E.
+Crowe and Robert M. Doran. Toronto: University of Toronto Press.
+
+\bibitem{RyallAction2026}
+Ryall, M. D. 2026.
+\newblock ``Mathematical Analysis of Agents $C$, $C^{+}$, and
+$C^{\mathrm{Plan}}$.''
+\newblock Unpublished manuscript, Appendix A.
+
+\bibitem{RyallWilkins2018}
+Ryall, M. D., and J. Wilkins. 2018.
+\newblock ``Insight and Social Being.''
+\newblock Preliminary manuscript.
+
+\end{thebibliography}
+
+\end{document}

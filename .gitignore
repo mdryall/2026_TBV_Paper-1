@@ -1,0 +1,23 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.dvi
+
+# Editor/OS
+*~
+.DS_Store
+
+# Local settings
+.claude/settings.local.json*

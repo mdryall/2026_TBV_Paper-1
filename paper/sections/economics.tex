@@ -1,0 +1,125 @@
+\section{The economics of inquiry}
+\label{sec:economics}
+
+Whether to prosecute a question must itself be a decision, and it must be
+priced at exactly the moment ordinary decision theory is silent: at
+dissonance the posterior is undefined (\cref{def:dissonance}), and the
+candidate answers are not represented objects (\cref{def:technology}).  This
+section shows that an honest valuation nevertheless exists: a statistic
+computed entirely from retained experience that is invariant across every
+representation successful inquiry could produce.
+
+\begin{assumption}[Costly, elective, dissonance-triggered production]
+\label{ass:elective}
+The technology $\phi_i$ operates only when agent $i$ experiences dissonance
+and elects inquiry, $\varepsilon_i=1$, at cost $\gamma_i>0$ in payoff units.
+Agent $i$ holds a delabeled success weight $\lambda_i\in(0,1]$: a subjective
+probability that an elected episode produces a usable refinement, defined on
+the event of success alone and not on the identities of possible outputs.
+On failure or abstention the committed policy is carried forward.  Awareness
+is cumulative: acquired distinctions are never lost, though theories
+formulated on them may later be rejected.
+\end{assumption}
+
+The success weight is awareness of unawareness in delabeled form---the agent
+can believe that inquiry may yield a usable distinction without being able
+to describe any candidate distinction---a construct with precedent in
+beliefs about unpredictable novelty \citep{Schipper2025,KarniViero2017}.
+
+\begin{definition}[Pinned distinctions]
+\label{def:pinned}
+Token sets in the record are \emph{mutually incoherent} if no single
+mechanism passes the test on their union.  A \emph{pinned distinction} is a
+separation of mutually incoherent token sets.  By
+\cref{prop:coherence}, every restorative refinement separates every pinned
+distinction, so the capability to condition future play on a pinned
+distinction is delivered by \emph{any} successful inquiry outcome.
+\end{definition}
+
+\begin{definition}[Retained-record leverage]
+\label{def:leverage}
+Under the \emph{subjective recurrence premise}---the agent evaluates one
+generation ahead as if its retained record recurs token for token---let
+$B_i(r_i)$ be the largest per-generation payoff improvement over the
+carried-forward policy achievable by a contingent rule that (i) is
+measurable with respect to pinned distinctions, (ii) is computable from the
+record together with the known structure $(\Theta,u_i)$, and (iii) is robust
+to every rival behavior consistent with the record.  Set $B_i=0$ when there
+is no dissonance.
+\end{definition}
+
+\begin{proposition}[Answer invariance and the participation rule]
+\label{prop:participation}
+$B_i(r_i)$ is computable from the deliberative record alone and is identical
+across all elements of $\mathcal R(\mathcal P_i,r_i)$: the agent prices the
+question without a menu of answers.  Electing inquiry has represented value
+$\lambda_iB_i(r_i)-\gamma_i$, so agent $i$ elects if and only if
+$\lambda_iB_i(r_i)\geq\gamma_i$.  Moreover, $B_i>0$ only if some pinned
+distinction changes the robustly optimal action at some recurrence:
+questions whose every admissible answer supports the current action are
+worthless at any positive cost, however much model multiplicity remains.
+\end{proposition}
+
+\begin{proof}
+Measurability with respect to pinned distinctions is deliverable by every
+restorative refinement (\cref{def:pinned}), so the maximand in
+\cref{def:leverage} does not depend on which refinement arrives; the value
+of electing is $\lambda_i$ times that common gain net of the cost, the
+extrapolated component of any full formulation being assigned no represented
+value at the election.  If no pinned distinction changes the robustly
+optimal action, every admissible contingent rule is payoff-equivalent to the
+carried-forward policy on the recurrence record, so the maximum is zero.
+\end{proof}
+
+The participation rule is a coherent non-Bayesian criterion operating
+precisely where Bayes is undefined, and its variables respect every
+discipline of \cref{sec:commitments}: the leverage quantifies over retained
+tokens and their recorded outcomes---``situations like the episodes I lost
+will recur, and whatever distinction inquiry yields would let me act on
+them''---never over candidate representations.  Two comparative properties
+follow immediately and organize the applications.  \emph{Action separation,
+not information}: the value of a question tracks whether its resolution
+could change behavior, not how much residual uncertainty it would resolve;
+a maximally uncertain agent whose every admissible repair prescribes its
+current actions rationally declines to inquire.  \emph{Rational cessation}:
+an agent whose record contains no evidence against its current actions has
+$B_i=0$, so sustained success extinguishes inquiry even though awareness
+remains incomplete.
+
+\begin{remark}[Exactness is special; opacity suppresses inquiry]
+\label{rem:transparency}
+Computing forgone payoffs from the record requires the consequence space to
+be \emph{counterfactually transparent}: rich enough that observed
+consequences, with the known mechanism family, identify what other own
+actions would have yielded.  Winner-take-all markets are transparent---the
+running example's leverage is exact---but environments whose consequences
+conceal forgone values depress $B_i$ toward zero and thereby rationally
+suppress inquiry.  How much an environment lets agents price their own
+questions is itself a dimension of its diagnosticity, alongside exposure.
+\end{remark}
+
+\begin{excont}
+At the dissonant record, both firms' committed constant policies disagree
+with exactly one revealed label (firm~1 lost at $s_{11}$, firm~2 at
+$s_{00}$).  Every restorative refinement separates the two labeled tokens,
+and implementing a token's revealed label at its recurrence gains exactly
+one-half against \emph{every} rival action: if the rival plays the winning
+architecture, the switch converts a differentiated loss ($0$) into a pooled
+half; if the rival switches, it converts a pooled half into a differentiated
+win ($1$).  Hence $B_i=\tfrac12$ for both firms---identical leverage from
+opposite experiences---and each elects inquiry if and only if
+$\lambda_i/2\geq\gamma_i$.  The valuation used no conjecture about the
+rival and no reference to which of the four admissible refinements might
+arrive.  For rational cessation and its converse, append a validation
+generation in which firm~1 has acquired the row refinement (certain of the
+true row assignment) while firm~2 has acquired the column refinement
+(certain of the false column assignment): their policies differ at the two
+off-diagonal states, firm~1 wins both, and the labels revealed there
+falsify firm~2's assignment.  Firm~1's record now agrees with its policy
+everywhere, so $B_1=0$: the firm holding the truth rationally never
+inquires again, and its awareness remains permanently incomplete.  Firm~2's
+record disagrees at two tokens, so $B_2=1$: defeat has concentrated the
+evidence, the dissonance, and the incentive in the losing firm, which
+elects whenever $\lambda_2\geq\gamma_2$ and, upon success, is driven
+stepwise to complete awareness.
+\end{excont}

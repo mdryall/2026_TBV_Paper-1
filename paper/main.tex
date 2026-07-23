@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[round,authoryear]{natbib}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\definecolor{linkblue}{HTML}{163A5F}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=linkblue,
+  urlcolor=linkblue,
+  pdftitle={Questions Before Priors: Causal Dissonance, Insight, and the
+  Origin of Strategic Theories},
+  pdfauthor={Michael D. Ryall}
+}
+
+\onehalfspacing
+
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{definition}[assumption]{Definition}
+\newtheorem{lemma}[assumption]{Lemma}
+\newtheorem{proposition}[assumption]{Proposition}
+\newtheorem{theorem}[assumption]{Theorem}
+\newtheorem{corollary}[assumption]{Corollary}
+\newtheorem{remark}[assumption]{Remark}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\newtheorem*{excont}{Example~1 (continued)}
+
+\crefname{assumption}{assumption}{assumptions}
+\Crefname{assumption}{Assumption}{Assumptions}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\crefname{example}{example}{examples}
+\Crefname{example}{Example}{Examples}
+
+\newcommand{\emptysetset}{\varnothing}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\marg}[1]{\operatorname{marg}_{#1}}
+
+\title{\textbf{Questions Before Priors:}\\
+Causal Dissonance, Insight, and the Origin of Strategic Theories\thanks{%
+Preliminary draft; comments welcome.  This paper develops the formal core of
+a research program on pre-Bayesian theory formation in strategy.}}
+\author{Michael D. Ryall}
+\date{July 2026\\[0.4em]\normalsize --- First draft ---}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+The theory-based view treats economic actors as theorists whose causal
+understandings direct search, experimentation, and action.  Existing formal
+treatments begin after the theory exists.  This paper models where strategic
+theories come from.  Agents represent their environment through awareness
+partitions of a state space; expressible causal theories assign elementary
+mechanisms to awareness cells; theories and beliefs determine committed
+policies; and the policy profile causes everyone's consequences through an
+objective causal system.  Bayesian learning operates only within the current
+language, and a misspecified posterior grows confident rather than alarmed,
+so detecting representational failure requires a distinct faculty: causal
+dissonance, the statistical rejection of every expressible theory.
+Dissonance directs inquiry without determining its output; a costly, fallible
+technology may produce a previously inexpressible distinction; and a bridge
+prior restores Bayesian competence on the expanded language.  The value of a
+question is computable before its answers are conceivable, warrant is
+distinct from post-insight confidence---the insight itself is not
+evidence---and an agent generally cannot measure its own overconfidence.
+Because theories cause actions and actions generate evidence, play converges
+to configurations in which every agent inhabits a Bayesian world; such
+configurations can preserve false theories, heterogeneous awareness, and
+permanent performance differences whenever neither strategic variety nor
+environmental harshness exposes them.
+\medskip
+
+\noindent\textbf{Keywords:} theory-based view; unawareness; insight; causal
+learning; subjective rationality; self-confirming equilibrium
+\end{abstract}
+
+\newpage
+
+\input{sections/intro}
+\input{sections/literature}
+\input{sections/model}
+\input{sections/bayesian}
+\input{sections/dissonance}
+\input{sections/inquiry}
+\input{sections/economics}
+\input{sections/pivot}
+\input{sections/dynamics}
+\input{sections/discussion}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}
