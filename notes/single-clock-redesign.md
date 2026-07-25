@@ -148,14 +148,19 @@ from unpriced inquiry:
 
 Both feed `prop:persistence`; the second is new and should be stated as such.
 
-### 4.4 Consistency between inquiry value and switching
-Inquiry only pays off if the resulting distinction actually changes behavior, which
-only happens if the induced switch clears `c_i`. So the deliberative leverage
-`\widehat B_i` (§5) must be measured **net of the switching cost** it would trigger —
-otherwise the agent could rationally pay `\gamma_i` for a distinction it will never
-act on. This is a clean tightening, not a new free parameter, and it keeps §5 honest
-without a trivial threshold proposition. **[Detail to work out in T2: whether `c_i`
-enters `\widehat B_i` per-group or once per policy change.]**
+### 4.4 Inquiry value and switching are DECOUPLED (revised July 25 — do NOT net κ)
+Earlier draft proposed netting the switching cost into `\widehat B_i`. **Rejected.**
+κ prices a switch to a policy on the *refined* partition, which is unrepresentable
+pre-insight, so the agent cannot price it when deciding to inquire (netting would
+violate modeling-commitment (i): pre-insight deliberation quantifies only over
+represented objects). Therefore:
+- **Inquiry** (pre-insight): `\lambda_i \widehat B_i \ge \gamma_i`. Prices the QUESTION —
+  the stakes of the present, mis-served record — never the answer. κ absent.
+- **Switch** (post-insight, refinement now concrete): (S,s) rule of §4.2,
+  `T\cdot\text{gain} > \kappa_i`.
+- **Decoupling = enlightened inertia** (`rem:stickiness`): inquire → learn → maybe
+  decline to switch. Unanticipatable (the agent cannot foresee what it will learn);
+  holds deterministically, NOT an opacity artifact. Value the QUESTION, not the ANSWER.
 
 ---
 
@@ -170,7 +175,7 @@ decaying in consecutive failures `k`; participation `\lambda_i^{(k)}\widehat B_i
   the running example's numbers are preserved by conditioning on the same events (see
   §8). **[Renormalization detail for T2; the old "rescale `\widehat B` and `\gamma`
   together" remark already anticipates this.]**
-- `\widehat B_i` measured net of `\kappa_i` (§4.4).
+- `\widehat B_i` is NOT net of `\kappa_i`: inquiry prices the question only (§4.4).
 - **No new headline propositions about cost thresholds.** The costs are plumbing.
 
 ---
