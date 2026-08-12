@@ -1,9 +1,14 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
-Last worked: **25 July 2026.** Everything below is committed (clean tree).
-Source of truth: **`paper/tbv_mdr_Paper01-v04.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Build: `cd paper && latexmk -pdf tbv_mdr_Paper01-v04.tex`.
-Compiles clean, **42 pp**.
+Last worked: **25 July 2026.** Everything below describes the state at that date.
+Source of truth: **`paper/tbv_mdr_GPTedit-01.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-01.pdf`**.
+Build: `cd paper && latexmk -pdf tbv_mdr_GPTedit-01.tex`.
+Compiles clean, **43 pp**.
+
+The current redraft is governed by `notes/REDRAFT_PLAN.md`. Earlier design and
+repair documents remain historical context; where the redraft plan explicitly
+reopens an issue, the redraft plan controls.
 
 ## Bottom line
 The **formal core** — setup (§3) + propositions (§4–§9) + appendix — is complete,

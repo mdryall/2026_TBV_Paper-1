@@ -10,8 +10,8 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
 
 | Path | Contents |
 |---|---|
-| `paper/` | Paper 1 manuscript as a single file: `tbv_mdr_Paper01-v01.tex` with `tbv_mdr_Paper01-v01.bib`; compiled as `tbv_mdr_Paper01-v01.pdf` |
-| `notes/` | Working formal notes: the four-state (2×2) insight model — the paper's engine — and the two-state minimal example |
+| `paper/` | Authoritative manuscript `tbv_mdr_GPTedit-01.tex`, bibliography `MDR_TBV_Paper01.bib`, and matching PDF `tbv_mdr_GPTedit-01.pdf` |
+| `notes/` | Current status in `STATUS.md`, live roadmap in `REDRAFT_PLAN.md`, and supporting formal notes |
 | `agenda/` | `Questions_Before_Priors.tex` — the research-program design memo (four-paper agenda, no-baked-in checklist, SCM architecture horizon) |
 | `literature/own-work/` | Prior Ryall papers and manuscripts feeding the agenda (SCE 2003, causal ambiguity 2009, value capture 2017, unawareness 2022, Ryall–Wilkins, action-theory Appendix A) |
 | `literature/tbv/` | TBV and unawareness literature (collect here) |
@@ -48,7 +48,7 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
    from process economics; diagnostic environments; full 2×2 mapping table.
    Fulcrum discipline observed: equilibrium subordinate to the
    dissonance → inquiry → awareness → models → Bayes chain.
-3. ✅ **First draft assembled** — `paper/main.tex` (27 pp. compiled), titled
+3. ✅ **First draft assembled** — `paper/tbv_mdr_GPTedit-01.tex` (43 pp. compiled), titled
    "Questions Before Priors: Causal Dissonance, Insight, and the Origin of
    Strategic Theories." Structure: intro (positioned on the verified gap) →
    related literature (TBV / unawareness / causal learning / subjective
@@ -58,6 +58,16 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
    (absorption sketch + example computations). The 2×2 runs as Example 1
    throughout. Next: author read-through and revision; tighten proofs; decide
    target-journal formatting (Management Science).
+
+## Current manuscript operations
+
+Read `notes/STATUS.md` and `notes/REDRAFT_PLAN.md` before substantive manuscript
+work. Build the authoritative manuscript with:
+
+```bash
+cd paper
+latexmk -pdf tbv_mdr_GPTedit-01.tex
+```
 
 ## Agenda (papers 2–4)
 
