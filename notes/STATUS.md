@@ -1,10 +1,13 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
-Last worked: **25 July 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-01.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-01.pdf`**.
-Build: `cd paper && latexmk -pdf tbv_mdr_GPTedit-01.tex`.
-Compiles clean, **43 pp**.
+Last worked: **12 August 2026.** Everything below describes the state at that date.
+Source of truth: **`paper/tbv_mdr_GPTedit-02.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-02.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-02.tex`.
+Compiles clean, **44 pp**.
+
+Current redraft stage: B1 COMPLETE; B2 has not begun and remains PENDING.
+B1 --- Evidence Process & Detection Mathematics: implementation and targeted post-implementation verification PASS.
 
 The current redraft is governed by `notes/REDRAFT_PLAN.md`. Earlier design and
 repair documents remain historical context; where the redraft plan explicitly

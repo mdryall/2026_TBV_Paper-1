@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-01.tex
+    paper/tbv_mdr_GPTedit-02.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -46,7 +46,10 @@ architecture rather than the primary headline contributions.
 
 ### B1 — Evidence Process & Detection Mathematics
 
-Status: PENDING
+Status: COMPLETE
+
+Completed 2026-08-12: mathematical audit, approved implementation, and targeted
+post-implementation verification completed --- `B1 IMPLEMENTATION: PASS`.
 
 Repair and verify:
 
