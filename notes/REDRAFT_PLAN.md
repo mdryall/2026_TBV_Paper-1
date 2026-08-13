@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-03.tex
+    paper/tbv_mdr_GPTedit-04.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -88,9 +88,10 @@ remains.
 
 ### B3 — The Value of a Question
 
-Status: PENDING
+Status: COMPLETE
 
-Not begun.
+Completed 2026-08-13: approved implementation and post-implementation review
+completed --- final result: `PASS`.
 
 Stress-test deliberative leverage B-hat.
 
