@@ -1,13 +1,17 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
-Last worked: **12 August 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-02.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-02.pdf`**.
-Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-02.tex`.
+Last worked: **13 August 2026.** Everything below describes the state at that date.
+Source of truth: **`paper/tbv_mdr_GPTedit-03.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-03.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-03.tex`.
 Compiles clean, **44 pp**.
 
-Current redraft stage: B1 COMPLETE; B2 has not begun and remains PENDING.
-B1 --- Evidence Process & Detection Mathematics: implementation and targeted post-implementation verification PASS.
+Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 PENDING / NOT BEGUN.
+B1 --- Evidence Process & Detection Mathematics: COMPLETE / PASS.
+B2 --- Formal Hygiene & Notational Architecture: COMPLETE / PASS.
+B3 --- The Value of a Question: PENDING / NOT BEGUN.
+B2 completed the formal-hygiene, notation, epistemic-status, and
+transition-initialization audit; implementation and final verification passed.
 
 The current redraft is governed by `notes/REDRAFT_PLAN.md`. Earlier design and
 repair documents remain historical context; where the redraft plan explicitly

@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-02.tex
+    paper/tbv_mdr_GPTedit-03.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -66,7 +66,12 @@ results form one mathematically consistent package.
 
 ### B2 — Formal Hygiene & Notational Architecture
 
-Status: PENDING
+Status: COMPLETE
+
+Completed 2026-08-13: manuscript-wide formal-hygiene and notation audit,
+approved implementation, targeted post-implementation verification, final
+propagation verification, and settled compilation completed --- final result:
+`PASS`.
 
 Address:
 
@@ -84,6 +89,8 @@ remains.
 ### B3 — The Value of a Question
 
 Status: PENDING
+
+Not begun.
 
 Stress-test deliberative leverage B-hat.
 
