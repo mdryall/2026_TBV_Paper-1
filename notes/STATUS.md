@@ -1,16 +1,16 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
 Last worked: **13 August 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-04.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-04.pdf`**.
-Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-04.tex`.
-Compiles clean, **46 pp**.
+Source of truth: **`paper/tbv_mdr_GPTedit-05.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-05.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-05.tex`.
+Compiles clean, **48 pp**.
 
-Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 PENDING / NOT BEGUN.
+Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 PENDING / NOT BEGUN.
 B1 --- Evidence Process & Detection Mathematics: COMPLETE / PASS.
 B2 --- Formal Hygiene & Notational Architecture: COMPLETE / PASS.
 B3 --- The Value of a Question: COMPLETE / PASS.
-B4 --- Warrant, Confidence & Insight: PENDING / NOT BEGUN.
+B4 --- Warrant, Confidence & Insight: post-implementation review PASS.
 B3 completed the approved deliberative-leverage implementation and
 post-implementation review; both passed.
 B2 completed the formal-hygiene, notation, epistemic-status, and

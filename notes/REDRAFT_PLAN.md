@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-04.tex
+    paper/tbv_mdr_GPTedit-05.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -117,7 +117,10 @@ than value already available without insight.
 
 ### B4 — Warrant, Confidence & Insight
 
-Status: PENDING
+Status: COMPLETE
+
+Completed 2026-08-13: approved implementation, formal correction, and final
+post-implementation review completed --- `B4 POST-IMPLEMENTATION REVIEW: PASS`.
 
 Align all claims with Theorem 9.2.
 
@@ -134,7 +137,7 @@ every warrant/confidence claim is exactly supported by the formal result.
 
 ### B5 — Dissonance, Questions & Scope of Generativity
 
-Status: PENDING
+Status: PENDING / NOT BEGUN
 
 Address:
 
