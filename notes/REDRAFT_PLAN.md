@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-07.tex
+    paper/tbv_mdr_GPTedit-08.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -179,7 +179,10 @@ no strategic narrative claim exceeds its mathematical support.
 
 ### B7 — Contribution Architecture / AHA Pass
 
-Status: PENDING / NOT BEGUN
+Status: COMPLETE
+
+Completed 2026-08-14: contribution-architecture/AHA revision, scope audit, and
+compilation completed --- `B7 IMPLEMENTATION: PASS`.
 
 Revise the abstract, introduction, statement of contribution, discussion, and
 conclusion so the signature findings dominate the exposition.

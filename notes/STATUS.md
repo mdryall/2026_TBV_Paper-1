@@ -1,18 +1,19 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
 Last worked: **14 August 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-07.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-07.pdf`**.
-Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-07.tex`.
-Compiles clean, **50 pp**.
+Source of truth: **`paper/tbv_mdr_GPTedit-08.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-08.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-08.tex`.
+Compiles clean, **48 pp**.
 
-Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 COMPLETE / PASS; B6 COMPLETE / PASS; B7 PENDING / NOT BEGUN.
+Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 COMPLETE / PASS; B6 COMPLETE / PASS; B7 COMPLETE / PASS; B8 PENDING.
 B1 --- Evidence Process & Detection Mathematics: COMPLETE / PASS.
 B2 --- Formal Hygiene & Notational Architecture: COMPLETE / PASS.
 B3 --- The Value of a Question: COMPLETE / PASS.
 B4 --- Warrant, Confidence & Insight: post-implementation review PASS.
 B5 --- Dissonance, Questions & Scope of Generativity: post-implementation review PASS.
 B6 --- Strategic Dynamics & Claim Audit: targeted post-implementation review PASS.
+B7 --- Contribution Architecture / AHA Pass: implementation and scope review PASS.
 B3 completed the approved deliberative-leverage implementation and
 post-implementation review; both passed.
 B2 completed the formal-hygiene, notation, epistemic-status, and
@@ -26,8 +27,8 @@ reopens an issue, the redraft plan controls.
 The **formal core** — setup (§3) + propositions (§4–§9) + appendix — is complete,
 internally consistent, independently stress-tested, and its new proofs verified.
 **It is ready for your read-through of the setup and propositions.**
-The **front matter** (abstract, §1 intro, §2 related lit, discussion) is deliberately
-**NOT yet updated** to the reworked model — that is the main outstanding task.
+The **front matter and closing sections** now foreground the paper's four signature
+findings and align their scope with the formal results.
 
 ## The model now (the setup you asked to focus on)
 - **Single clock** of periods `t=1,2,…` (generations/episodes are gone).
@@ -69,14 +70,10 @@ dynamics (absorption, SCUE, rest-points) → persistence. New this cycle:
 ## OUTSTANDING when you return
 1. **Your read-through** of the setup + propositions — the point of this cycle was to
    make them sensible and interesting; your judgment is the next input.
-2. **Front matter sync** (deferred): abstract/intro/discussion still describe one
-   persistence channel and omit enlightened inertia + capacity heterogeneity; intro's
-   "five sets of results" is now incomplete; §2 (~line 203) understates SCUE (it also
-   *relaxes* optimality to the inaction band); intro's "identical agents" headline
-   should acknowledge the two heterogeneity sources. The conceptual audit produced the
-   full itemized list — ask me to resurface it.
-3. **Optional**: spell out the enlightened-inertia persistence instance in the running
-   example (`κ>½` case gives a clean 3/4 vs 1/4 gap); sharpen the prose corpus-situating
+2. **B8 whole-manuscript integration audit**: verify mathematics, notation, the
+   running example, references, and theorem-to-narrative correspondence as one final
+   package.
+3. **Optional**: sharpen the prose corpus-situating
    (SCE / causal-ambiguity / deliberation / value-capture / Lonergan).
 
 ## Where to look
