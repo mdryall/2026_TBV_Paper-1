@@ -1,12 +1,12 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
 Last worked: **14 August 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-08.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-08.pdf`**.
-Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-08.tex`.
+Source of truth: **`paper/tbv_mdr_GPTedit-09.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-09.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-09.tex`.
 Compiles clean, **48 pp**.
 
-Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 COMPLETE / PASS; B6 COMPLETE / PASS; B7 COMPLETE / PASS; B8 PENDING.
+Current redraft stage: B1–B8 COMPLETE / PASS.
 B1 --- Evidence Process & Detection Mathematics: COMPLETE / PASS.
 B2 --- Formal Hygiene & Notational Architecture: COMPLETE / PASS.
 B3 --- The Value of a Question: COMPLETE / PASS.
@@ -14,6 +14,9 @@ B4 --- Warrant, Confidence & Insight: post-implementation review PASS.
 B5 --- Dissonance, Questions & Scope of Generativity: post-implementation review PASS.
 B6 --- Strategic Dynamics & Claim Audit: targeted post-implementation review PASS.
 B7 --- Contribution Architecture / AHA Pass: implementation and scope review PASS.
+B8 --- Whole-Manuscript Integration Audit: COMPLETE / PASS.
+B8 PASS — READY FOR FINAL PROMOTION. No acceptance-bar blockers identified.
+Redraft status: COMPLETE / CLOSED. Formal architecture: FROZEN.
 B3 completed the approved deliberative-leverage implementation and
 post-implementation review; both passed.
 B2 completed the formal-hygiene, notation, epistemic-status, and
@@ -26,7 +29,7 @@ reopens an issue, the redraft plan controls.
 ## Bottom line
 The **formal core** — setup (§3) + propositions (§4–§9) + appendix — is complete,
 internally consistent, independently stress-tested, and its new proofs verified.
-**It is ready for your read-through of the setup and propositions.**
+The B8 acceptance-bar audit passed without requiring manuscript changes.
 The **front matter and closing sections** now foreground the paper's four signature
 findings and align their scope with the formal results.
 
@@ -67,14 +70,9 @@ dynamics (absorption, SCUE, rest-points) → persistence. New this cycle:
 - Capacity heterogeneity = **modest-core** (one proposition + the two-sources remark).
 - `τ:S→Θ` two-level structure kept (the unawareness engine).
 
-## OUTSTANDING when you return
-1. **Your read-through** of the setup + propositions — the point of this cycle was to
-   make them sensible and interesting; your judgment is the next input.
-2. **B8 whole-manuscript integration audit**: verify mathematics, notation, the
-   running example, references, and theorem-to-narrative correspondence as one final
-   package.
-3. **Optional**: sharpen the prose corpus-situating
-   (SCE / causal-ambiguity / deliberation / value-capture / Lonergan).
+## Future work
+Future work, journal formatting, or submission packaging must begin as a separately
+authorized project and must not silently modify GPTedit-09.
 
 ## Where to look
 - `notes/single-clock-redesign.md` — the design spec for the overhaul (primitives,

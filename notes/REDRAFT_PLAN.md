@@ -2,12 +2,16 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-08.tex
+    paper/tbv_mdr_GPTedit-09.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
 
 ## Editorial objective
+
+Redraft plan status: COMPLETE / CLOSED.
+
+The formal architecture is frozen.
 
 Revise the manuscript without redesigning its basic architecture.
 
@@ -197,7 +201,14 @@ results directly from the front matter.
 
 ### B8 — Whole-Manuscript Integration Audit
 
-Status: PENDING
+Status: COMPLETE
+
+Completed 2026-08-14: `B8 ACCEPTANCE-BAR AUDIT: PASS`;
+`B8 PASS — READY FOR FINAL PROMOTION`; `B8 INTEGRATION: COMPLETE`.
+No B8 manuscript changes were required.
+No acceptance-bar blockers were identified.
+
+B1–B8: COMPLETE / PASS. The complete B1–B8 redraft plan is COMPLETE / CLOSED.
 
 Perform a complete final audit of:
 

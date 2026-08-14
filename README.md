@@ -10,7 +10,7 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
 
 | Path | Contents |
 |---|---|
-| `paper/` | Authoritative manuscript `tbv_mdr_GPTedit-08.tex`, bibliography `MDR_TBV_Paper01.bib`, and matching PDF `tbv_mdr_GPTedit-08.pdf` |
+| `paper/` | Authoritative manuscript `tbv_mdr_GPTedit-09.tex`, bibliography `MDR_TBV_Paper01.bib`, and matching PDF `tbv_mdr_GPTedit-09.pdf` |
 | `notes/` | Current status in `STATUS.md`, live roadmap in `REDRAFT_PLAN.md`, and supporting formal notes |
 | `agenda/` | `Questions_Before_Priors.tex` — the research-program design memo (four-paper agenda, no-baked-in checklist, SCM architecture horizon) |
 | `literature/own-work/` | Prior Ryall papers and manuscripts feeding the agenda (SCE 2003, causal ambiguity 2009, value capture 2017, unawareness 2022, Ryall–Wilkins, action-theory Appendix A) |
@@ -18,7 +18,9 @@ false theories. First paper in a multi-paper Theory-Based View agenda. Target:
 | `talks/` | Presentation decks (Utah/FAU pre-Bayesian talk, Jan 2025) |
 | `archive/` | Superseded idea documents (content consolidated into `agenda/`) |
 
-## Current plan (July 2026)
+## Redraft status
+
+The B1–B8 redraft plan is COMPLETE / CLOSED. The formal architecture is FROZEN.
 
 1. ✅ **Done** — three mechanisms drafted into the 2×2 laboratory
    (`notes/rigorous_four_state_insight_model.tex`, now 28 pp.):
@@ -66,7 +68,7 @@ work. Build the authoritative manuscript with:
 
 ```bash
 cd paper
-latexmk -pdf tbv_mdr_GPTedit-08.tex
+latexmk -pdf tbv_mdr_GPTedit-09.tex
 ```
 
 ## Agenda (papers 2–4)
