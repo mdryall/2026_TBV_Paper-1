@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-05.tex
+    paper/tbv_mdr_GPTedit-06.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -137,7 +137,10 @@ every warrant/confidence claim is exactly supported by the formal result.
 
 ### B5 — Dissonance, Questions & Scope of Generativity
 
-Status: PENDING / NOT BEGUN
+Status: COMPLETE
+
+Completed 2026-08-14: approved implementation and independent Main Branch
+post-implementation review completed --- `B5 POST-IMPLEMENTATION REVIEW: PASS`.
 
 Address:
 
@@ -153,7 +156,7 @@ claiming to derive semantic creativity itself.
 
 ### B6 — Strategic Dynamics & Claim Audit
 
-Status: PENDING
+Status: PENDING / NOT BEGUN
 
 Audit general claims concerning:
 

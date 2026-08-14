@@ -4,7 +4,7 @@
 
 The sole authoritative manuscript is:
 
-    paper/tbv_mdr_GPTedit-05.tex
+    paper/tbv_mdr_GPTedit-06.tex
 
 Its TRUTH VERSION header must agree with its filename.
 
@@ -17,7 +17,7 @@ The authoritative bibliography is:
 
 The matching compiled manuscript PDF is:
 
-    paper/tbv_mdr_GPTedit-05.pdf
+    paper/tbv_mdr_GPTedit-06.pdf
 
 A new manuscript version becomes authoritative only when the author explicitly
 promotes it. Never invent or promote a new version number autonomously.
@@ -82,7 +82,7 @@ Before editing:
 After manuscript edits:
 
     cd paper
-    latexmk -pdf tbv_mdr_GPTedit-05.tex
+    latexmk -pdf tbv_mdr_GPTedit-06.tex
 
 Do not fix substantive content merely to make compilation succeed. If an
 approved edit causes a compilation error, diagnose and report it.
