@@ -1,17 +1,18 @@
 # Where we are — TBV Paper 1 (read this first when returning)
 
 Last worked: **14 August 2026.** Everything below describes the state at that date.
-Source of truth: **`paper/tbv_mdr_GPTedit-06.tex`** (one sentence per line; bib
-`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-06.pdf`**.
-Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-06.tex`.
-Compiles clean, **48 pp**.
+Source of truth: **`paper/tbv_mdr_GPTedit-07.tex`** (one sentence per line; bib
+`MDR_TBV_Paper01.bib`). Matching PDF: **`paper/tbv_mdr_GPTedit-07.pdf`**.
+Build: `cd paper` followed by `latexmk -pdf tbv_mdr_GPTedit-07.tex`.
+Compiles clean, **50 pp**.
 
-Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 COMPLETE / PASS; B6 PENDING / NOT BEGUN.
+Current redraft stage: B1 COMPLETE / PASS; B2 COMPLETE / PASS; B3 COMPLETE / PASS; B4 COMPLETE / PASS; B5 COMPLETE / PASS; B6 COMPLETE / PASS; B7 PENDING / NOT BEGUN.
 B1 --- Evidence Process & Detection Mathematics: COMPLETE / PASS.
 B2 --- Formal Hygiene & Notational Architecture: COMPLETE / PASS.
 B3 --- The Value of a Question: COMPLETE / PASS.
 B4 --- Warrant, Confidence & Insight: post-implementation review PASS.
 B5 --- Dissonance, Questions & Scope of Generativity: post-implementation review PASS.
+B6 --- Strategic Dynamics & Claim Audit: targeted post-implementation review PASS.
 B3 completed the approved deliberative-leverage implementation and
 post-implementation review; both passed.
 B2 completed the formal-hygiene, notation, epistemic-status, and

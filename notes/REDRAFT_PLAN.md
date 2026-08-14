@@ -2,7 +2,7 @@
 
 ## Current source of truth
 
-    paper/tbv_mdr_GPTedit-06.tex
+    paper/tbv_mdr_GPTedit-07.tex
 
 This file is the sole authoritative manuscript until the author explicitly
 promotes a successor.
@@ -156,7 +156,10 @@ claiming to derive semantic creativity itself.
 
 ### B6 — Strategic Dynamics & Claim Audit
 
-Status: PENDING / NOT BEGUN
+Status: COMPLETE
+
+Completed 2026-08-14: approved implementation and targeted post-implementation
+review completed --- `B6 POST-IMPLEMENTATION REVIEW: PASS`.
 
 Audit general claims concerning:
 
@@ -176,7 +179,7 @@ no strategic narrative claim exceeds its mathematical support.
 
 ### B7 — Contribution Architecture / AHA Pass
 
-Status: PENDING
+Status: PENDING / NOT BEGUN
 
 Revise the abstract, introduction, statement of contribution, discussion, and
 conclusion so the signature findings dominate the exposition.
