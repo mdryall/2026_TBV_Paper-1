@@ -1,6 +1,6 @@
 # METRICS.md — GPTedit-10 revision working metrics
 
-Updated: 2026-08-15 (Session 1, Phase 2).
+Updated: 2026-08-15 (Session 2, Phase 3a).
 Counting method: `notes/revision_v10/wordcount.py` (saved in Session 1) — python strip of comments, LaTeX commands, and environment markers over the compiled body; main = `\begin{document}` to `\appendix`, appendix = `\appendix` to `\end{document}`; tokens containing at least one alphanumeric character count as words.
 **Method note (Session 1):** the Session 0 script was not saved and its exact numbers could not be reproduced (closest reconstruction ran ≈1,300 words below its main-text figure on identical input).
 To keep the series consistent, `wordcount.py` is now the standing method and the Phase 0/Phase 1 checkpoints below are RESTATED under it (original Session 0 figures in parentheses).
@@ -95,6 +95,37 @@ The only hit for the deleted phrases is inside Appendix D's verbatim `prop:capac
 7. **TikZ style rename:** the timeline figure's node style was named `pbox` because `step` collides with the pgf grid key.
 8. **Preamble change:** added `tikz` + `arrows.meta`, `positioning` libraries (authorized by plan §0.5).
 
+## After Phase 3a (Session 2: abstract + Introduction + §2 placeholder)
+
+| Quantity | Value | Target (-10) |
+|---|---|---|
+| Compiled pages | 53 | ≈34–38 (shrinks in Phases 3c–3g) |
+| Main-text words | 16,162 | ≤13,500 |
+| Appendix words | 5,125 (unchanged) | ≈6,500 |
+| Abstract words | 186 | ≤190 ✓ |
+| Introduction words (excl. figure block) | 1,490 | ≤2,200 ✓ |
+| Main-text formal results / def+ass / remarks | 9 / 18 / 0 | unchanged |
+| Figures / tables in main text | 3 / 2 | unchanged |
+
+Compile: `latexmk -pdf` clean; no warnings, no undefined references, no overfull boxes.
+`paper/tbv_mdr_GPTedit-09.tex` untouched.
+Main-text delta +315 words vs Phase 2: the rewritten introduction is longer than the old dense one (the old intro ran ≈1,200 words under this method); this is the plan §2 funded expansion — net shrinkage comes from the Phase 3c–3g section rewrites.
+
+### Changes (Session 2)
+
+- Abstract replaced with the plan §6 text verbatim, one sentence per line (186 words; only coined term: causal dissonance).
+- Introduction fully rewritten to the plan §5 paragraph architecture: ¶1 question + concrete hook; ¶2 TBV state of play + the FGZ-flagged open problem; ¶3 Bayesian boundary in words with the Ortoleva/Berk/Esponda–Pouzo positioning footnote; ¶4 the chain (references `fig:chain`, which was preserved byte-identically and now floats after ¶4) + example introduction; ¶¶5–8 the four findings in strategy language with example numbers (15/11/4 partitions and the coin flip; leverage = ½ and the 0-vs-½ winner/loser asymmetry; the +½ warrant gap; the β=1 trap at ½ each, ¾–¼ persistence, dissonant stasis, enlightened inertia); ¶9 contribution + the two authorized scope sentences (semantic act primitive; fixed Θ / companion work); ¶10 two-sentence roadmap.
+- Four-findings skeleton retained; all prose replaced; voice per R9 (impersonal for facts, "I" appears in the abstract).
+- New empty `\section{The problem in miniature}` (`sec:miniature`) with `% TODO` placeholder comments; Related literature renumbers 2→3, Model 3→4, etc.; all cross-references are `\cref`-generated and shifted automatically.
+- Skip-test residue: `notes/revision_v10/skiptest_intro.md`.
+
+### Notes / reported items (Session 2)
+
+9. **Section renumbering:** the placeholder §2 shifts every later section number up by one (Model is now §4, matching the plan's target architecture); Session 1's METRICS references to "§3.x" locations now render as "§4.x".
+10. **The empty §2 heading renders with no body** until Session 3B integrates the author's draft; deliberate per the runbook.
+11. **Roadmap sentence spans multiple cross-references** (R5 mid-sentence-chain exception for roadmaps, as in the plan's own ¶10 spec).
+12. **Intro is 710 words under its ceiling.** The plan treats budgets as ceilings; the four-findings paragraphs carry all required numbers. Room remains if the author wants a longer hook or thicker positioning.
+
 ## Label map (old → new)
 
 No label was renamed or deleted. Locations and rendered numbers changed as follows.
@@ -138,4 +169,7 @@ None so far.
 
 ## VERIFY-CITE flags
 
-None so far.
+Two, both in the introduction's Bayesian-boundary footnote (Session 2), cited as plain text pending Phase 5 bib work:
+
+1. Esponda & Pouzo (2016), Econometrica, Berk–Nash equilibrium — add to bib, convert to `\citep`.
+2. Ortoleva (2012), AER, hypothesis-testing model of paradigm change — add to bib, convert to `\citep`.
