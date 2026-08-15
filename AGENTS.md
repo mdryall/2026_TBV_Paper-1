@@ -109,3 +109,16 @@ Tool-specific permission files remain tool-specific.
 
 Do not copy Claude permission syntax from `.claude/` into `AGENTS.md`.
 Do not alter `.claude/settings.local.json` unless explicitly requested.
+
+## Active project: GPTedit-10 revision (expository restructuring)
+Directive: notes/REVISION_PLAN_v10.md + notes/REVISION_RUNBOOK_v10.md. Read both in full before any edit.
+Working file: paper/tbv_mdr_GPTedit-10.tex (created in Phase 0 as a copy of -09).
+paper/tbv_mdr_GPTedit-09.tex is READ-ONLY for this project. It remains the sole authoritative manuscript.
+Promotion of -10 to authoritative is an author act only. Agents never promote.
+The frozen-architecture list in REVISION_PLAN_v10.md §1 is binding. Conflicts resolve in favor of the frozen
+decision, flagged with % MDR-DECISION: comments — never resolved silently.
+Mathematical content of retained statements is unchanged; approved structural changes are those listed in the plan.
+One new formal item exists (winner/loser proposition); it is approval-gated per the runbook.
+Commits only on explicit author instruction at session boundaries. Never push. Never promote.
+One sentence per line, all prose, always.
+Journal formatting / submission packaging remain out of scope (separately authorized project).

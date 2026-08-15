@@ -80,3 +80,8 @@ authorized project and must not silently modify GPTedit-09.
 - `notes/formal-core-plan.md` — the 5-phase plan (Phases 1–3 executed).
 - `git log --oneline b28f3c9~1..HEAD` — the formal-core work, one commit per phase.
 - Auto-memory (`paper1-revision-state.md`) carries the same state for the assistant.
+
+## 2026-08-15 GPTedit-10 revision project OPEN
+Directive: notes/REVISION_PLAN_v10.md; execution per notes/REVISION_RUNBOOK_v10.md.
+Scope: expository restructuring only. B1–B8 remains CLOSED; the formal architecture remains FROZEN.
+Authoritative manuscript remains paper/tbv_mdr_GPTedit-09.tex until explicit author promotion.
