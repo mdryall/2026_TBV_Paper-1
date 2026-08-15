@@ -13,6 +13,8 @@
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs,tabularx,array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{enumitem}
 \usepackage{setspace}
 \usepackage{xcolor}
@@ -113,28 +115,38 @@ Bayesian judgment evaluates theories expressible in the current language, while 
 Calling the latter event causal dissonance prevents posterior confidence in the best available misspecified theory from being mistaken for evidence that the language itself is adequate.
 
 This paper models that transition, embedded in strategic interaction.
-Its organizing object is the chain
-\begin{align*}
-	\text{theory}
-	\longrightarrow
-	\text{Bayesian judgment}
-	\longrightarrow
-	\text{action}
-	\longrightarrow
-	\text{experience}
-	\longrightarrow
-	\text{dissonance}
-	\longrightarrow\\
-	\text{inquiry}
-	\longrightarrow
-	\text{refined awareness}
-	\longrightarrow
-	\text{new models}
-	\longrightarrow
-	\text{theory}
-	\longrightarrow \cdots
-\end{align*}
+Its organizing object is the chain displayed in \cref{fig:chain}.
 This is the process by which an agent whose representation has become untenable regains the capacity to be Bayesian.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  stage/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=7mm},
+  arr/.style={-{Stealth[length=2mm]}, semithick},
+  node distance=5mm and 6mm
+]
+\node[stage] (theory) {theory};
+\node[stage, right=of theory] (judgment) {Bayesian\\judgment};
+\node[stage, right=of judgment] (action) {action};
+\node[stage, right=of action] (experience) {experience};
+\node[stage, right=of experience] (dissonance) {dissonance};
+\node[stage, below=9mm of dissonance] (inquiry) {inquiry};
+\node[stage, left=of inquiry] (awareness) {refined\\awareness};
+\node[stage, left=of awareness] (models) {new models};
+\draw[arr] (theory) -- (judgment);
+\draw[arr] (judgment) -- (action);
+\draw[arr] (action) -- (experience);
+\draw[arr] (experience) -- (dissonance);
+\draw[arr] (dissonance) -- (inquiry);
+\draw[arr] (inquiry) -- (awareness);
+\draw[arr] (awareness) -- (models);
+\draw[arr] (models.west) -| (theory.south);
+\end{tikzpicture}
+\caption{The organizing chain.
+A theory supports Bayesian judgment and action; experience can defeat every expressible theory, producing causal dissonance; costly inquiry may refine awareness; formulation on the refined language yields new models and a new theory, and Bayesian judgment resumes.}
+\label{fig:chain}
+\end{figure}
 The back end follows subjective rationality \citep{KalaiLehrer1993b,Ryall2003}: agents combine theories, beliefs, and conjectures to choose standing policies whose interaction causes observed consequences.
 The front end makes their awareness partitions endogenous.
 Theories assign elementary mechanisms to awareness cells, each cell implicitly claiming that its pooled states are causally alike.
@@ -283,6 +295,11 @@ First, theories, defined next, are interventional objects: they make predictions
 Second, on-path data constrain $\tau(s)(a)$ only at visited state--profile pairs, so observationally equivalent systems with different counterfactual content are generic; that is the engine of the identification results.
 Third, the on-path distribution of consequences given an agent's category of states is a \emph{selection} object---it mixes mechanisms according to which states co-occur with which play---and must never be conflated with any mechanism's own conditional.
 
+\paragraph{The Calibration Convention.}
+\label{conv:calibration}
+Throughout, the \emph{exact calibration} means deterministic mechanisms with adequacy tolerance $\eta=0$ and finite-sample slack $w\equiv0$ (the test calibration of \cref{def:test}), in which tests reject at the first impossible observation and false alarms are zero; the running example uses it.
+All definitions are stated once for the general stochastic case; the exact calibration is the special case, and I flag the two places where it changes a conclusion: every dissonant record is repairable under the exact calibration but not in general (\cref{rem:irreparable}), and the dissonance capacity $b_i$ affects neither detection nor false alarms under the exact calibration (\cref{prop:capacity}).
+
 \subsection{Awareness, theories, and conjectures}
 \label{sec:awareness-sub}
 
@@ -303,9 +320,6 @@ An awareness cell is thus an implicit causal claim: the states it pools are alik
 An expressible theory makes the claim explicit by naming the mechanism.
 Restricting theories to \emph{single} mechanism assignments---rather than arbitrary conditional distributions per cell---is substantive and deliberate.
 If any distribution were expressible, any within-cell mixture would be too, and no experience could reject the class: coarseness alone cannot produce a detectable failure in a saturated model space.
-The mechanism vocabulary $\Theta$ is known to all agents from the outset; what an agent may lack is the \emph{distinction} that separates states carrying different mechanisms.
-Everything the paper formalizes as the representational product of insight is the production of such a distinction.
-Expansion of the mechanism vocabulary itself is a deeper dimension of awareness growth deliberately left outside this paper.
 
 Agent $i$ holds a belief $\mu_i\in\Delta(M(\mathcal P_i))$ over $M(\mathcal P_i)$---formally, the acting tier of a two-tier belief specified in \cref{sec:dissonance}---and a conjecture $q_i:\mathcal P_i\to\Delta(A_{-i})$ about rival play that conditions on $\mathcal P_i$-cells.
 Theories and conjectures are different kinds of objects and are deliberately separated: a theory is a causal claim about the objective system; a conjecture is a strategic claim about what other agents will do.
@@ -328,11 +342,6 @@ Before acquisition neither belief nor action can condition on that distinction.
 This capacity is a modeling idealization: it treats the retained particular as re-describable under any predicate the agent comes to possess, while denying the agent any pre-insight access to the predicate itself.
 \end{assumption}
 
-Retention without recodability-in-advance is the minimal separation between experiencing a particular and possessing a projectible concept for it: the agent can remember ``customers like that one'' without commanding a predicate that distinguishes them, and the technology of \cref{sec:inquiry} operates on exactly this material.
-The idealization has a cost worth naming: recoding is treated as total and infallible once the predicate is held, whereas real reclassification of remembered particulars is partial and error-prone; \cref{sec:pivot} isolates where this matters.
-Observability of the full action profile keeps the separation of causal from strategic error clean; a variant folding components of $a$ into $x_i$ changes bookkeeping only.
-The start-of-period perception of the current cell is what lets a cell-contingent policy be implemented; the state $s$ itself is never perceived.
-
 \begin{assumption}[Standing policy, subjective optimality, and costly switching]
 \label{ass:commitment}
 Agent $i$ carries a \emph{standing policy} $\sigma_i:\mathcal P_i\to A_i$ from one period to the next.
@@ -341,12 +350,9 @@ Given its current acting belief $\mu_i$ and conjecture $q_i$, the \emph{belief-o
 \sigma_i^{\star}(C)\in\arg\max_{a_i\in A_i}
 \sum_{m\in M(\mathcal P_i)}\mu_i(m)
 \sum_{a_{-i}\in A_{-i}}q_i(a_{-i}\mid C)\,
-\mathbb E_{x\sim m(C)(a_i,a_{-i})}\!\left[\pi_i(x_i)\right],
+\mathbb E_{x\sim m(C)(a_i,a_{-i})}\!\left[\pi_i(x_i)\right].
 \label{eq:subjective-optimality}
 \end{equation}
-For every cell \(C\) of its current awareness partition, agent \(i\) knows the induced cell probability \(\rho(C)\).
-When a refinement is acquired, the probabilities of the newly representable cells become available with that refinement.
-This does not give the agent access to the decomposition of a current cell into states or distinctions it does not yet represent.
 The associated subjective per-period value is
 \begin{equation}
 U_i(\sigma\mid\mu_i,q_i)=\sum_{C\in\mathcal P_i}\rho(C)\sum_{m\in M(\mathcal P_i)}\mu_i(m)\sum_{a_{-i}\in A_{-i}}q_i(a_{-i}\mid C)\,\mathbb E_{x\sim m(C)(\sigma(C),a_{-i})}\!\left[\pi_i(x_i)\right],
@@ -365,6 +371,79 @@ When dissonance (\cref{sec:dissonance}) leaves $\mu_i$ undefined, $\sigma_i^{\st
 
 Policy inertia is thus an outcome, not an assumption: a standing policy persists until the belief-optimal action moves far enough to clear the switching hurdle $\kappa_i$, or until the language itself breaks down and must be repaired (\cref{sec:dissonance}).
 How long play stays fixed is therefore governed by agent-level parameters---the switching hurdle here, and the tolerance for misfit introduced with the test of \cref{sec:dissonance}---rather than fixed by assumption.
+\Cref{fig:timeline} displays the period timeline.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  pbox/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=8mm},
+  cbox/.style={pbox, densely dashed},
+  arr/.style={-{Stealth[length=2mm]}, semithick},
+  node distance=5mm and 6mm
+]
+\node[pbox] (perceive) {perceive cell\\$C_{\mathcal P_i}(s)$};
+\node[pbox, right=of perceive] (act) {act via standing\\policy $\sigma_i$};
+\node[pbox, right=of act] (observe) {observe\\$(a,x_i)$};
+\node[pbox, right=of observe] (update) {update belief;\\run sequential test};
+\node[cbox, below=8mm of update] (dissonance) {dissonance?\\(active set empty)};
+\node[cbox, left=of dissonance] (elect) {elect inquiry?\\($\lambda_i^{(k_i)}\widehat B_i\ge\gamma_i$)};
+\node[cbox, left=of elect] (refine) {refine, formulate,\\bridge prior?};
+\node[cbox, left=of refine] (switch) {switch policy?\\(gain $>\kappa_i$)};
+\draw[arr] (perceive) -- (act);
+\draw[arr] (act) -- (observe);
+\draw[arr] (observe) -- (update);
+\draw[arr] (update) -- (dissonance);
+\draw[arr] (dissonance) -- (elect);
+\draw[arr] (elect) -- (refine);
+\draw[arr] (refine) -- (switch);
+\draw[arr] (switch.west) -- ++(-8mm,0) node[left] {$t+1$};
+\end{tikzpicture}
+\caption{The period timeline.
+Solid steps occur every period: the agent perceives its current awareness cell, acts through its standing policy, observes the realized action profile and its own consequence, and updates its beliefs and sequential test (\cref{ass:observation,ass:commitment,def:test}).
+Dashed steps are contingent: dissonance occurs only if the active set empties (\cref{def:dissonance}); a dissonant agent elects inquiry only if $\lambda_i^{(k_i)}\widehat B_i\ge\gamma_i$ (\cref{prop:participation}); a successful election refines awareness, and formulation with a bridge prior restores judgment (\cref{sec:pivot}); a policy switch occurs only when the horizon-$T$ gain clears the hurdle $\kappa_i$ (\cref{ass:commitment}).}
+\label{fig:timeline}
+\end{figure}
+
+\subsection{What agents know and don't know}
+\label{sec:epistemics}
+
+The start-of-period perception of the current cell is what lets a cell-contingent policy be implemented; the state $s$ itself is never perceived.
+Observability of the full action profile keeps the separation of causal from strategic error clean; a variant folding components of $a$ into $x_i$ changes bookkeeping only.
+Retention without recodability-in-advance is the minimal separation between experiencing a particular and possessing a projectible concept for it: the agent can remember ``customers like that one'' without commanding a predicate that distinguishes them, and the technology of \cref{sec:inquiry} operates on exactly this material.
+The idealization has a cost worth naming: recoding is treated as total and infallible once the predicate is held, whereas real reclassification of remembered particulars is partial and error-prone; \cref{sec:pivot} isolates where this matters.
+The mechanism vocabulary $\Theta$ is known to all agents from the outset; what an agent may lack is the \emph{distinction} that separates states carrying different mechanisms.
+Everything the paper formalizes as the representational product of insight is the production of such a distinction.
+For every cell \(C\) of its current awareness partition, agent \(i\) knows the induced cell probability \(\rho(C)\).
+When a refinement is acquired, the probabilities of the newly representable cells become available with that refinement.
+This does not give the agent access to the decomposition of a current cell into states or distinctions it does not yet represent.
+\Cref{tab:ledger} collects the epistemic specification in one place; the defining statements are referenced in its final column.
+
+\begin{table}[t]
+\centering
+\caption{The epistemic ledger: what agent $i$ knows, observes, and never accesses.}
+\label{tab:ledger}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}Xl@{}}
+\toprule
+Object & Agent $i$'s access & Reference\\
+\midrule
+State $s$ & never perceived, at the time or in retrospect & \cref{ass:observation}\\
+Own awareness cell $C_{\mathcal P_i}(s)$ & perceived at the start of each period & \cref{ass:observation}\\
+Realized action profile $a$ & observed at the end of each period, including rivals' actions & \cref{ass:observation}\\
+Own consequence $x_i$ & observed at the end of each period & \cref{ass:observation}\\
+Rivals' consequences $x_{-i}$ & never observed & \cref{ass:observation}\\
+Mechanism vocabulary $\Theta$ & known to all agents from the outset & \cref{def:mechanisms}\\
+Objective assignment $\tau$ & never accessed; theories are cell-constant conjectures about it & \cref{def:mechanisms,def:awareness}\\
+Cell probabilities $\rho(C)$ & known on current cells; the within-cell decomposition is not represented & \cref{eq:subjective-value}\\
+Deliberative record $r_i$ & retained; the only record deliberation may use & \cref{ass:observation}\\
+Analyst record $\bar r_i$ (state labels) & never accessed by deliberation; consumed only by the technology & \cref{ass:observation,def:technology}\\
+Recoding under a refinement & total and infallible once the refinement is acquired; unavailable before & \cref{ass:observation}\\
+Test calibration $(\eta,w,\bar n)$, capacity $b_i$ & the agent's own; operated by the agent & \cref{def:test}\\
+Rivals' partitions, beliefs, policies & never accessed; rival play enters only through the empirical conjecture $q_i$ & \cref{sec:awareness-sub}\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{On-path conditionals}
 
@@ -380,7 +459,7 @@ p_i^{*}(\cdot\mid C,a)
 This is the selection object flagged above: rivals with finer partitions condition on distinctions agent $i$ cannot see, so the within-cell state mixture can vary with the profile.
 It is precisely this dependence---differentiated play by others inside one's own categories---that generates the contrasts on which the diagnostic apparatus feeds.
 
-\subsection{Modeling commitments}
+\subsection{Scope and modeling commitments}
 \label{sec:commitments}
 
 Five disciplines govern everything that follows; they are what distinguish a model of unawareness from a model of inattention or model selection.
@@ -390,12 +469,14 @@ Five disciplines govern everything that follows; they are what distinguish a mod
 (iv)~All valuations attached to inquiry are subjective, coarse, and possibly wrong; no objective payoff information leaks from behind the awareness frontier.
 (v)~Evidence that generates a candidate representation is separated, in the formal accounting, from evidence that warrants it.
 
+Expansion of the mechanism vocabulary itself is a deeper dimension of awareness growth deliberately left outside this paper.
+
 \subsection{The running example}
 
 \begin{example}[A four-state laboratory]
 \label{ex:setup}
 Two firms serve a unit market.
-States are customer configurations $S=\{s_{00},s_{01},s_{10},s_{11}\}$, displayed as a $2\times2$ array with row coordinate $r$ and column coordinate $c$; $\rho$ is uniform.
+States are customer configurations $S=\{s_{00},s_{01},s_{10},s_{11}\}$, displayed as a $2\times2$ array with row coordinate $r$ and column coordinate $c$ (\cref{fig:example-array}); $\rho$ is uniform.
 Actions are product architectures $A_i=\{0,1\}$.
 The mechanism vocabulary is $\Theta=\{\theta^0,\theta^1,\theta^n\}$, with a demand parameter $\beta\in[0,1]$: under $\theta^a$ (``architecture $a$ is preferred''), if the firms differentiate, the firm offering $a$ receives payoff $1$ and its rival $0$; if they pool on $a$, each receives $\tfrac12$; if they pool on the other architecture, each receives $\beta/2$, the customer withholding $1-\beta$ of the unit value.
 Under $\theta^n$ (``architecture is neutral''), each firm receives $\tfrac12$ regardless.
@@ -403,8 +484,75 @@ A consequence $x_i$ is the pair (own payoff, observed action profile).
 The objective assignment is the \emph{row law} $\tau(s_{rc})=\theta^{r}$: the row coordinate is causally relevant, the column coordinate is not.
 Both firms begin with the coarse partition $\mathcal P_i^0=\{S\}$, under which the expressible theories are the three constant assignments; the row law is not among them, because it is not constant on $S$.
 The baseline sets $\beta=1$ (deterministic winner-take-all with market splitting); $\beta<1$ returns in \cref{sec:dynamics}.
-All mechanisms here are deterministic, so every test below operates in its exact, zero-tolerance instance; nothing in the general development relies on that.
+All mechanisms here are deterministic, so the example runs in the exact calibration of the Calibration Convention (\cref{conv:calibration}); nothing in the general development relies on that.
 \end{example}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\small]
+\begin{scope}
+\fill[gray!15] (0,0) rectangle (2.4,1.2);
+\draw[gray!60] (0,1.2) -- (2.4,1.2);
+\draw[gray!60] (1.2,0) -- (1.2,2.4);
+\draw (0,0) rectangle (2.4,2.4);
+\node at (0.6,1.8) {$s_{00}$};
+\node at (1.8,1.8) {$s_{01}$};
+\node at (0.6,0.6) {$s_{10}$};
+\node at (1.8,0.6) {$s_{11}$};
+\node[anchor=west] at (2.5,1.8) {$\theta^{0}$};
+\node[anchor=west] at (2.5,0.6) {$\theta^{1}$};
+\node[anchor=south, align=center] at (1.2,2.5) {the row law\\$\tau(s_{rc})=\theta^{r}$};
+\end{scope}
+\begin{scope}[xshift=4.6cm]
+\draw[gray!60] (0,0.6) -- (1.2,0.6);
+\draw[gray!60] (0.6,0) -- (0.6,1.2);
+\draw (0,0) rectangle (1.2,1.2);
+\draw[line width=1pt] (0,0.6) -- (1.2,0.6);
+\node[font=\scriptsize] at (0.3,0.9) {$s_{00}$};
+\node[font=\scriptsize] at (0.9,0.9) {$s_{01}$};
+\node[font=\scriptsize] at (0.3,0.3) {$s_{10}$};
+\node[font=\scriptsize] at (0.9,0.3) {$s_{11}$};
+\node[anchor=north] at (0.6,-0.15) {rows};
+\end{scope}
+\begin{scope}[xshift=6.6cm]
+\draw[gray!60] (0,0.6) -- (1.2,0.6);
+\draw[gray!60] (0.6,0) -- (0.6,1.2);
+\draw (0,0) rectangle (1.2,1.2);
+\draw[line width=1pt] (0.6,0) -- (0.6,1.2);
+\node[font=\scriptsize] at (0.3,0.9) {$s_{00}$};
+\node[font=\scriptsize] at (0.9,0.9) {$s_{01}$};
+\node[font=\scriptsize] at (0.3,0.3) {$s_{10}$};
+\node[font=\scriptsize] at (0.9,0.3) {$s_{11}$};
+\node[anchor=north] at (0.6,-0.15) {columns};
+\end{scope}
+\begin{scope}[xshift=8.6cm]
+\draw[gray!60] (0,0.6) -- (1.2,0.6);
+\draw[gray!60] (0.6,0) -- (0.6,1.2);
+\draw (0,0) rectangle (1.2,1.2);
+\draw[line width=1pt] (0,0.6) -- (0.6,0.6) -- (0.6,1.2);
+\node[font=\scriptsize] at (0.3,0.9) {$s_{00}$};
+\node[font=\scriptsize] at (0.9,0.9) {$s_{01}$};
+\node[font=\scriptsize] at (0.3,0.3) {$s_{10}$};
+\node[font=\scriptsize] at (0.9,0.3) {$s_{11}$};
+\node[anchor=north] at (0.6,-0.15) {isolate $s_{00}$};
+\end{scope}
+\begin{scope}[xshift=10.6cm]
+\draw[gray!60] (0,0.6) -- (1.2,0.6);
+\draw[gray!60] (0.6,0) -- (0.6,1.2);
+\draw (0,0) rectangle (1.2,1.2);
+\draw[line width=1pt] (0.6,0) -- (0.6,0.6) -- (1.2,0.6);
+\node[font=\scriptsize] at (0.3,0.9) {$s_{00}$};
+\node[font=\scriptsize] at (0.9,0.9) {$s_{01}$};
+\node[font=\scriptsize] at (0.3,0.3) {$s_{10}$};
+\node[font=\scriptsize] at (0.9,0.3) {$s_{11}$};
+\node[anchor=north] at (0.6,-0.15) {isolate $s_{11}$};
+\end{scope}
+\end{tikzpicture}
+\caption{The four-state laboratory.
+Left: states $s_{rc}$ with the row law $\tau(s_{rc})=\theta^{r}$---the row coordinate is causally relevant, the column coordinate is not (\cref{ex:setup}).
+Right: once the discovery record labels $s_{00}$ and $s_{11}$, exactly four minimal repairs separate them (thick boundaries): the row partition, the column partition, and the two partitions isolating one labeled state (\cref{sec:inquiry}).}
+\label{fig:example-array}
+\end{figure}
 \section{Bayesian competence and its boundary}
 \label{sec:bayesian}
 
@@ -451,7 +599,6 @@ Theory $m$ is \emph{adequate} at a visited pair $(C,a)$ when $\TV\!\left(p_i^{*}
 The agent monitors adequacy \emph{sequentially}, period by period.
 For each theory admitted when the current language is initialized, it maintains a nonnegative \emph{evidence process} $E_i^{m}$, initialized at $1$ with that language; under adequacy, $E_i^{m}$ is a nonnegative supermartingale, while at a recurrent pair where $m$ is strictly inadequate the construction in \cref{app:eprocess} contains a fixed betting component with strictly positive expected log-growth.
 Because the total evidence process assigns that component positive weight, $E_i^{m}$ diverges almost surely under recurrent strict inadequacy.
-(The exact deterministic case $\eta=0$ instead uses the separate zero-likelihood detector of \cref{app:eprocess}: a theory is rejected at the first realized consequence to which it assigns probability zero.)
 Agent $i$ carries a \emph{dissonance capacity} $b_i>0$ and \emph{rejects} $m$, permanently, at the first period in which $\log E_i^{m}\ge b_i$.
 The \emph{active set} $\widehat M_i(\mathcal P_i,r_i)$ contains the theories admitted when the current language was initialized that have not subsequently been rejected by the sequential test.
 On the initial language all theories in $M(\mathcal P_i)$ are admitted and each begins with $E_i^m=1$; after a refinement, admission is determined by the initial repair screen described in the judged-updating paragraph below.
@@ -469,8 +616,7 @@ The repair test of \cref{sec:inquiry} imposes this at every pair with $n_i(C,a)>
 Sequential testing is consistent: a theory strictly inadequate at a recurrent pair is almost surely rejected, an adequate theory is falsely rejected with conditional probability at most $E_i^m(t_0)e^{-b_i}$, and the active set is monotone and eventually constant; the formal statement and proof are \cref{lem:test-consistency} in \cref{app:deferred}.
 
 The inherited-value term matters: a theory adequate under the current profile may carry evidence from an earlier regime, so the active set and its future false-rejection bound track the whole retained process, not current play alone.
-The deterministic case uses the separate exact detector of \cref{app:eprocess}: when $\eta=0$, an inadequate theory is rejected at the first diagnostic consequence to which it assigns probability zero, while an adequate theory is never falsely rejected.
-Capacity $b_i$ plays no role in this detector and false alarms are zero.
+Under the exact calibration the separate zero-likelihood detector of \cref{app:eprocess} applies and capacity $b_i$ plays no role (\cref{conv:calibration}).
 
 \begin{assumption}[Full-support marginals, stochastic case]
 \label{ass:full-support}
@@ -589,7 +735,7 @@ The repair test deliberately applies to every nonempty recoded cell--profile pai
 The count floor $\bar n$ is not part of the repair test; it applies only to the deliberative grouping test of \cref{sec:economics}.
 Every nonempty recoded fragment remains subject to \cref{eq:repair-test}, while the larger finite-sample slack $w(n)$ at small $n$ preserves the intended caution about sparse evidence.
 Refinement can therefore reconcile observations but cannot delete their constraints.
-In the exact deterministic case $\eta=0$ and $w\equiv0$, the repair test is exact consistency at every observed pair.
+Under the exact calibration the repair test is exact consistency at every observed pair (\cref{conv:calibration}).
 
 Restoration factorizes cell by cell, so finding a repair is a coloring problem; the formal statement and proof are \cref{prop:coherence} in \cref{app:deferred}.
 
@@ -688,7 +834,7 @@ Sufficiency for $\tau'$ is refinement of $\mathcal P^{\tau'}$ (\cref{def:awarene
 
 \begin{excont}
 After discovery, the record contains two labeled observations: architecture $0$ objectively preferred at $s_{00}$, architecture $1$ at $s_{11}$.
-Of the fifteen partitions of four states, exactly four are minimally restorative---each must separate $s_{00}$ from $s_{11}$: the row partition $\{\{s_{00},s_{01}\},\{s_{10},s_{11}\}\}$, the column partition $\{\{s_{00},s_{10}\},\{s_{01},s_{11}\}\}$, and the two partitions isolating one labeled state.
+Of the fifteen partitions of four states, exactly four are minimally restorative---each must separate $s_{00}$ from $s_{11}$: the row partition $\{\{s_{00},s_{01}\},\{s_{10},s_{11}\}\}$, the column partition $\{\{s_{00},s_{10}\},\{s_{01},s_{11}\}\}$, and the two partitions isolating one labeled state (\cref{fig:example-array}).
 The record directs inquiry (eleven partitions are excluded) without determining it (four remain).
 A natural complexity ordering counts the coordinates needed to describe a refinement: rows and columns are one-coordinate distinctions, the isolating partitions require two.
 A factor-seeking technology thus produces the row or the column refinement---and here direction runs out.
@@ -1046,6 +1192,26 @@ Its standing policy is carried forward with a standing anomaly.
 A population profile is \emph{absorbing} if every agent is, from some period on, either in a SCUE role (never dissonant) or in dissonant stasis.
 \end{definition}
 
+\Cref{tab:terminal} collects the taxonomy of terminal conditions developed in this section, including the enlightened inertia of \cref{rem:stickiness}.
+
+\begin{table}[t]
+\centering
+\caption{Taxonomy of terminal conditions: how questions die.}
+\label{tab:terminal}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Terminal condition & What survives & Why inquiry died & Payoff consequence & Example instance\\
+\midrule
+SCUE (\cref{def:scue}) & a represented model class adequate on path, with acting beliefs on it & answered, or never priced: $\lambda_i^{(k_i)}\widehat B_i<\gamma_i$, in particular $\widehat B_i=0$ & can be first-best, or carry concealed payoff-relevant error & the $\beta=1$ trap: both firms certain of the false column law, each earning $\tfrac12$ forever\\
+\addlinespace
+Dissonant stasis (\cref{def:stasis}) & no admitted theory; the standing policy carries a standing anomaly & unpriced ($\widehat B_i=0$), abandoned ($\lambda_i^{(k)}$ decayed), or unanswerable (irreparable record) & permanent disadvantage possible & at $\beta<1$: the coarse firm earns $\tfrac14$ against its refined rival's $\tfrac34$, permanently\\
+\addlinespace
+Enlightened inertia (\cref{rem:stickiness}) & a refined language and an improved model, learned but not acted on & answered, but the recommended switch is unpriced: horizon-$T$ gain $\le\kappa_i$ & the agent forgoes the improvement its rival captures & $\kappa_i\ge\tfrac12$ after acquiring the row law: the firm knows it and holds its old policy\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \paragraph{A represented model class, restored endogenously.}
 \label{rem:grain}
 Rational-learning convergence traditionally requires a grain of truth: the environment is absolutely continuous with respect to beliefs \citep{KalaiLehrer1993a}.
@@ -1059,13 +1225,12 @@ A SCUE is a configuration in which an admitted represented model class continues
 \label{ass:regularity}
 (i) \emph{Strict adequacy.}
 At each visited pair every theory is either $\eta$-adequate or strictly inadequate---none sits exactly at the adequacy boundary---so \cref{lem:test-consistency} applies for every agent, theory, partition profile, and policy profile.
-In the deterministic case $\eta=0$ this holds automatically and the sequential detector recovers the exact test.
 (ii) \emph{Production randomness.}
 The randomization in each $\phi_i$ is independent across elections and of the state and consequence draws, and, conditional on an election at a \emph{repairable} record ($\mathcal R(\mathcal P_i,\bar r_i)\neq\emptysetset$), production succeeds with probability at least $\underline\pi>0$.
 At an irreparable record production fails surely (\cref{def:technology}).
 \end{assumption}
 
-Part (i) is the genericity that makes each theory's evidence process settle cleanly relative to the capacity threshold (\cref{lem:test-consistency}); it rules out only a boundary knife-edge and holds automatically in the deterministic case.
+Part (i) is the genericity that makes each theory's evidence process settle cleanly relative to the capacity threshold (\cref{lem:test-consistency}); it rules out only a boundary knife-edge and holds automatically under the exact calibration (\cref{conv:calibration}).
 Part (ii) gives every elected repairable question a real chance of resolution; finiteness of elections comes instead from the decay of the achievability weight, so no separate never-produce exclusion is needed.
 The agent, unable to tell a repairable record from an irreparable one, may elect either; the two are distinguished only in their success probabilities, not in the agent's decision.
 
@@ -1130,7 +1295,7 @@ In environments whose primitives are \emph{diagnostic}---payoff-relevant policy 
 By \cref{prop:adequacy}, an objectively false theory that retains nonvanishing acting-belief mass in a stable SCUE must be \(\eta\)-adequate on path; the induced profile is therefore concealing for that theory in the sense of \cref{def:exposure}.
 Concealment alone does not guarantee survival.
 The theory must also be admitted when the language is initialized, avoid prior and subsequent rejection, retain nonvanishing acting-belief mass, support a stationary standing policy, coexist with confirmed conjectures, and leave no profitable inquiry election.
-In stochastic environments even an active \(\eta\)-adequate theory remains subject to the conditional false-rejection bound of \cref{lem:test-consistency}; under the exact deterministic detector an active adequate theory is never falsely rejected, but the remaining SCUE conditions are still required.
+In stochastic environments even an active \(\eta\)-adequate theory remains subject to the conditional false-rejection bound of \cref{lem:test-consistency}; under the exact calibration false rejection is impossible (\cref{conv:calibration}), but the remaining SCUE conditions are still required.
 
 Strictly punishing primitives---those whose on-path conditionals at every payoff-relevant policy error separate from every expressible prediction by more than $\eta$---are diagnostic, as \cref{prop:punishing} in \cref{app:deferred} records.
 
