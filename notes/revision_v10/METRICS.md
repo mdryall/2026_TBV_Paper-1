@@ -1,6 +1,15 @@
 # METRICS.md — GPTedit-10 revision working metrics
 
-Updated: 2026-08-15 (Session 3A, Phase 3b(i): Section 2 scaffold written to `sec2_scaffold.md`; manuscript untouched, no counts changed).
+Updated: 2026-08-16 (post-3A conceptual discussion; see `author-reflection-notes.md`).
+
+## Author-added scope for Session 4 (instructed 2026-08-16)
+
+In addition to the runbook Session 4 kickoff, the Model rewrite must:
+1. Add a one-sentence **two-perspective convention**: from the agent's side, awareness cells are primitive states with nothing below them; the partition apparatus is the analyst's device relating the agent's space to Nature's.
+2. Apply **agent-eye/God's-eye discipline** to Model-section prose; revisit the sentence "An awareness cell is thus an implicit causal claim" in that light (keep as explicitly analyst-voice commentary or rephrase).
+Rationale and full discussion: `notes/revision_v10/author-reflection-notes.md` (Part II items 1–2).
+
+Session 3A note (2026-08-15): Phase 3b(i) scaffold written to `sec2_scaffold.md`; manuscript untouched, no counts changed.
 Counting method: `notes/revision_v10/wordcount.py` (saved in Session 1) — python strip of comments, LaTeX commands, and environment markers over the compiled body; main = `\begin{document}` to `\appendix`, appendix = `\appendix` to `\end{document}`; tokens containing at least one alphanumeric character count as words.
 **Method note (Session 1):** the Session 0 script was not saved and its exact numbers could not be reproduced (closest reconstruction ran ≈1,300 words below its main-text figure on identical input).
 To keep the series consistent, `wordcount.py` is now the standing method and the Phase 0/Phase 1 checkpoints below are RESTATED under it (original Session 0 figures in parentheses).
